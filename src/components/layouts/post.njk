@@ -1,0 +1,32 @@
+{% extends 'layouts/base.njk' %}
+
+{# Populate <head> with post-related assets #}
+{% block head %}
+  {% if config.syntaxTheme %}
+    <link rel="preload" as="style" href="/assets/css/{{ config.syntaxTheme }}"/>
+    <link rel="stylesheet" href="/assets/css/{{ config.syntaxTheme }}"/>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <main tabindex="-1">
+    {% include "header.njk" %}
+    {% if date %}
+      <time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
+    {% endif %}
+    <h1>{{ title }}</h1>
+    <article>
+      {{ content | safe }}
+    </article>
+    <hr />
+    <h5>Tags</h5>
+    {% if tags.length %}
+      <nav>
+      {% for tag in tags %}
+        <a href="/blog/tag/{{tag}}/">{{tag}}</a>
+      {% endfor %}
+      </nav>
+    {% endif %}
+  </main>
+{% endblock %}
+
