@@ -1,0 +1,19 @@
+{
+  "name": "Eleventy blog/site starter",
+  "shortDesc": "I'm Mattia Astorino, UX Engineer in Milan and member of Open Source Design.",
+  "url": "https://equinusocio.dev",
+  "lang": "en",
+  "authorHandle": "@equinusocio",
+  "authorName": "Mattia Astorino",
+  "paymentPointer": "$twitter.xrptipbot.com/equinusocio",
+  "syntaxTheme": "prism-material-light.css",
+  "permalinkClass": "permalink",
+  "iframesClass": "iframes-wrapper",
+  "codeClass": "code-wrapper",
+  "paths": {
+    "src": "src",
+    "blogdir": "blog",
+    "includes": "components",
+    "output": "dist"
+  }
+}
