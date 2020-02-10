@@ -6,7 +6,7 @@ title: Blog
 
 {% set postList = collections.posts %}
 {% if collections.posts.length %}
-  <section css-module="post-list">
+  <section css-module="PostList">
     <ol reversed>
       {% for item in postList %}
         {% if not loop.first %}

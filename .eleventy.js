@@ -47,7 +47,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addTransform('htmlmin', htmlMinTransform)
   }
   eleventyConfig.addTransform('contentParser', contentParser)
-  // eleventyConfig.addTransform('postHtml', postHtml)
+  eleventyConfig.addTransform('postHtml', postHtml)
 
   /**
    * Add Plugins
