@@ -1,13 +1,12 @@
-const path = require('path');
 const fs = require('fs');
-const modulesPath = '.cssModules';
+const modulesPath = './.cssModules';
 
 module.exports = {
   plugins: [
     require('postcss-modules')({
       getJSON: function(cssFileName, json, outputFileName) {
         !fs.existsSync(modulesPath) && fs.mkdirSync(modulesPath);
-        fs.writeFileSync(`./${modulesPath}/cssClasses.json`, JSON.stringify(json));
+        fs.writeFileSync('./.cssModules/cssClasses.json', JSON.stringify(json));
       }
     }),
     require('postcss-preset-env')({
