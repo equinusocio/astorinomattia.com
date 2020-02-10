@@ -1,8 +1,6 @@
 const jsdom = require('@tbranyen/jsdom')
 const slugify = require('slugify')
 const eleventyConfig = require('../../src/_data/config.json')
-const posthtml = require('posthtml');
-const posthtmlCssModules = require('posthtml-css-modules');
 const { JSDOM } = jsdom
 
 module.exports = function(content, outputPath) {
