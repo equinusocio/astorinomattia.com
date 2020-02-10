@@ -3,14 +3,18 @@ const modulesPath = './.cssModules';
 
 module.exports = {
   plugins: [
+    require('postcss-easy-import')({
+      extensions: ['.pcss']
+    }),
+    require('postcss-preset-env')({
+      stage: 0,
+    }),
     require('postcss-modules')({
+      generateScopedName: "[name]-[local]-[hash:base64:5]",
       getJSON: function(cssFileName, json, outputFileName) {
         !fs.existsSync(modulesPath) && fs.mkdirSync(modulesPath);
         fs.writeFileSync('./.cssModules/cssClasses.json', JSON.stringify(json));
       }
-    }),
-    require('postcss-preset-env')({
-      stage: 0,
     }),
     require('cssnano')({
       preset: [
