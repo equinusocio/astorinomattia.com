@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master
 publish_mode: editorial_workflow
-site_url: "https://xity-starter.netlify.com"
+site_url: "https://equinusocio.netlify.com"
 media_folder: "static/images"
 public_folder: "images"
 collections:
