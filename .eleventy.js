@@ -27,7 +27,6 @@ module.exports = function(eleventyConfig) {
    */
   eleventyConfig.addPassthroughCopy({ './static': '.' })
   eleventyConfig.addPassthroughCopy(`./assets/css/${siteConfig.syntaxTheme}`)
-  eleventyConfig.addPassthroughCopy("admin");
 
   /**
    * Add filters
