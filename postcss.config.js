@@ -12,7 +12,7 @@ module.exports = {
     require('postcss-modules')({
       generateScopedName: "[name]-[local]-[hash:base64:5]",
       getJSON: function(cssFileName, json, outputFileName) {
-        !fs.existsSync(modulesPath) && fs.mkdirSync(modulesPath);
+        !fs.exists(modulesPath) && fs.mkdir(modulesPath);
         fs.writeFileSync('./.cssModules/cssClasses.json', JSON.stringify(json));
       }
     }),
