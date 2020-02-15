@@ -8,7 +8,7 @@ module.exports = function(content, outputPath) {
      * transpile css-modules classes
      */
     const result = posthtml()
-      .use(posthtmlCssModules('./.cssModules/cssClasses.json'))
+      .use(posthtmlCssModules('./dist/.cssModules/cssClasses.json'))
       .process(content, { sync: true })
       .html
 

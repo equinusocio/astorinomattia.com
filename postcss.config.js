@@ -1,5 +1,5 @@
 const fs = require('fs');
-const modulesPath = './.cssModules';
+const modulesPath = './dist/.cssModules';
 
 module.exports = {
   plugins: [
@@ -12,8 +12,8 @@ module.exports = {
     require('postcss-modules')({
       generateScopedName: "[name]-[local]-[hash:base64:5]",
       getJSON: function(cssFileName, json, outputFileName) {
-        !fs.exists(modulesPath) && fs.mkdir(modulesPath);
-        fs.writeFile('./.cssModules/cssClasses.json', JSON.stringify(json));
+        !fs.existsSync(modulesPath) && fs.mkdirSync(modulesPath);
+        fs.writeFileSync('./dist/.cssModules/cssClasses.json', JSON.stringify(json));
       }
     }),
     require('cssnano')({
