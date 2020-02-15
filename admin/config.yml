@@ -1,0 +1,70 @@
+backend:
+  name: git-gateway
+  branch: master
+publish_mode: editorial_workflow
+site_url: "https://xity-starter.netlify.com"
+media_folder: "static/images"
+public_folder: "images"
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Homepage"
+        delete: false
+        file: "src/index.md"
+        slug: "{{slug}}"
+        create: false
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "layouts/njk.njk"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "SEO Meta Title", name: "metaTitle", widget: "string", required: false}
+          - {label: "SEO Meta Description", name: "metaDesc", widget: "string", required: false}
+          - {label: "Post Feed Heading", name: "postsHeading", widget: "string", default: "Latest posts"}
+          - {label: "Archive Link Text", name: "archiveButtonText", widget: "string", default: "See all posts"}
+          - {label: "Social Image", name: "socialImage", widget: "image", required: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+  - name: "generic_pages"
+    label: "Generic Pages"
+    folder: "src"
+    slug: "{{slug}}"
+    preview_path: "pages/{{slug}}"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Permalink Override (Pattern: '/your-slug/index.html')", name: "permalink", widget: "string", required: false}
+      - {label: "SEO Meta Title", name: "metaTitle", widget: "string", required: false}
+      - {label: "SEO Meta Description", name: "metaDesc", widget: "string", required: false}
+      - {label: "Social Image", name: "socialImage", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "posts"
+    label: "Posts"
+    folder: "src/blog"
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "SEO Meta Title", name: "metaTitle", widget: "string", required: false}
+      - {label: "SEO Meta Description", name: "metaDesc", widget: "string", required: false}
+      - {label: "Social Image", name: "socialImage", widget: "image", required: false}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list", allow_add: true}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: "Globals"
+    name: "globals"
+    files:
+      - label: "Navigation"
+        name: "nav"
+        delete: false
+        file: "src/_data/navigation.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Text", name: "text", widget: "string"}
+              - {label: "Url", name: "url", widget: "string"}
+              - {label: "Is url to external site?", name: "external", widget: "boolean", required: false}
