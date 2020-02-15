@@ -1,0 +1,11 @@
+{
+  "netlify.api_token": "b0029a340b2853f1240cf0d818baf205a78e867e483c1abaa9716bafb8c0d09f",
+  "netlify.site_id": "xity-starter.netlify.com",
+  "files.watcherExclude": {
+    "**/.cache": true,
+    "**/.cssModules": true
+  },
+  "search.exclude": {
+    "**/.cssModules": true
+  }
+}
