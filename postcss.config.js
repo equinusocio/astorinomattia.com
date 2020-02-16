@@ -13,7 +13,7 @@ module.exports = {
       generateScopedName: "[name]-[local]-[hash:base64:5]",
       getJSON: function(cssFileName, json, outputFileName) {
         !fs.existsSync(siteConfig.paths.modulesPath) && fs.mkdirSync(siteConfig.paths.modulesPath);
-        fs.writeFileSync('./dist/.cssModules/cssClasses.json', JSON.stringify(json));
+        fs.writeFileSync(`${siteConfig.paths.modulesPath}/cssClasses.json`, JSON.stringify(json));
       }
     }),
     require('cssnano')({

@@ -1,5 +1,6 @@
 const posthtml = require('posthtml');
 const posthtmlCssModules = require('posthtml-css-modules');
+const siteConfig = require('../../src/_data/config.json')
 
 module.exports = function(content, outputPath) {
   if (outputPath.endsWith('.html')) {
@@ -8,7 +9,7 @@ module.exports = function(content, outputPath) {
      * transpile css-modules classes
      */
     const result = posthtml()
-      .use(posthtmlCssModules('./dist/.cssModules/cssClasses.json'))
+      .use(posthtmlCssModules(`${siteConfig.paths.modulesPath}/cssClasses.json`))
       .process(content, { sync: true })
       .html
 
