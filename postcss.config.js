@@ -1,5 +1,5 @@
 const fs = require('fs');
-const modulesPath = './dist/.cssModules';
+const siteConfig = require('./src/_data/config.json')
 
 module.exports = {
   plugins: [
@@ -12,7 +12,7 @@ module.exports = {
     require('postcss-modules')({
       generateScopedName: "[name]-[local]-[hash:base64:5]",
       getJSON: function(cssFileName, json, outputFileName) {
-        !fs.existsSync(modulesPath) && fs.mkdirSync(modulesPath);
+        !fs.existsSync(siteConfig.paths.modulesPath) && fs.mkdirSync(siteConfig.paths.modulesPath);
         fs.writeFileSync('./dist/.cssModules/cssClasses.json', JSON.stringify(json));
       }
     }),

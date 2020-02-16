@@ -1,6 +1,6 @@
 const jsdom = require('@tbranyen/jsdom')
 const slugify = require('slugify')
-const eleventyConfig = require('../../src/_data/config.json')
+const siteConfig = require('../../src/_data/config.json')
 const { JSDOM } = jsdom
 
 module.exports = function(content, outputPath) {
@@ -72,7 +72,7 @@ module.exports = function(content, outputPath) {
         // Set the anchor href based on the generated slug
         anchor.setAttribute('href', `#${headingSlug}`)
         // Add class and content to the anchor
-        anchor.classList.add(eleventyConfig.permalinkClass)
+        anchor.classList.add(siteConfig.permalinkClass)
         anchor.innerHTML = '#'
         // Set the ID attribute with the slug
         heading.setAttribute('id', `${headingSlug}`)
@@ -89,7 +89,7 @@ module.exports = function(content, outputPath) {
       articleEmbeds.forEach(embed => {
         const wrapper = document.createElement('div')
         embed.setAttribute('loading', 'lazy')
-        wrapper.classList.add(eleventyConfig.iframesClass)
+        wrapper.classList.add(siteConfig.iframesClass)
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
@@ -102,7 +102,7 @@ module.exports = function(content, outputPath) {
     if (codeSnippets.length) {
       codeSnippets.forEach(embed => {
         const wrapper = document.createElement('div')
-        wrapper.classList.add(eleventyConfig.codeClass)
+        wrapper.classList.add(siteConfig.codeClass)
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })

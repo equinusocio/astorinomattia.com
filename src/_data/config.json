@@ -14,6 +14,7 @@
     "src": "src",
     "blogdir": "blog",
     "includes": "components",
+    "modulesPath": "./dist/.cssModules",
     "output": "dist"
   }
 }
