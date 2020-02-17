@@ -19,7 +19,7 @@
     "build:assets": "parcel build ./assets/css/app.pcss ./assets/js/app.js --out-dir ./dist/assets --no-source-maps",
     "watch": "cross-env ELEVENTY_ENV=development run-s clean:* build:assets serve && run-p watch:*",
     "serve": "eleventy --serve --port=8080",
-    "watch:assets": "parcel watch ./assets/css/app.pcss ./assets/js/app.js --out-dir ./dist/assets --no-source-maps --no-hmr",
+    "watch:assets": "parcel watch ./assets/css/app.pcss ./assets/js/app.js ./assets/images --out-dir ./dist/assets --no-source-maps --no-hmr",
     "dev": "yarn watch"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "@tbranyen/jsdom": "^13.0.0",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",
+    "fs-extra": "^8.1.0",
     "html-minifier": "^4.0.0",
     "markdown-it": "^10.0.0",
     "postcss-preset-env": "^6.7.0",

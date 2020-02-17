@@ -13,7 +13,9 @@
     {% block head %}{% endblock %}
   </head>
   <body>
-    {% block content %}{% endblock content %}
-    <script src="https://cdn.jsdelivr.net/npm/what-input@5.2.6/dist/what-input.min.js"></script>
+    <main tabindex="-1" css-module="Container">
+      {% block content %}{% endblock content %}
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/what-input@5.2.6/dist/what-input.min.js" defer></script>
   </body>
 </html>

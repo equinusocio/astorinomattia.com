@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const siteConfig = require('./src/_data/config.json')
 
 module.exports = {
@@ -10,10 +10,14 @@ module.exports = {
       stage: 0,
     }),
     require('postcss-modules')({
-      generateScopedName: "[name]-[local]-[hash:base64:5]",
+      generateScopedName: "[local]-[hash:base64:5]",
       getJSON: function(cssFileName, json, outputFileName) {
-        !fs.existsSync(siteConfig.paths.modulesPath) && fs.mkdirSync(siteConfig.paths.modulesPath);
-        fs.writeFileSync(`${siteConfig.paths.modulesPath}/cssClasses.json`, JSON.stringify(json));
+        const outputFile = `${siteConfig.paths.modulesPath}/cssClasses.json`
+        const file = fs.pathExistsSync(outputFile) ? fs.readJsonSync(outputFile) : {};
+        const result = {...file, ...json}
+
+        fs.ensureDirSync(siteConfig.paths.modulesPath)
+        fs.writeJsonSync(outputFile, result);
       }
     }),
     require('cssnano')({
