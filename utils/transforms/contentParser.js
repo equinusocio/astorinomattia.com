@@ -3,6 +3,11 @@ const slugify = require('slugify')
 const siteConfig = require('../../src/_data/config.json')
 const { JSDOM } = jsdom
 
+function setModuleName(element, modules) {
+  const currentModule = modules.map(item => `${item}`);
+  element.setAttribute('css-module', currentModule.join(' '))
+}
+
 module.exports = function(content, outputPath) {
   if (outputPath.endsWith('.html')) {
     /**
@@ -31,6 +36,10 @@ module.exports = function(content, outputPath) {
            */
           const figure = document.createElement('figure')
           const figCaption = document.createElement('figcaption')
+          /**
+           * Add a class to the figure element
+           */
+          setModuleName(figure, siteConfig.figureClass)
           /**
            * Set figcaption content from image title
            * then remove the title attribute
@@ -72,7 +81,7 @@ module.exports = function(content, outputPath) {
         // Set the anchor href based on the generated slug
         anchor.setAttribute('href', `#${headingSlug}`)
         // Add class and content to the anchor
-        anchor.classList.add(siteConfig.permalinkClass)
+        setModuleName(anchor, siteConfig.permalinkClass)
         anchor.innerHTML = '#'
         // Set the ID attribute with the slug
         heading.setAttribute('id', `${headingSlug}`)
@@ -89,7 +98,7 @@ module.exports = function(content, outputPath) {
       articleEmbeds.forEach(embed => {
         const wrapper = document.createElement('div')
         embed.setAttribute('loading', 'lazy')
-        wrapper.classList.add(siteConfig.iframesClass)
+        setModuleName(wrapper, siteConfig.iframeClass)
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
@@ -102,7 +111,7 @@ module.exports = function(content, outputPath) {
     if (codeSnippets.length) {
       codeSnippets.forEach(embed => {
         const wrapper = document.createElement('div')
-        wrapper.classList.add(siteConfig.codeClass)
+        setModuleName(wrapper, siteConfig.codeClass)
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
