@@ -1,24 +1,8 @@
-@import './core.pcss';
+/* Import settings */
+@import './settings.pcss';
+
+/* Import core files */
+@import './core/*.pcss';
+
+/* Import modules */
 @import './modules/*.pcss';
-/* @import './modules/Container.pcss';
-@import './modules/PostList.pcss'; */
-
-nav > a + a {
-  margin-left: 16px;
-}
-
-a[aria-current='page'],
-a[aria-current='page']:hover {
-  color: var(--ne-global-foreground);
-}
-
-
-figure {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-[data-whatintent='mouse'] a:focus,
-[data-whatintent='mouse'] a:visited:focus {
-  outline: none;
-}

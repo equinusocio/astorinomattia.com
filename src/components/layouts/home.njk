@@ -1,9 +1,23 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  {% include "header.njk" %}
-  {% if title %}
-    <h1>{{ title }}</h1>
-  {% endif %}
-  {{ content | safe }}
+  <main tabindex="-1" css-module="BaseLayout">
+    <div>
+      {% include "header.njk" %}
+      {% if title %}
+        <h1>{{ title }}</h1>
+      {% endif %}
+      {% block leftContent %}{% endblock leftContent %}
+    </div>
+    <div>
+      {% block rightContent %}
+        <h1>H1 Title</h1>
+        <h2>H2 Title</h2>
+        <h3>H3 Title</h3>
+        <h4>H4 Title</h4>
+        <h5>H5 Title</h1>
+        <h6>H6 Title</h6>
+      {% endblock rightContent %}
+    </div>
+  </main>
 {% endblock %}

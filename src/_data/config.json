@@ -10,7 +10,7 @@
   "permalinkClass": ["Permalink"],
   "iframeClass": ["IframesWrapper"],
   "codeClass": ["CodeWrapper"],
-  "figureClass": ["Figure", "Test"],
+  "figureClass": ["Figure"],
   "paths": {
     "src": "src",
     "blogdir": "blog",
