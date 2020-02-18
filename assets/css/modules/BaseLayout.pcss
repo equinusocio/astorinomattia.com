@@ -2,10 +2,26 @@
   display: grid;
   padding: 32px 16px;
 
-  @media (min-width: 48em) {
+  @media (width >= 60em) {
     max-width: 1440px;
     margin: 0 auto;
     padding: 40px 64px;
     grid-template-columns: 47% 1fr;
+  }
+}
+
+.BaseLayout__LeftSide {
+
+  @media (width >= 60em) {
+    padding-right: 64px;
+  }
+}
+
+
+.BaseLayout__Sticker {
+
+  @media (width >= 60em) {
+    position: sticky;
+    top: 40px;
   }
 }

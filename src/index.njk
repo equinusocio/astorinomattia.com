@@ -1,8 +1,18 @@
 ---
 metaTitle: Home
 ---
-{% extends 'layouts/home.njk' %}
+{% extends 'layouts/page.njk' %}
 
 {% block leftContent %}
-<p>I’m Mattia Astorino. I work as <em>UX Engineer</em> and open source developer. Photographer in my spare time.</p>
+  <p class="PageDescription">I’m Mattia Astorino. I work as <em>UX Engineer</em>, <em>designer</em> and <em>open source developer</em>. Photographer in my spare time.</p>
+  {% include "./components/socials.njk" %}
 {% endblock leftContent %}
+
+{% block rightContent %}
+  <h1>H1 Title</h1>
+  <h2>H2 Title</h2>
+  <h3>H3 Title</h3>
+  <h4>H4 Title</h4>
+  <h5>H5 Title</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aut autem in. Consequatur, voluptatem mollitia eius quos excepturi soluta, delectus doloremque qui illum neque debitis in tempora nostrum vel molestiae.</p>
+{% endblock rightContent %}

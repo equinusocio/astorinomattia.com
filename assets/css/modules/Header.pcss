@@ -1,3 +1,45 @@
 .Header {
-  background-color: red;
+  display: flex;
+  padding-bottom: 40px;
+  padding-right: 40px;
+
+  @media (width >= 60em) {
+    margin-bottom: 48px;
+  }
 }
+
+.Header__Navigation {
+  display: grid;
+  grid-auto-flow: column dense;
+  align-items: center;
+  grid-gap: 32px;
+
+  & .Header__Logo {
+    display: inline-flex;
+    min-width: 32px;
+  }
+
+  & > a {
+    color: var(--color-50);
+    font-size: 1.13rem;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-white);
+    }
+
+    &[aria-current='page'] {
+      color: var(--accent-color);
+    }
+  }
+
+  &::after {
+    content: '';
+    height: 3px;
+    background-color: var(--color-90);
+    flex-grow: 1;
+    width: 72px;
+    display: block;
+  }
+}
+

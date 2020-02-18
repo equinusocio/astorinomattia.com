@@ -1,20 +1,23 @@
 <header class="Header">
-  {% if navigation.items %}
-    <nav>
-      {% for item in navigation.items %}
-        {% set relExternal = '' %}
-        {% set isCurrent = '' %}
+    <nav class="Header__Navigation">
+      <a href="/" class="Header__Logo">
+        <img src="/images/logo.png" alt="Home" width="32" height="32" />
+      </a>
+      {% if navigation.items %}
+        {% for item in navigation.items %}
+          {% set isCurrent = '' %}
+          {% set relExternal = '' %}
 
-        {% if item.external %}
-          {% set relExternal = ' rel="external" target="_blank"' %}
-        {% endif %}
-        {% if page.url == item.url %}
-          {% set isCurrent = ' aria-current="page"' %}
-        {% endif %}
-        <a href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}>
-          <b>{{ item.text }}</b>
-        </a>
-      {% endfor %}
+          {% if item.external %}
+            {% set relExternal = ' rel="external noopener noreferrer" target="_blank"' %}
+          {% endif %}
+          {% if page.url == item.url %}
+            {% set isCurrent = ' aria-current="page"' %}
+          {% endif %}
+          <a href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}>
+            <b>{{ item.text }}</b>
+          </a>
+        {% endfor %}
+      {% endif %}
     </nav>
-  {% endif %}
 </header>

@@ -1,10 +1,18 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  {% include "header.njk" %}
-  {% if title %}
-    <h1>{{ title }}</h1>
-  {% endif %}
-
-  {{ content | safe }}
+  <main tabindex="-1" class="BaseLayout">
+    <div class="BaseLayout__LeftSide">
+      <div class="BaseLayout__Sticker">
+        {% include "header.njk" %}
+        {% if title %}
+          <h1>{{ title }}</h1>
+        {% endif %}
+        {% block leftContent %}{% endblock leftContent %}
+      </div>
+    </div>
+    <div class="BaseLayout__RightSide">
+      {% block rightContent %}{% endblock rightContent %}
+    </div>
+  </main>
 {% endblock %}
