@@ -8,10 +8,8 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova:400,700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@0.6.0/modern-normalize.min.css"/>
-    <link rel="stylesheet" href="/assets/css/app.css" media="print" onload="this.media='all'">
-    <noscript>
-      <link rel="stylesheet" href="/assets/css/app.css">
-    </noscript>
+    <link rel="preload" href="/assets/css/app.css" as="style">
+    <link rel="stylesheet" href="/assets/css/app.css">
     <script src="/assets/js/app.js" defer></script>
     {% block head %}{% endblock %}
   </head>
