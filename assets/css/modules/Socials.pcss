@@ -1,3 +1,25 @@
 .Socials {
-  background-color: red;
+  margin-top: 88px;
+
+  & ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-grid;
+    grid-gap: 24px;
+    grid-auto-flow: column dense;
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-0);
+    transition: transform 200ms;
+    pointer-events: fill;
+
+    &:hover {
+      fill: var(--accent-color);
+      transform: scale(0.9);
+    }
+  }
 }
