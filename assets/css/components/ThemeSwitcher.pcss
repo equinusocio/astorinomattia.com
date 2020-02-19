@@ -1,0 +1,36 @@
+.ThemeSwitcher {
+  display: flex;
+}
+
+.ThemeSwitcher__ThemeButton {
+  --ne-button-y-padding: 8px;
+  --ne-button-x-padding: 8px;
+  --ne-button-foreground: var(--navigation-links-color);
+  --ne-button-hover-foreground: var(--navigation-links-color);
+  --ne-button-active-foreground: var(--navigation-links-color);
+  --ne-button-background: transparent;
+  --ne-button-hover-background: transparent;
+  --ne-button-active-background: transparent;
+  --ne-button-shadow: none;
+
+  display: inline-flex;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    color: var(--contrast-color);
+  }
+
+  @nest *[data-theme='light'] &[data-theme-name='light'] {
+    color: var(--accent-color);
+  }
+  @nest *[data-theme='dark'] &[data-theme-name='dark'] {
+    color: var(--accent-color);
+  }
+
+  & svg {
+    margin: 0;
+    width: 24px;
+    height: 24px;
+  }
+}

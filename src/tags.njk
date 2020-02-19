@@ -8,7 +8,7 @@ pagination:
   alias: tag
 permalink: /blog/tag/{{ tag }}/
 ---
-{% from "postItem.njk" import postItem %}
+{% from "post-item.njk" import postItem %}
 
 <h1 style="margin-bottom: 8px">#{{ tag }}</h1>
 <small>{{ collections[tag].length }} posts published</small>

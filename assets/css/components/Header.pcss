@@ -1,7 +1,6 @@
 .Header {
   display: flex;
   padding-bottom: 40px;
-  padding-right: 40px;
 
   @media (width >= 60em) {
     margin-bottom: 48px;
@@ -13,6 +12,7 @@
   grid-auto-flow: column dense;
   align-items: center;
   grid-gap: 32px;
+  margin-right: 24px;
 
   & .Header__Logo {
     display: inline-flex;
@@ -20,12 +20,12 @@
   }
 
   & > a {
-    color: var(--color-50);
+    color: var(--navigation-links-color);
     font-size: 1.13rem;
     text-decoration: none;
 
     &:hover {
-      color: var(--color-0);
+      color: var(--contrast-color);
     }
 
     &[aria-current='page'] {
@@ -33,13 +33,16 @@
     }
   }
 
-  &::after {
-    content: '';
-    height: 3px;
-    background-color: var(--color-90);
-    flex-grow: 1;
-    width: 72px;
-    display: block;
+  @media (width >= 60em) {
+    &::after {
+      content: '';
+      height: 3px;
+      background-color: var(--header-rule-color);
+      transition: background-color 80ms;
+      flex-grow: 1;
+      width: 72px;
+      display: block;
+    }
   }
 }
 

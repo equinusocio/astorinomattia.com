@@ -5,6 +5,10 @@ module.exports = {
     require('postcss-easy-import')({
       extensions: ['.pcss']
     }),
+    require('postcss-dark-theme-class')({
+      darkSelector: '[data-theme="dark"]',
+      lightSelector: '[data-theme="light"]'
+    }),
     require('postcss-preset-env')({
       stage: 0,
     }),
