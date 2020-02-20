@@ -1,0 +1,10 @@
+{% from "post-card.njk" import postCard %}
+
+{% set postList = collections.posts %}
+{% if collections.posts.length %}
+  <section class="PostList">
+    {% for item in postList %}
+      {{ postCard(item.url, item.data.title, item.date, item.data.abstract) }}
+    {% endfor %}
+  </section>
+{% endif %}

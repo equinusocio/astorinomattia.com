@@ -1,0 +1,12 @@
+{% macro postCard(url, title, date, abs) %}
+  <article class="PostCard NeumoBig">
+    <header>
+      <time class="PostCard__Date" datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
+      <h5 class="PostCard__Title">{{ title }}</h5>
+    </header>
+    <p data-size='small'>
+      {{ abs }}
+    </p>
+    <a href="{{ url }}" rel="bookmark">Read this story</a>
+  </article>
+{% endmacro %}

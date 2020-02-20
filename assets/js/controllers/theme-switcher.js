@@ -8,15 +8,6 @@ export default class extends Controller {
     const lightSelector = this.lightTarget.dataset.themeName;
     const darkSelector = this.darkTarget.dataset.themeName;
 
-    // switch (html.dataset.theme) {
-    //   case lightSelector:
-    //     html.dataset.theme = lightSelector;
-    //     break;
-
-    //   default:
-    //     break;
-    // }
-
     this.lightTarget.addEventListener('click', () => {
       html.dataset.theme = 'light';
     }, false);

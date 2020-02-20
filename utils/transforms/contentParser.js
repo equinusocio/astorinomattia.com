@@ -3,11 +3,6 @@ const slugify = require('slugify')
 const siteConfig = require('../../src/_data/config.json')
 const { JSDOM } = jsdom
 
-function setModuleName(element, modules) {
-  const currentModule = modules.map(item => `${item}`);
-  element.setAttribute('css-module', currentModule.join(' '))
-}
-
 module.exports = function(content, outputPath) {
   if (outputPath.endsWith('.html')) {
     /**
@@ -39,7 +34,7 @@ module.exports = function(content, outputPath) {
           /**
            * Add a class to the figure element
            */
-          setModuleName(figure, siteConfig.figureClass)
+          figure.classList.add(siteConfig.figureClass)
           /**
            * Set figcaption content from image title
            * then remove the title attribute
@@ -81,7 +76,7 @@ module.exports = function(content, outputPath) {
         // Set the anchor href based on the generated slug
         anchor.setAttribute('href', `#${headingSlug}`)
         // Add class and content to the anchor
-        setModuleName(anchor, siteConfig.permalinkClass)
+        anchor.classList.add(siteConfig.permalinkClass)
         anchor.innerHTML = '#'
         // Set the ID attribute with the slug
         heading.setAttribute('id', `${headingSlug}`)
@@ -98,7 +93,7 @@ module.exports = function(content, outputPath) {
       articleEmbeds.forEach(embed => {
         const wrapper = document.createElement('div')
         embed.setAttribute('loading', 'lazy')
-        setModuleName(wrapper, siteConfig.iframeClass)
+        wrapper.classList.add(siteConfig.iframeClass)
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
@@ -111,7 +106,7 @@ module.exports = function(content, outputPath) {
     if (codeSnippets.length) {
       codeSnippets.forEach(embed => {
         const wrapper = document.createElement('div')
-        setModuleName(wrapper, siteConfig.codeClass)
+        wrapper.classList.add(siteConfig.codeClass)
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
@@ -131,7 +126,7 @@ module.exports = function(content, outputPath) {
         const externalLink = document.createElement('a')
         if (link.hasAttributes()) {
           const linkAttributes = link.attributes
-          for (var i = linkAttributes.length - 1; i >= 0; i--) {
+          for (let i = linkAttributes.length - 1; i >= 0; i--) {
             externalLink.setAttribute(
               linkAttributes[i].name,
               linkAttributes[i].value

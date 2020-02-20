@@ -8,7 +8,7 @@ pagination:
   alias: tag
 permalink: /blog/tag/{{ tag }}/
 ---
-{% from "post-item.njk" import postItem %}
+{% from "post-card.njk" import postCard %}
 
 <h1 style="margin-bottom: 8px">#{{ tag }}</h1>
 <small>{{ collections[tag].length }} posts published</small>
@@ -19,7 +19,7 @@ permalink: /blog/tag/{{ tag }}/
       {% if not loop.first %}
         <hr/>
       {% endif %}
-      {{ postItem(post.url, post.data.title, post.date) }}
+      {{ postCard(post.url, post.data.title, post.date) }}
     {% endfor %}
   </ol>
 </section>
