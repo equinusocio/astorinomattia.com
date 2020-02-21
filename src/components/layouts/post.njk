@@ -3,8 +3,7 @@
 {# Populate <head> with post-related assets #}
 {% block head %}
   {% if config.syntaxTheme %}
-    <link rel="preload" as="style" href="/assets/css/{{ config.syntaxTheme }}"/>
-    <link rel="stylesheet" href="/assets/css/{{ config.syntaxTheme }}"/>
+    <link rel="stylesheet" href="/assets/css/{{ config.syntaxTheme }}" media="print" onload="this.media='all'" />
   {% endif %}
 {% endblock %}
 
