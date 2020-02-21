@@ -1,6 +1,5 @@
 {% extends 'layouts/base.njk' %}
 
-{# Populate <head> with post-related assets #}
 {% block head %}
   {% if config.syntaxTheme %}
     <link rel="stylesheet" href="/assets/css/{{ config.syntaxTheme }}" media="print" onload="this.media='all'" />
@@ -8,24 +7,13 @@
 {% endblock %}
 
 {% block content %}
-  {% include "header.njk" %}
   <main tabindex="-1" class="BaseLayout">
-    {% if date %}
-      <time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
-    {% endif %}
-    <h1>{{ title }}</h1>
-    <article>
+    {% include "header.njk" %}
+    <article class="PostContent">
+      {% if title %}
+        <h1>{{ title }}</h1>
+      {% endif %}
       {{ content | safe }}
     </article>
-    <hr />
-    <h5>Tags</h5>
-    {% if tags.length %}
-      <nav>
-      {% for tag in tags %}
-        <a href="/blog/tag/{{tag}}/">{{tag}}</a>
-      {% endfor %}
-      </nav>
-    {% endif %}
   </main>
 {% endblock %}
-
