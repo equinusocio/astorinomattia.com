@@ -2,10 +2,12 @@
   display: grid;
   padding: 32px 16px;
 
+  @media (width >= 48em) {
+    padding: 40px 64px;
+  }
   @media (width >= 60em) {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 40px 64px;
     grid-template-columns: 47% 1fr;
   }
 }

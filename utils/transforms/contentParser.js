@@ -1,14 +1,18 @@
 const jsdom = require('@tbranyen/jsdom')
-const slugify = require('slugify')
-const siteConfig = require('../../src/_data/config.json')
 const { JSDOM } = jsdom
+const slugify = require('slugify')
+const eleventyConfig = require('../../src/_data/config.json')
 
-module.exports = function(content, outputPath) {
+function setClass(element, list) {
+  list.map(item => element.classList.add(item))
+}
+
+module.exports = function(value, outputPath) {
   if (outputPath.endsWith('.html')) {
     /**
      * create the document model
      */
-    const DOM = new JSDOM(content)
+    const DOM = new JSDOM(value)
     const document = DOM.window.document
 
     /**
@@ -32,15 +36,15 @@ module.exports = function(content, outputPath) {
           const figure = document.createElement('figure')
           const figCaption = document.createElement('figcaption')
           /**
-           * Add a class to the figure element
-           */
-          figure.classList.add(siteConfig.figureClass)
-          /**
            * Set figcaption content from image title
            * then remove the title attribute
            */
           figCaption.innerHTML = `<small>${image.getAttribute('title')}</small>`
           image.removeAttribute('title')
+          /**
+           * Add custom class to the figure elements inside posts
+           */
+          setClass(figure, eleventyConfig.figureClass)
           /**
            * Clone image inside figure
            * and add the figcaption element
@@ -76,7 +80,7 @@ module.exports = function(content, outputPath) {
         // Set the anchor href based on the generated slug
         anchor.setAttribute('href', `#${headingSlug}`)
         // Add class and content to the anchor
-        anchor.classList.add(siteConfig.permalinkClass)
+        setClass(anchor, eleventyConfig.permalinkClass)
         anchor.innerHTML = '#'
         // Set the ID attribute with the slug
         heading.setAttribute('id', `${headingSlug}`)
@@ -93,7 +97,7 @@ module.exports = function(content, outputPath) {
       articleEmbeds.forEach(embed => {
         const wrapper = document.createElement('div')
         embed.setAttribute('loading', 'lazy')
-        wrapper.classList.add(siteConfig.iframeClass)
+        setClass(wrapper, eleventyConfig.iframeClass)
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
@@ -106,7 +110,7 @@ module.exports = function(content, outputPath) {
     if (codeSnippets.length) {
       codeSnippets.forEach(embed => {
         const wrapper = document.createElement('div')
-        wrapper.classList.add(siteConfig.codeClass)
+        setClass(wrapper, eleventyConfig.codeClass)
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
@@ -126,7 +130,7 @@ module.exports = function(content, outputPath) {
         const externalLink = document.createElement('a')
         if (link.hasAttributes()) {
           const linkAttributes = link.attributes
-          for (let i = linkAttributes.length - 1; i >= 0; i--) {
+          for (var i = linkAttributes.length - 1; i >= 0; i--) {
             externalLink.setAttribute(
               linkAttributes[i].name,
               linkAttributes[i].value
@@ -144,7 +148,9 @@ module.exports = function(content, outputPath) {
         if (isExternal) {
           externalLink.setAttribute(
             'rel',
-            currentRel ? currentRel + ' noopener' : 'noopener'
+            currentRel && !currentRel.includes('noopener')
+              ? `${currentRel} noopener noreferrer`
+              : 'noopener noreferrer'
           )
         }
         externalLink.innerHTML = link.innerHTML
@@ -152,7 +158,7 @@ module.exports = function(content, outputPath) {
       })
     }
 
-    return `<!DOCTYPE html>\r\n${document.documentElement.outerHTML}`
+    return '<!DOCTYPE html>\r\n' + document.documentElement.outerHTML
   }
-  return content
+  return value
 }

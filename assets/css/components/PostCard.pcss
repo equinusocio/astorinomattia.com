@@ -2,15 +2,21 @@
   border-radius: 16px;
   background-color: var(--ne-global-background);
   transition: box-shadow 80ms, background-color 80ms;
-  padding: 24px 40px 32px;
+  padding: 16px 24px 24px;
+
 
   @media (width >= 80em) {
+    padding: 24px 40px 32px;
+
     &:nth-child(even) {
       transform: translateY(20%);
     }
   }
-}
 
+  & .Permalink {
+    display: none;
+  }
+}
 
 .PostCard__Date {
   color: var(--post-card-date-color);
@@ -21,6 +27,11 @@
   margin-bottom: 32px;
 }
 
-.Permalink {
-  display: none;
+.PostCard__Cta {
+  text-decoration: none;
+  margin-top: 32px;
+
+  & svg {
+    margin-inline-start: 4px;
+  }
 }
