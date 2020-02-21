@@ -5,7 +5,7 @@ abstract: "Let’s talk about how to work with Web Components, what to consider,
 external_url: https://css-tricks.com/making-web-components-for-different-contexts/
 permalink: false
 tags:
-  - web components
-  - design system
+  - web-components
+  - design-system
   - html
 ---
