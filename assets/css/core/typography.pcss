@@ -1,30 +1,31 @@
 h1 {
-  font-size: responsive 45px 54px;
-  font-range: 320px 768px;
+  font-size: responsive 38px 54px;
+  font-range: 240px 768px;
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 800;
   color: var(--contrast-color);
+  line-height: 1.2;
 }
 
 h2 {
-  font-size: responsive 38px 45px;
-  font-range: 320px 768px;
+  font-size: responsive 31px 45px;
+  font-range: 240px 768px;
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 700;
   color: var(--contrast-color);
 }
 
 h3 {
-  font-size: responsive 31px 38px;
-  font-range: 320px 768px;
+  font-size: responsive 26px 38px;
+  font-range: 240px 768px;
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 700;
   color: var(--contrast-color);
 }
 
 h4 {
-  font-size: responsive 26px 31px;
-  font-range: 320px 768px;
+  font-size: responsive 22px 31px;
+  font-range: 240px 768px;
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 700;
   color: var(--contrast-color);
@@ -32,20 +33,21 @@ h4 {
 
 h5 {
   font-size: responsive 22px 26px;
-  font-range: 320px 768px;
+  font-range: 240px 768px;
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 700;
   color: var(--contrast-color);
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 p {
   font-size: responsive 18px 22px;
-  font-range: 320px 768px;
-  line-height: responsive 27px 33px;
-  line-height-range: 420px 768px;
+  font-range: 240px 768px;
 }
 
 [data-size='small'] {
-  font-size: 0.87rem;
+
+  @media (width >= 60em) {
+    font-size: 0.87rem;
+  }
 }
