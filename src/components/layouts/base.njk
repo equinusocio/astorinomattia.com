@@ -11,9 +11,14 @@
     <script src="/assets/js/app.js" defer></script>
     <link rel="stylesheet" href="/assets/css/app.css">
     <script src="https://cdn.jsdelivr.net/npm/what-input@5.2.6/dist/what-input.min.js" defer></script>
+
     {% block head %}{% endblock %}
   </head>
   <body>
     {% block content %}{% endblock content %}
+    <script>
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("/service-worker.js");
+    </script>
   </body>
 </html>

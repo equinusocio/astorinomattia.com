@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const pwaPlugin = require('eleventy-plugin-pwa')
 const htmlMinTransform = require('./utils/transforms/htmlmin.js')
 const contentParser = require('./utils/transforms/contentParser.js')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
@@ -54,11 +55,13 @@ module.exports = function(eleventyConfig) {
 
   /**
    * Add Plugins
+   * @link https://github.com/11ty/eleventy-plugin-rss
+   * @link https://github.com/11ty/eleventy-plugin-syntaxhighlight
+   * @link https://github.com/okitavera/eleventy-plugin-pwa
    */
-  // Add rss generation: https://github.com/11ty/eleventy-plugin-rss
   eleventyConfig.addPlugin(rssPlugin)
-  // Add code syntax highlight: https://github.com/11ty/eleventy-plugin-syntaxhighlight
   eleventyConfig.addPlugin(syntaxHighlight)
+  eleventyConfig.addPlugin(pwaPlugin)
 
   /**
    * Create custom data collections
