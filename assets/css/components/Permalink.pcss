@@ -1,3 +1,9 @@
-*:not(:hover) > .Permalink {
-  display: none;
+.Permalink {
+  font-size: 0.8em;
+  padding: 8px;
+  text-decoration: none;
+
+  @nest *:not(:hover) > & {
+    display: none;
+  }
 }

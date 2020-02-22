@@ -5,7 +5,7 @@ axios.defaults.headers.common['Authorization'] = `Bearer ${process.env.CDA}`
 module.exports = async function() {
   try {
     const response = await axios.get(
-      `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/environments/${process.env.ENVIRONMENT}/entries?content_type=blogPost`
+      `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/environments/${process.env.ENVIRONMENT}/entries?content_type=blogPost&order=-sys.createdAt`
     )
     const allPosts = response.data.items.map((item) => {
       return {
