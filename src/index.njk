@@ -2,6 +2,7 @@
 metaTitle: Home
 ---
 {% extends 'layouts/page.njk' %}
+{% from "post-list.njk" import postList %}
 
 {% block leftContent %}
   <p class="PageDescription">I’m Mattia Astorino. I work as <em>UX Engineer</em>, <em>designer</em> and <em>open source developer</em>. Photographer in my spare time.</p>
@@ -9,5 +10,5 @@ metaTitle: Home
 {% endblock leftContent %}
 
 {% block rightContent %}
-{% include "./components/post-list.njk" %}
+{{ postList(posts) }}
 {% endblock rightContent %}

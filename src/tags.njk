@@ -1,20 +1,21 @@
 ---
-layout: page
 metaTitle: Tag
 description: Categories page description
 pagination:
   data: tags
   size: 1
   alias: tag
-permalink: /blog/tag/{{ tag }}/
+permalink: /tags/{{ tag }}/
 ---
 {% extends 'layouts/page.njk' %}
+{% from "post-list.njk" import postList %}
 
 {% block leftContent %}
   <p class="PageDescription">I’m Mattia Astorino. I work as <em>UX Engineer</em>, <em>designer</em> and <em>open source developer</em>. Photographer in my spare time.</p>
   {% include "./components/socials.njk" %}
 {% endblock leftContent %}
 
+
 {% block rightContent %}
-{% include "./components/post-list.njk" %}
+{{ postList(posts) }}
 {% endblock rightContent %}

@@ -1,8 +1,9 @@
 {% from "post-card.njk" import postCard %}
 
-{% if posts.length %}
+{% macro postList(postsList) %}
+{% if postsList.length %}
   <section class="PostList">
-    {% for item in posts %}
+    {% for item in postsList %}
       {% if item.externalUrl %}
         {% set isExternal = true %}
         {% set postUrl = item.externalUrl %}
@@ -14,3 +15,4 @@
     {% endfor %}
   </section>
 {% endif %}
+{% endmacro %}

@@ -30,7 +30,6 @@ module.exports = function(eleventyConfig) {
    */
   eleventyConfig.addPassthroughCopy({ './static': '.' })
   eleventyConfig.addPassthroughCopy(`./assets/css/${siteConfig.syntaxTheme}`)
-  eleventyConfig.addPassthroughCopy(`./admin`)
 
   /**
    * Add filters
@@ -70,15 +69,9 @@ module.exports = function(eleventyConfig) {
    * Code from https://github.com/hankchizljaw/hylia
    */
   // Blog posts collection
-  const now = new Date()
-  const livePosts = post => post.date <= now && !post.data.draft
-  eleventyConfig.addCollection('posts', collection => {
+  eleventyConfig.addCollection('cmsPosts', collection => {
     return [
-      ...collection
-        .getFilteredByGlob(
-          `./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*.md`
-        )
-        .filter(livePosts),
+      ...collection.getFilteredByGlob(`./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*.md`),
     ].reverse()
   })
 
