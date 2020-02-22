@@ -2,9 +2,13 @@
 metaTitle: Tag
 description: Categories page description
 pagination:
-  data: tags
+  data: collections
   size: 1
   alias: tag
+  filter:
+    - all
+    - js
+  addAllPagesToCollections: true
 permalink: /tags/{{ tag }}/
 ---
 {% extends 'layouts/page.njk' %}
@@ -17,5 +21,5 @@ permalink: /tags/{{ tag }}/
 
 
 {% block rightContent %}
-{{ postList(posts) }}
+{{ postList(collections[tag]) }}
 {% endblock rightContent %}
