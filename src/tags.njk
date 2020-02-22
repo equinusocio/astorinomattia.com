@@ -3,23 +3,18 @@ layout: page
 metaTitle: Tag
 description: Categories page description
 pagination:
-  data: collections
+  data: tags
   size: 1
   alias: tag
 permalink: /blog/tag/{{ tag }}/
 ---
-{% from "post-card.njk" import postCard %}
+{% extends 'layouts/page.njk' %}
 
-<h1 style="margin-bottom: 8px">#{{ tag }}</h1>
-<small>{{ collections[tag].length }} posts published</small>
+{% block leftContent %}
+  <p class="PageDescription">I’m Mattia Astorino. I work as <em>UX Engineer</em>, <em>designer</em> and <em>open source developer</em>. Photographer in my spare time.</p>
+  {% include "./components/socials.njk" %}
+{% endblock leftContent %}
 
-<section style="margin-top: 80px">
-  <ol reversed>
-    {% for post in collections[tag] %}
-      {% if not loop.first %}
-        <hr/>
-      {% endif %}
-      {{ postCard(post.url, post.data.title, post.date) }}
-    {% endfor %}
-  </ol>
-</section>
+{% block rightContent %}
+{% include "./components/post-list.njk" %}
+{% endblock rightContent %}

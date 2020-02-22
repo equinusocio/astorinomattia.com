@@ -17,7 +17,8 @@ module.exports = async function() {
         description: item.fields.description,
         externalUrl: item.fields.externalUrl,
         canonicalUrl: item.fields.canonicalUrl,
-        body: item.fields.body
+        body: item.fields.body,
+        tags: item.fields.tags
       };
     });
     return allPosts

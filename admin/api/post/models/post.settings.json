@@ -1,0 +1,68 @@
+{
+  "connection": "default",
+  "collectionName": "posts",
+  "info": {
+    "name": "Post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Tags": {
+      "type": "enumeration",
+      "enum": [
+        "css",
+        "css",
+        "customProperties",
+        "tips",
+        "webComponents",
+        "postcss",
+        "html",
+        "vue",
+        "js",
+        "animations",
+        "performance",
+        "designSystem",
+        "ui",
+        "design",
+        "interactions",
+        "accessibility"
+      ],
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "default": "Sample Title",
+      "required": true
+    },
+    "Slug": {
+      "type": "string",
+      "required": false,
+      "default": "sample-title"
+    },
+    "CanonicalUrl": {
+      "type": "string"
+    },
+    "externalUrl": {
+      "type": "string"
+    },
+    "HeroImage": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Body": {
+      "type": "richtext",
+      "required": true
+    },
+    "PublishDate": {
+      "type": "date"
+    }
+  }
+}
