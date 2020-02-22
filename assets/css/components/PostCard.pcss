@@ -3,13 +3,14 @@
   background-color: var(--ne-global-background);
   transition: box-shadow 80ms, background-color 80ms;
   padding: 16px 24px 24px;
+  position: relative;
+  overflow: hidden;
 
   @media (width >= 48em) {
     padding: 24px 40px 32px;
   }
 
   @media (width >= 80em) {
-
     &:nth-child(even) {
       transform: translateY(20%);
     }
@@ -34,6 +35,16 @@
   margin-top: 32px;
   display: block;
   padding: 8px 0;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   & svg {
     margin-inline-start: 4px;
