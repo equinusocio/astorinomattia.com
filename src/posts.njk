@@ -1,4 +1,12 @@
+---
+pagination:
+    data: posts
+    size: 1
+    alias: post
+permalink: "blog/{{ post.slug }}/"
+---
 {% extends 'layouts/base.njk' %}
+
 
 {% block head %}
   {% if config.syntaxTheme %}
@@ -10,10 +18,10 @@
   <main tabindex="-1" class="BaseLayout">
     {% include "header.njk" %}
     <article class="PostContent">
-      {% if title %}
-        <h1>{{ title }}</h1>
+      {% if post.title %}
+        <h1>{{ post.title }}</h1>
       {% endif %}
-      {{ content | safe }}
+      {{post.body | toHtml | safe}}
     </article>
   </main>
 {% endblock %}

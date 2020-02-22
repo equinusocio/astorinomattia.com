@@ -1,9 +1,12 @@
+require('dotenv').config()
+
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const htmlMinTransform = require('./utils/transforms/htmlmin.js')
 const contentParser = require('./utils/transforms/contentParser.js')
-const htmlDate = require('./utils/filters/htmlDate.js')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
-const date = require('./utils/filters/date.js')
+const htmlDateFilter = require('./utils/filters/htmlDate.js')
+const dateFilter = require('./utils/filters/date.js')
+const markdownFilter = require('./utils/filters/markdown-it.js');
 const fs = require('fs')
 
 /**
@@ -33,9 +36,11 @@ module.exports = function(eleventyConfig) {
    * @link https://www.11ty.io/docs/filters/
    */
   // human friendly date format
-  eleventyConfig.addFilter('dateFilter', date)
+  eleventyConfig.addFilter('dateFilter', dateFilter)
   // robot friendly date format for crawlers
-  eleventyConfig.addFilter('htmlDate', htmlDate)
+  eleventyConfig.addFilter('htmlDate', htmlDateFilter)
+  // Transform markdown to html
+  eleventyConfig.addFilter('toHtml', markdownFilter)
 
   /**
    * Add Transforms
