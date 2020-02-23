@@ -5,6 +5,9 @@
   padding: 16px 24px 24px;
   position: relative;
   overflow: hidden;
+  animation: fadeIn 1 800ms ease-out;
+  animation-fill-mode: backwards;
+  animation-play-state: paused;
 
   @media (width >= 48em) {
     padding: 24px 40px 32px;
@@ -48,5 +51,15 @@
 
   & svg {
     margin-inline-start: 4px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
