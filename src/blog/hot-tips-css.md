@@ -206,7 +206,11 @@ my-component {
 }
 ```
 
-You need to enable `env` variables with `<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>`
+You need to enable `env` variables with:
+
+```html
+<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+```
 
 ## Prevent outline overlapping
 
