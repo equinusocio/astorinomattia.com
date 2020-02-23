@@ -37,9 +37,9 @@ If you don't like to use an empty element, you can use your `.sr-only` utility c
 
 You can choose to use the `aria-label` attribute to add a mean to the button or the hidden element readable only by assistive technologies, it's up to you. Using the `button` element we already solved the first three points of our checklist since __it is interactive, keyboard navigable and accessible by default__. No tabindex needed or javascript code to make it keyboard accessibile.
 
-- ~~Interactive~~ ✅
-- ~~Keyboard controlled~~ ✅
-- ~~Accessible~~ ✅
+- <del>Interactive</del><ins>✓</ins>
+- <del>Keyboard controlled</del><ins>✓</ins>
+- <del>Accessible</del><ins>✓</ins>
 - Customizable
 
 ## Customization
@@ -132,10 +132,10 @@ myelement.style.setProperty("--icon", "...");
 
 We can now flag the last step! 🎉
 
-- ~~Interactive~~ ✅
-- ~~Keyboard controlled~~ ✅
-- ~~Accessible~~ ✅
-- ~~Customizable~~ ✅
+- <del>Interactive</del><ins>✓</ins>
+- <del>Keyboard controlled</del><ins>✓</ins>
+- <del>Accessible</del><ins>✓</ins>
+- <del>Customizable</del><ins>✓</ins>
 
 ## Live demo
 
@@ -144,7 +144,7 @@ We can now flag the last step! 🎉
     src="https://glitch.com/embed/#!/embed/accessible-icon-button?path=style.css&previewSize=0"
     title="accessible-icon-button on Glitch"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
+    style="height: 400px; width: 100%; border: 0;">
   </iframe>
 </div>
 
