@@ -1,5 +1,5 @@
 {% macro postCard(url, title, date, abstract, isExternal) %}
-  <article class="PostCard NeumoBig">
+  <article class="PostCard NeumoBig" data-target="post-list.post">
     <header>
       <time class="PostCard__Date" datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
       <h5 class="PostCard__Title">{{ title }}</h5>
