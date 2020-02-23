@@ -99,7 +99,7 @@ element {
 ```
 Use the system font to provide a consistent typography experience.
 
-## Check if input have a value
+## Check if input has value
 
 ```css
 .Note {

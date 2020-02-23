@@ -8,9 +8,9 @@
   "paymentPointer": "$twitter.xrptipbot.com/equinusocio",
   "syntaxTheme": "prism-material-light.css",
   "permalinkClass": ["Permalink"],
-  "iframeClass": ["IframesWrapper"],
-  "codeClass": ["CodeWrapper"],
-  "figureClass": ["Figure"],
+  "iframeClass": ["IframesWrapper", "Bleeding"],
+  "codeClass": ["CodeWrapper", "Bleeding"],
+  "figureClass": ["Figure", "Bleeding"],
   "paths": {
     "src": "src",
     "blogdir": "blog",
