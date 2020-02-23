@@ -1,13 +1,5 @@
----
-pagination:
-  data: posts
-  size: 1
-  alias: post
-tegs: {{post.tags}}
-permalink: "blog/{{ post.slug }}/"
----
 {% extends 'layouts/base.njk' %}
-
+{% from "../tag-list.njk" import tagList %}
 
 {% block head %}
   {% if config.syntaxTheme %}
@@ -19,10 +11,13 @@ permalink: "blog/{{ post.slug }}/"
   <main tabindex="-1" class="BaseLayout">
     {% include "header.njk" %}
     <article class="PostContent">
-      {% if post.title %}
-        <h1>{{ post.title }}</h1>
-      {% endif %}
-      {{post.body | toHtml | safe}}
+      <header class="PostContent__Header">
+        {% if title %}
+          <h1>{{ title }}</h1>
+        {% endif %}
+        {{ tagList(tags) }}
+      </header>
+      {{content | safe}}
     </article>
   </main>
 {% endblock %}

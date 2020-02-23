@@ -7,7 +7,6 @@ const contentParser = require('./utils/transforms/contentParser.js')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const htmlDateFilter = require('./utils/filters/htmlDate.js')
 const dateFilter = require('./utils/filters/date.js')
-const markdownFilter = require('./utils/filters/markdown-it.js');
 const fs = require('fs')
 
 /**
@@ -40,8 +39,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('dateFilter', dateFilter)
   // robot friendly date format for crawlers
   eleventyConfig.addFilter('htmlDate', htmlDateFilter)
-  // Transform markdown to html
-  eleventyConfig.addFilter('toHtml', markdownFilter)
 
   /**
    * Add Transforms
@@ -69,11 +66,15 @@ module.exports = function(eleventyConfig) {
    * Code from https://github.com/hankchizljaw/hylia
    */
   // Blog posts collection
-  // eleventyConfig.addCollection('cmsPosts', collection => {
-  //   return [
-  //     ...collection.getFilteredByGlob(`./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*.md`),
-  //   ].reverse()
-  // })
+  const now = new Date()
+  const livePosts = post => post.date <= now && !post.data.draft
+  eleventyConfig.addCollection('posts', collection => {
+    return [
+      ...collection
+      .getFilteredByGlob(`./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*.md`)
+      .filter(livePosts),
+    ]
+  })
 
   /**
    * Override BrowserSync Server options
@@ -104,6 +105,8 @@ module.exports = function(eleventyConfig) {
       },
     },
   })
+
+  // eleventyConfig.setQuietMode(true);
 
   /**
    * Eleventy configuration object

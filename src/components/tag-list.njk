@@ -1,0 +1,9 @@
+{% macro tagList(tags) %}
+  {% if tags.length %}
+    <ul class="TagList">
+    {% for tag in tags %}
+      <li><a href="/tags/{{tag | slug}}" class="TagList__Tag NeumoSmall">#{{tag}}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

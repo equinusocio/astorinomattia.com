@@ -3,15 +3,15 @@
 {% macro postList(postsList) %}
 {% if postsList.length %}
   <section class="PostList">
-    {% for item in postsList %}
-      {% if item.externalUrl %}
+    {% for item in postsList | reverse %}
+      {% if item.data.external_url %}
         {% set isExternal = true %}
-        {% set postUrl = item.externalUrl %}
+        {% set postUrl = item.data.external_url %}
       {% else %}
-        {% set postUrl = item.slug %}
+        {% set postUrl = item.url %}
         {% set isExternal = false %}
       {% endif %}
-      {{ postCard(postUrl, item.title, item.date, item.description, isExternal) }}
+      {{ postCard(postUrl, item.data.title, item.date, item.data.abstract, isExternal) }}
     {% endfor %}
   </section>
 {% endif %}

@@ -2,12 +2,13 @@
   <article class="PostCard NeumoBig">
     <header>
       <time class="PostCard__Date" datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
-      <h4 class="PostCard__Title">{{ title }}</h4>
+      <h5 class="PostCard__Title">{{ title }}</h5>
     </header>
     <p data-size='small'>
       {{ abstract }}
     </p>
-    <a href="/blog/{{ url }}" rel="bookmark" data-size="small" class="PostCard__Cta">
+
+    <a href="{{ url }}" rel="bookmark" data-size="small" class="PostCard__Cta">
       <strong>
         Read this story
         {% if isExternal %}

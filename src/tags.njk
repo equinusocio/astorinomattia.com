@@ -1,24 +1,25 @@
 ---
 metaTitle: Tag
 description: Categories page description
-permalink: false
 pagination:
   data: collections
   size: 1
   alias: tag
   filter:
-    - all
     - js
-  addAllPagesToCollections: true
+    - all
+    - posts
+permalink: /tags/{{ tag | slug }}/
 ---
 {% extends 'layouts/page.njk' %}
 {% from "post-list.njk" import postList %}
 
 {% block leftContent %}
-  <p class="PageDescription">I’m Mattia Astorino. I work as <em>UX Engineer</em>, <em>designer</em> and <em>open source developer</em>. Photographer in my spare time.</p>
+  <h1 style="margin-bottom: 0;">#{{tag}}</h1>
+  <p>{{ collections[tag].length }} articles published</p>
   {% include "./components/socials.njk" %}
 {% endblock leftContent %}
 
 {% block rightContent %}
-{{ postList(collections[tag]) }}
+  {{ postList(collections[tag]) }}
 {% endblock rightContent %}
