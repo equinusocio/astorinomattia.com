@@ -69,11 +69,11 @@ module.exports = function(eleventyConfig) {
    * Code from https://github.com/hankchizljaw/hylia
    */
   // Blog posts collection
-  eleventyConfig.addCollection('cmsPosts', collection => {
-    return [
-      ...collection.getFilteredByGlob(`./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*.md`),
-    ].reverse()
-  })
+  // eleventyConfig.addCollection('cmsPosts', collection => {
+  //   return [
+  //     ...collection.getFilteredByGlob(`./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*.md`),
+  //   ].reverse()
+  // })
 
   /**
    * Override BrowserSync Server options

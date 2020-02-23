@@ -9,11 +9,11 @@ export default class extends Controller {
     const darkSelector = this.darkTarget.dataset.themeName;
 
     this.lightTarget.addEventListener('click', () => {
-      html.dataset.theme = 'light';
+      html.dataset.theme = lightSelector;
     }, false);
 
     this.darkTarget.addEventListener('click', () => {
-      html.dataset.theme = 'dark';
+      html.dataset.theme = darkSelector;
     }, false);
   }
 }

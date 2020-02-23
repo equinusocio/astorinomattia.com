@@ -19,9 +19,6 @@ permalink: "blog/{{ post.slug }}/"
   <main tabindex="-1" class="BaseLayout">
     {% include "header.njk" %}
     <article class="PostContent">
-      {% for tag in post.tags %}
-        <p>{{tag}}</p>
-      {% endfor %}
       {% if post.title %}
         <h1>{{ post.title }}</h1>
       {% endif %}
