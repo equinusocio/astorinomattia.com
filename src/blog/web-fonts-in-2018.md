@@ -60,7 +60,8 @@ Declaring a font-face family is very simple but we must care about some things w
     url('/fonts/custom-font.woff') format('woff');
 }
 ```
-> Unicode range from [Google Web Fundaments](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization?hl=en#unicode-range_subsetting)
+
+>>> Unicode range from [Google Web Fundaments](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization?hl=en#unicode-range_subsetting)
 
 As you can see we use only optimised fonts (**woff** and **woff2**) and we tell the browser to download only the required glyphs range (from `U+000` to `U+5FF`). There are also two more things to notice, the `local()` function and the fonts order. The first one allows users to use their local copy of the font if present (eg. think about the Roboto fonts that are pre-installed on android) instead of downloading it. The fonts declaration order is also important because the browser will start to fetching the resources following the declaration order. If it support the woff2 format it will download the font, instead if it doesn't recognise the resource format it will proceed to the next one, and so on. _If you really want to use also `eot` and `ttf` fonts make sure to add them at the end of the `src` declaration._
 
