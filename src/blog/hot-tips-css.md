@@ -1,7 +1,7 @@
 ---
 title: Hot CSS tips
 date: '2018-06-21'
-abstract: "Here a curated collection of css snippets that you can use in specific situations or just for fun and exploring."
+metaDesc: "Here a curated collection of css snippets that you can use in specific situations or just for fun and exploring."
 tags:
   - css
   - tips

@@ -1,7 +1,7 @@
 ---
 title: The Adaptive + Responsive model
 date: '2019-02-12'
-abstract: "What do we get if we combine the adaptive and the responsive approaches? Introducing the A+R model."
+metaDesc: "What do we get if we combine the adaptive and the responsive approaches? Introducing the A+R model."
 tags:
   - css
   - html

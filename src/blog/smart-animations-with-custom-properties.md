@@ -1,7 +1,7 @@
 ---
 title: Smart animations with custom properties
 date: '2018-10-16'
-abstract: "What you get by combining css custom properties and keyframes? Smart keyframes!"
+metaDesc: "What you get by combining css custom properties and keyframes? Smart keyframes!"
 tags:
   - css
   - custom properties

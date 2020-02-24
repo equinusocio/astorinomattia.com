@@ -11,7 +11,7 @@
         {% set postUrl = item.url %}
         {% set isExternal = false %}
       {% endif %}
-      {{ postCard(postUrl, item.data.title, item.date, item.data.abstract, isExternal) }}
+      {{ postCard(postUrl, item.data.title, item.date, item.data.metaDesc, isExternal) }}
     {% endfor %}
   </section>
 {% endif %}
