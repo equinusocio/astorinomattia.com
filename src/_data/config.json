@@ -6,7 +6,7 @@
   "authorHandle": "@equinusocio",
   "authorName": "Mattia Astorino",
   "paymentPointer": "$twitter.xrptipbot.com/equinusocio",
-  "syntaxTheme": "prism-material-light.css",
+  "syntaxTheme": "prism-mono.css",
   "permalinkClass": ["Permalink"],
   "iframeClass": ["IframesWrapper", "Bleeding"],
   "codeClass": ["CodeWrapper", "Bleeding"],
