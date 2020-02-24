@@ -31,7 +31,6 @@
 <meta property="og:description" content="{{ pageDesc }}"/>
 
 {% if socialImage %}
-  <meta name="twitter:card" content="summary_large_image"/>
   <meta property="og:image" content="{{ socialImage }}"/>
   <meta name="twitter:image" content="{{ socialImage }}"/>
   <meta property="og:image:alt" content="Page image for {{ pageTitle }}"/>
@@ -40,6 +39,7 @@
   <meta property="og:image" content="{{ config.url }}/cover.jpg"/>
   <meta name="twitter:image" content="{{ config.url }}/cover.jpg"/>
 {% endif %}
+<meta name="twitter:card" content="summary_large_image"/>
 
 {% if config.paymentPointer %}
   <meta name="monetization" content="{{ config.paymentPointer }}"/>
