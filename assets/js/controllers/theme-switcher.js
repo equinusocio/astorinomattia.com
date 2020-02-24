@@ -7,13 +7,19 @@ export default class extends Controller {
     const html = document.documentElement;
     const lightSelector = this.lightTarget.dataset.themeName;
     const darkSelector = this.darkTarget.dataset.themeName;
+    const lightButton = this.lightTarget
+    const darkButton = this.darkTarget
 
-    this.lightTarget.addEventListener('click', () => {
+    lightButton.addEventListener('click', () => {
       html.dataset.theme = lightSelector;
+      lightButton.setAttribute('aria-pressed', 'true')
+      darkButton.setAttribute('aria-pressed', 'false')
     }, false);
 
-    this.darkTarget.addEventListener('click', () => {
+    darkButton.addEventListener('click', () => {
       html.dataset.theme = darkSelector;
+      darkButton.setAttribute('aria-pressed', 'true')
+      lightButton.setAttribute('aria-pressed', 'false')
     }, false);
   }
 }
