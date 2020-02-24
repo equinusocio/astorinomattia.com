@@ -3,4 +3,10 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 40px;
   padding-bottom: 80px;
+
+  @media (width >= 80em) {
+    & > *:nth-child(even) {
+      transform: translateY(20%);
+    }
+  }
 }

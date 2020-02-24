@@ -13,6 +13,8 @@ export default class extends Controller {
           observer.unobserve(entry.target);
         }
       });
+    }, {
+      threshold: 0.7
     });
 
     posts.forEach(post => {

@@ -1,0 +1,20 @@
+---
+permalink: false
+metaTitle: Mattia Astorino
+metaDesc: UX Engineer in Milan and member of Open Source Design.
+---
+{% extends 'layouts/page.njk' %}
+{% from "post-list.njk" import postList %}
+
+{% block head %}
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
+
+{% block leftContent %}
+  <p class="PageDescription">My personal laboraty when i test and destroy things, and where i share my side projects.</p>
+  {% include "./components/socials.njk" %}
+{% endblock leftContent %}
+
+{% block rightContent %}
+  {{ postList(collections.posts) }}
+{% endblock rightContent %}
