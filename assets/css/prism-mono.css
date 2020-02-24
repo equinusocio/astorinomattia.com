@@ -39,11 +39,11 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 .token.comment,
 .token.doctype,
 .token.prolog {
-  color: #cecece
+  color: #797979
 }
 
 .token.punctuation {
-  color: var(--accent-color-light)
+  color: inherit;
 }
 
 .token.constant,

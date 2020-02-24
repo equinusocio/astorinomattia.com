@@ -1,3 +1,5 @@
+@custom-selector :--headings h2, h3, h4, h5;
+
 .PostContent {
   margin: 0 auto;
   max-width: 52ch;
@@ -12,4 +14,9 @@
   & h1 {
     margin-bottom: 88px;
   }
+
+}
+
+.PostContent :--headings {
+  margin-top: 88px;
 }

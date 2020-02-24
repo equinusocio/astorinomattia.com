@@ -106,7 +106,7 @@ module.exports = function(eleventyConfig) {
     },
   })
 
-  // eleventyConfig.setQuietMode(true);
+  eleventyConfig.setQuietMode(true);
 
   /**
    * Eleventy configuration object

@@ -1,0 +1,20 @@
+---
+metaTitle: Oops
+title: '404'
+permalink: 404.html
+eleventyExcludeFromCollections: true
+---
+{% extends 'layouts/page.njk' %}
+{% from "post-list.njk" import postList %}
+
+{% block head %}
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
+
+{% block leftContent %}
+  <p>You are in the wrong place. Please <a href="/">go back to home</a>.</p>
+{% endblock leftContent %}
+
+{% block rightContent %}
+  <img src="/images/404.gif" width="312" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; z-index: -1; opacity: 0.1; height: 100%; object-fit: cover; object-position: 50% 0;" />
+{% endblock rightContent %}
