@@ -2,7 +2,7 @@
 
 {% macro postList(postsList) %}
 {% if postsList.length %}
-  <section class="GridList" data-controller="post-list" >
+  <div class="GridList" data-controller="post-list" >
     {% for item in postsList | reverse %}
       {% if item.data.external_url %}
         {% set isExternal = true %}
@@ -13,6 +13,6 @@
       {% endif %}
       {{ postCard(postUrl, item.data.title, item.date, item.data.metaDesc, isExternal) }}
     {% endfor %}
-  </section>
+  </div>
 {% endif %}
 {% endmacro %}

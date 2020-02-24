@@ -2,7 +2,7 @@
 
 {% block content %}
   <main tabindex="-1" class="BaseLayout" data-display="grid">
-    <div class="BaseLayout__LeftSide">
+    <section class="BaseLayout__LeftSide">
       <div class="BaseLayout__Sticker">
         {% include "header.njk" %}
         {% if title %}
@@ -10,9 +10,9 @@
         {% endif %}
         {% block leftContent %}{% endblock leftContent %}
       </div>
-    </div>
-    <div class="BaseLayout__RightSide">
+    </section>
+    <section class="BaseLayout__RightSide">
       {% block rightContent %}{% endblock rightContent %}
-    </div>
+    </section>
   </main>
 {% endblock %}
