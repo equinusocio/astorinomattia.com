@@ -22,9 +22,5 @@ const generateImages = async (title) => {
 }
 
 fs.readdirSync(paths.blogPath).map(fileName => {
-  // fs.readFile(`${paths.blogPath}${fileName}`, 'utf8', (err, data) => {
-  //   if (err) throw err
-  //   const postDesc = encodeURIComponent(fm(data).attributes.metaDesc)
-  // })
   generateImages(fileName)
 })
