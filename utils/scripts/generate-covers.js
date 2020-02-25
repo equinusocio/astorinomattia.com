@@ -8,7 +8,7 @@ const fm = require('front-matter')
 
 const paths = {
   blogPath: `./src/${eleventyConfig.paths.blogdir}/`,
-  coversPath: './static/images/covers/'
+  coversPath: './dist/images/covers/'
 }
 
 const generateImages = async (title) => {
