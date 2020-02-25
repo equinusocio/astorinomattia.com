@@ -1,0 +1,17 @@
+{
+  "version": 0.2,
+  "debug": true,
+  "aws": {
+    "access_key": "",
+    "access_secret": "",
+    "bucket_name": ""
+  },
+  "endpoints": {
+    "articles": {
+      "opengraph": "https://cover-template.glitch.me/?slug=:slug"
+    }
+  },
+  "viewports": {
+    "opengraph": [1200, 630]
+  }
+}

@@ -2,6 +2,7 @@
 title: Accessible icon buttons with masks and SVG.
 date: '2019-10-20'
 metaDesc: "Let's try a new way to make accessible icon buttons with SVG's and CSS masks."
+socialImage: true
 tags:
   - css
   - accessibility

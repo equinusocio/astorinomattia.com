@@ -2,6 +2,7 @@
 title: Hot CSS tips
 date: '2018-06-21'
 metaDesc: "Here a curated collection of css snippets that you can use in specific situations or just for fun and exploring."
+socialImage: true
 tags:
   - css
   - tips

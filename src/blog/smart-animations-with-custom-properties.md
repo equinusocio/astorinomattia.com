@@ -2,6 +2,7 @@
 title: Smart animations with custom properties
 date: '2018-10-16'
 metaDesc: "What you get by combining css custom properties and keyframes? Smart keyframes!"
+socialImage: true
 tags:
   - css
   - custom properties

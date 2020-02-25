@@ -2,6 +2,7 @@
 title: How to handle web fonts in 2018
 date: '2018-12-16'
 metaDesc: "How to correctly load web fonts to avoid performance issues and speed up page loading."
+socialImage: true
 tags:
   - css
   - tips

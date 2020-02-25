@@ -2,6 +2,7 @@
 title: Web Components — the right way
 date: '2018-04-26'
 metaDesc: "We have been heard about web components, here i will explain the technology purpose and what your should avoid."
+socialImage: true
 tags:
   - web components
   - tips
