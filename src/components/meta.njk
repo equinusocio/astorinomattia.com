@@ -31,9 +31,9 @@
 <meta property="og:description" content="{{ pageDesc }}"/>
 
 {% if socialImage %}
-  <meta property="og:image" content="{{ config.url }}/images/covers/{{ title | slug | replace(".", "") }}.png"/>
+  <meta name="image" property="og:image" content="{{ config.url }}/images/covers/{{ title | slug | replace(".", "") }}.png"/>
   <meta name="twitter:image" content="{{ config.url }}/images/covers/{{ title | slug | replace(".", "") }}.png"/>
-  <meta property="og:image:alt" content="Page image for {{ pageTitle }}"/>
+  <meta name="og:image:alt" property="og:image:alt" content="Page image for {{ pageTitle }}"/>
   <meta name="twitter:image:alt" content="Page image for {{ pageTitle }}"/>
 {% else %}
   <meta property="og:image" content="{{ config.url }}/cover.jpg"/>
