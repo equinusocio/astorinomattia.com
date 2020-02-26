@@ -20,14 +20,15 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="{{ currentUrl }}"/>
 <meta property="twitter:url" content="{{ currentUrl }}"/>
-<meta property="twitter:site" content="{{ siteTitle }}"/>
+<meta name="twitter:site" content="@equinusocio"/>
+<meta name="twitter:creator" content="@equinusocio" />
 
 {% if config.authorHandle %}
   <meta name="twitter:creator" content="@{{ config.authorHandle | replace('@', '') }}"/>
 {% endif %}
 
 <meta name="description" content="{{ pageDesc }}"/>
-<meta name="twitter:description" content="{{ pageDesc }}"/>
+<meta property="twitter:description" content="{{ pageDesc }}"/>
 <meta property="og:description" content="{{ pageDesc }}"/>
 
 {% if socialImage %}
