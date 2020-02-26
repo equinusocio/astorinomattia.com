@@ -2,15 +2,18 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  display: inline-grid;
-  grid-auto-flow: column dense;
-  grid-gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .TagList__Tag {
+  display: inline-block;
   padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-size: 0.87rem;
   font-weight: 700;
+  white-space: nowrap;
+  margin: 8px;
 }

@@ -84,7 +84,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
     notify: false,
     open: true,
-    directory: true,
     snippetOptions: {
       rule: {
         match: /<\/head>/i,
