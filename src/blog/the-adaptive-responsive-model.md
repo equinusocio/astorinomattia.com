@@ -1,5 +1,5 @@
 ---
-title: The Adaptive + Responsive model
+title: The Adaptive Responsive model
 date: '2019-02-12'
 metaDesc: "What do we get if we combine the adaptive and the responsive approaches? Introducing the A+R model."
 socialImage: true
