@@ -3,7 +3,7 @@ pre code {
   font-family: monospace;
   color: var(--color-50);
   overflow-x: auto;
-  font-size: 0.9em;
+  font-size: 1rem;
   background-color: var(--color-100);
 }
 
