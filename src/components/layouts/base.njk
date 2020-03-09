@@ -1,7 +1,4 @@
-{% if 'blog/' in page.url %}
-  {% set scrolles = ' data-scrolles' %}
-{% endif %}
-<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#" {{ scrolles | safe }}>
+<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -43,7 +40,7 @@
       {% include "../../../dist/assets/css/app.css" %}
     </style>
   </head>
-  <body>
+  <body data-pageurl="{{page.url}}" data-controller="scrolles">
     {% block content %}{% endblock content %}
     <script>
       if ('serviceWorker' in navigator) {
