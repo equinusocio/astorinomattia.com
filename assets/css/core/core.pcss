@@ -56,3 +56,18 @@ ul:not([class]) {
     }
   }
 }
+
+[data-scrolles]::before {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Required style */
+  height: 3px;
+  content: '';
+  background: var(--accent-color);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--scrolles-progress, 0));
+}

@@ -6368,7 +6368,7 @@ param-case@^2.1.1:
   dependencies:
     no-case "^2.2.0"
 
-parcel-bundler@^1.12.4:
+parcel-bundler@1.12.4, parcel-bundler@^1.12.4:
   version "1.12.4"
   resolved "https://registry.yarnpkg.com/parcel-bundler/-/parcel-bundler-1.12.4.tgz#31223f4ab4d00323a109fce28d5e46775409a9ee"
   integrity sha512-G+iZGGiPEXcRzw0fiRxWYCKxdt/F7l9a0xkiU4XbcVRJCSlBnioWEwJMutOCCpoQmaQtjB4RBHDGIHN85AIhLQ==
@@ -8415,6 +8415,13 @@ saxes@^3.1.3, saxes@^3.1.9:
   integrity sha512-Ydydq3zC+WYDJK1+gRxRapLIED9PWeSuuS41wqyoRmzvhhh9nc+QQrVMKJYzJFULazeGhzSV0QleN2wD3boh2g==
   dependencies:
     xmlchars "^2.1.1"
+
+scrolles@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/scrolles/-/scrolles-1.3.0.tgz#4b9c988f001df6790cce3209f67907be6d3fc6ba"
+  integrity sha512-Sfl3uk3XEbW/q6jya/1kStyN2CgSUB29QR32Xvkh9dZa88+uKR5rs0tbdTR66eDztL7daaX8P87rxhOYJEsiJA==
+  dependencies:
+    parcel-bundler "1.12.4"
 
 section-matter@^1.0.0:
   version "1.0.0"
