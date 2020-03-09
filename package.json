@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/equinusocio/xity-starter"
   },
+  "engines": {
+    "node": ">= 11"
+  },
   "scripts": {
     "clean": "run-s clean:*",
     "clean:cache": "rimraf ./.cache",
