@@ -1,4 +1,5 @@
 import { Controller } from 'stimulus'
+import { ResizeObserver } from '@juggle/resize-observer';
 import { Scrolles } from 'scrolles';
 
 export default class extends Controller {
