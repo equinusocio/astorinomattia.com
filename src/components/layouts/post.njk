@@ -9,7 +9,9 @@
 
 {% block content %}
   <main tabindex="-1" class="BaseLayout">
-    {% include "header.njk" %}
+    <section class="BaseLayout__LeftSide">
+      {% include "header.njk" %}
+    </section>
     <article class="PostContent">
       <header class="PostContent__Header">
         {% if title %}
