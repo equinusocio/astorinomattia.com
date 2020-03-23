@@ -4,7 +4,6 @@ const fse = require('fs-extra')
 const { useGenerator } = require("cezanne")
 const { generateArticlesOpengraph } = useGenerator;
 const eleventyConfig = require('../../src/_data/config.json')
-const fm = require('front-matter')
 
 const paths = {
   blogPath: `./src/${eleventyConfig.paths.blogdir}/`,
