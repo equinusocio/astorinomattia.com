@@ -15,7 +15,7 @@
     "clean:dist": "rimraf ./dist",
     "clean:covers": "rimraf ./static/images/covers/*",
     "generate:covers": "run-s clean:covers && node ./utils/scripts/generate-covers.js",
-    "build": "cross-env ELEVENTY_ENV=production run-s clean:* generate:covers build:assets build:html",
+    "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html",
     "build:html": "eleventy",
     "build:assets": "parcel build ./assets/css/app.pcss ./assets/js/app.js --out-dir ./dist/assets --no-source-maps",
     "watch": "cross-env ELEVENTY_ENV=development run-s clean:* build:assets && run-p serve watch:*",
@@ -55,6 +55,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "cross-env": "^6.0.3",
+    "husky": "^4.2.3",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "postcss-cli": "^7.1.0",
@@ -62,6 +63,11 @@
     "rimraf": "^3.0.0",
     "stylelint": "^13.2.0",
     "stylelint-config-oval": "^1.0.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn generate:covers"
+    }
   },
   "browserslist": [
     "last 1 Chrome versions",
