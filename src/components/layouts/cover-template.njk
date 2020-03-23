@@ -71,6 +71,12 @@
 
 
     </style>
+  </head>
+  <body data-pageurl="{{page.url}}" data-controller="scrolles">
+    <div class="Cover">
+      <img width="100" height="100" src="https://cdn.glitch.com/67774d4a-1cf9-44c8-b0f4-171aa3e3d27a%2Flogo.png?v=1582668471452" />
+      <h1 data-title>Sample Title</h1>
+    </div>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const getSlug = urlParams.get('slug');
@@ -82,11 +88,5 @@
 
       title.innerHTML = getSlug ? formattedSlug : 'You should not be here.';
     </script>
-  </head>
-  <body data-pageurl="{{page.url}}" data-controller="scrolles">
-    <div class="Cover">
-      <img width="100" height="100" src="https://cdn.glitch.com/67774d4a-1cf9-44c8-b0f4-171aa3e3d27a%2Flogo.png?v=1582668471452" />
-      <h1 data-title>Sample Title</h1>
-    </div>
   </body>
 </html>

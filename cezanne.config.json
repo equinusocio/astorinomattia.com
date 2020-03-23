@@ -8,7 +8,7 @@
   },
   "endpoints": {
     "articles": {
-      "opengraph": "https://cover-template.glitch.me/?slug=:slug"
+      "opengraph": "https://equinusocio.dev/ct.html?slug=:slug"
     }
   },
   "viewports": {
