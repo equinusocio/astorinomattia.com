@@ -14,6 +14,7 @@
     "clean:cache": "rimraf ./.cache",
     "clean:dist": "rimraf ./dist",
     "generate:covers": "rimraf ./static/images/covers/* && node ./utils/scripts/generate-covers.js",
+    "postbuild": "yarn generate:covers",
     "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html",
     "build:html": "eleventy",
     "build:assets": "parcel build ./assets/css/app.pcss ./assets/js/app.js --out-dir ./dist/assets --no-source-maps",
