@@ -25,7 +25,7 @@ But first, let's define what we want to achieve with our code, what we want from
 A `<button>` element is everything we need, you never would have said that, right?
 
 ```html
-<button type="button"aria-label="Download File"></button>
+<button type="button" aria-label="Download File"></button>
 ```
 
 If you don't like to use an empty element, you can use your `.sr-only` utility class to hide the inside content from the UI.
@@ -159,12 +159,3 @@ Be aware that when talking about "minimal UI experience" we mean that things may
 HTML is accessible and semantic by default and CSS provides handy dynamic ways to build our interfaces. If you add some custom properties you can have a really smart component without using javascript or other libs to achieve simple tasks like this one.
 
 Enjoy it! 🎉
-
-
-
-
-
-
-
-
-
