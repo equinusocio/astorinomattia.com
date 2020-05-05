@@ -12,6 +12,7 @@
   --ne-button-hover-background: transparent;
   --ne-button-active-background: transparent;
   --ne-button-shadow: none;
+  --ne-button-font-size: 0.9rem;
 
   display: inline-flex;
 
@@ -21,10 +22,13 @@
     color: var(--contrast-color);
   }
 
-  @nest *[data-theme='light'] &[data-theme-name='light'] {
+  @nest html[data-theme='light'] &[data-theme-name='light'] {
     color: var(--accent-color);
   }
-  @nest *[data-theme='dark'] &[data-theme-name='dark'] {
+  @nest html[data-theme='dark'] &[data-theme-name='dark'] {
+    color: var(--accent-color);
+  }
+  @nest html[data-theme='auto'] &[data-theme-name='auto'] {
     color: var(--accent-color);
   }
 
