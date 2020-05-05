@@ -25,13 +25,13 @@ But first, let's define what we want to achieve with our code, what we want from
 A `<button>` element is everything we need, you never would have said that, right?
 
 ```html
-<button aria-label="Download File"></button>
+<button type="button"aria-label="Download File"></button>
 ```
 
 If you don't like to use an empty element, you can use your `.sr-only` utility class to hide the inside content from the UI.
 
 ```html
-<button>
+<button type="button">
   <span class="sr-only">Download File</span>
 </button>
 ```
@@ -53,14 +53,12 @@ Let's start adding some basic style to our button to set up positioning and box 
 
 ```css
 .IconButton {
+  all: unset;
   width: 56px;
   height: 56px;
-  appearance: none;
   border-radius: 50%;
-  border: 0;
   background-color: #000;
   cursor: pointer;
-  padding: 0;
   position: relative;
 }
 ```
@@ -69,7 +67,7 @@ Now, we are going to use a `::pseudo-element` to add the icon. The absolute posi
 
 ```css
 .IconButton::before {
-  /* Positioning related code */
+  /* Icon positioning related code */
   content: "";
   display: block;
   width: 50%;
