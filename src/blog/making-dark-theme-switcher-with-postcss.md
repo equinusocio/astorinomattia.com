@@ -152,7 +152,7 @@ The magic is made by `postcss-dark-theme-class` — which will add our `[data-th
 
 ## Bonus tip
 
-You may notice that the `--accent-color` custom property defined inside the themes don't change. If you have colors that will not change based on the theme, you can remove them from the `prefers-color-scheme` at-rule.
+You may notice that the `--accent-color` custom property defined inside themes doesn't change. If you have colors that will not change based on the theme, you can remove them from the `prefers-color-scheme` at-rule.
 
 In this way, they will not be duplicated and the one defined outside the media query will always apply.
 
