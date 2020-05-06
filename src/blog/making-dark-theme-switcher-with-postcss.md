@@ -98,7 +98,7 @@ We'll build the switcher using vanilla JS, but you can do it with any framework 
 const html = document.documentElement
 const themeButtons = document.querySelectorAll('[data-set-theme]');
 
-themeButtons.forEach(function(button) {
+themeButtons.forEach((button) => {
 	const theme = button.dataset.setTheme;
 
 	button.addEventListener('click', () => {
