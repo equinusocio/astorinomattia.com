@@ -125,7 +125,6 @@ Check it live:
 The magic is made by `postcss-dark-theme-class` — which will add our `[data-theme]` custom attribute to the `:root` selectors we wrote — during the CSS transpilation. Here what it generates from our code:
 
 ```css
-
 /* Our automatic and user specified light theme */
 :root {
   --accent-color: hsl(226deg, 100%, 50%);
