@@ -1,13 +1,10 @@
 html {
   transition: color 80ms, background-color 80ms;
-  overflow: hidden;
 }
 
 body {
   font-family: system-ui, sans-serif;
   padding: 0;
-  height: 100vh;
-  overflow: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -58,20 +55,4 @@ ul:not([class]) {
       display: inline-block;
     }
   }
-}
-
-[data-scrolles]::before {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-
-  /* Required style */
-  height: 3px;
-  content: '';
-  background: var(--accent-color);
-  transform-origin: 0 50%;
-  transform: scaleX(var(--scrolles-progress, 0));
 }
