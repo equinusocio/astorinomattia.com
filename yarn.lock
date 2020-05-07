@@ -4134,6 +4134,11 @@ function-bind@^1.1.1:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
 
+ga-lite@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/ga-lite/-/ga-lite-2.0.5.tgz#f0528dfb27feee4ac10b2f770f0a1a88075652f8"
+  integrity sha512-dpf7m9VwuvybwvhvpqtBxe/UvN4Vy1Ih6h2YSgL+SyOX62icHzscLNC21jYwUkzXB7aV/q57ZQfOaLAFVNurhQ==
+
 gensync@^1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.1.tgz#58f4361ff987e5ff6e1e7a210827aa371eaac269"

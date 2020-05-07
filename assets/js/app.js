@@ -3,6 +3,8 @@ import Turbolinks from 'turbolinks'
 /* Import controllers */
 import ThemeSwitcher from './controllers/theme-switcher'
 import GridList from './controllers/grid-list'
+import galite from 'ga-lite'
+
 
 /* Init Stimulus library */
 const application = Application.start()
@@ -15,3 +17,12 @@ application.register('post-list', GridList)
  * Init Turbolinks within the site
  */
 Turbolinks.start()
+
+document.addEventListener("turbolinks:load", (event) => {
+  if (typeof galitea === "function"){
+
+    galitea("set", "location", event.data.url)
+    galite('create', 'UA-134447939-1', 'auto')
+    galite('send', 'pageview')
+  }
+})
