@@ -18,11 +18,9 @@ application.register('post-list', GridList)
  */
 Turbolinks.start()
 
-document.addEventListener("turbolinks:load", (event) => {
-  if (typeof galite === "function"){
+galite('create', 'UA-134447939-1', 'auto')
 
-    galite("set", "location", event.data.url)
-    galite('create', 'UA-134447939-1', 'auto')
-    galite('send', 'pageview')
-  }
+document.addEventListener("turbolinks:load", (event) => {
+  galite("set", "location", event.data.url)
+  galite('send', 'pageview')
 })
