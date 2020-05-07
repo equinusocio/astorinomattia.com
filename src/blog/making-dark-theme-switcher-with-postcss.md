@@ -87,9 +87,9 @@ Browsers will now adapt the color scheme automatically based on the users' OS pr
 As we said, our switcher should have three options, we can use a simple select element, or build a set of buttons:
 
 ```html
-<button aria-current="true" data-set-theme="auto">Auto</button>
-<button aria-current="false" data-set-theme="dark">Dark</button>
-<button aria-current="false" data-set-theme="light">Light</button>
+<button type="button" data-set-theme="auto">Auto</button>
+<button type="button" data-set-theme="dark">Dark</button>
+<button type="button" data-set-theme="light">Light</button>
 ```
 
 We'll build the switcher using vanilla JS, but you can do it with any framework you want, the concept is the same: we have to add the selectors we defined inside the PostCSS plugin to the `root` element, based on the clicked button.
@@ -99,14 +99,10 @@ const html = document.documentElement
 const themeButtons = document.querySelectorAll('[data-set-theme]');
 
 themeButtons.forEach((button) => {
-	const theme = button.dataset.setTheme;
+  const theme = button.dataset.setTheme;
 
-	button.addEventListener('click', () => {
-    let currentButton = html.querySelector('[aria-current="true"][data-set-theme]');
-
-    currentButton.setAttribute('aria-current', false);
-    button.setAttribute('aria-current', true);
-		html.dataset.theme = theme;
+  button.addEventListener('click', () => {
+    html.dataset.theme = theme;
   })
 })
 ```
