@@ -19,9 +19,9 @@ application.register('post-list', GridList)
 Turbolinks.start()
 
 document.addEventListener("turbolinks:load", (event) => {
-  if (typeof galitea === "function"){
+  if (typeof galite === "function"){
 
-    galitea("set", "location", event.data.url)
+    galite("set", "location", event.data.url)
     galite('create', 'UA-134447939-1', 'auto')
     galite('send', 'pageview')
   }
