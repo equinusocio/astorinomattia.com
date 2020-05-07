@@ -102,12 +102,16 @@ themeButtons.forEach((button) => {
 	const theme = button.dataset.setTheme;
 
 	button.addEventListener('click', () => {
+    let currentButton = html.querySelector('[aria-current="true"][data-set-theme]');
+
+    currentButton.setAttribute('aria-current', false);
+    button.setAttribute('aria-current', true);
 		html.dataset.theme = theme;
   })
 })
 ```
 
-Each time we click on a theme button, the value set as `data-set-theme` is applied as value of the `data-theme` attribute on the document root element.
+Each time we click on a theme button, the value set as `data-set-theme` is applied as value of the `data-theme` attribute on the document root element, we also change the `[aria-current]` attribute.
 
 Check it live:
 
