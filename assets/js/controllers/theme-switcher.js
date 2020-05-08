@@ -3,34 +3,45 @@ import { Controller } from 'stimulus'
 export default class extends Controller {
   static targets = ["light", "dark", "auto"]
 
-  connect() {
+  /* Set the current button theme as active if match the current theme */
+  setPressed(element) {
+    const currentPressed = this.scope.element.querySelector('[aria-pressed="true"]')
+    currentPressed.setAttribute('aria-pressed', false);
+    element.setAttribute('aria-pressed', true);
+  }
+
+  /* Set the activated theme to root and save it to localStorage */
+  setTheme(element) {
     const html = document.documentElement;
-    const lightSelector = this.lightTarget.dataset.themeName;
-    const darkSelector = this.darkTarget.dataset.themeName;
-    const autoSelector = this.autoTarget.dataset.themeName;
+    const themeName = element.dataset.themeName;
+
+    html.dataset.theme = themeName;
+    localStorage.setItem('theme', themeName)
+    this.setPressed(element)
+  }
+
+  /* Set initial theme if saved on local storage */
+  initialize() {
+    document.documentElement.dataset.theme = localStorage.getItem('theme') || 'auto';
+  }
+
+  /* Init theme switcher actions */
+  connect() {
     const lightButton = this.lightTarget
     const darkButton = this.darkTarget
     const autoButton = this.autoTarget
 
+
     lightButton.addEventListener('click', () => {
-      html.dataset.theme = lightSelector;
-      lightButton.setAttribute('aria-pressed', 'true')
-      darkButton.setAttribute('aria-pressed', 'false')
-      autoButton.setAttribute('aria-pressed', 'false')
+      this.setTheme(lightButton)
     }, false);
 
     darkButton.addEventListener('click', () => {
-      html.dataset.theme = darkSelector;
-      lightButton.setAttribute('aria-pressed', 'false')
-      darkButton.setAttribute('aria-pressed', 'true')
-      autoButton.setAttribute('aria-pressed', 'false')
+      this.setTheme(darkButton)
     }, false);
 
     autoButton.addEventListener('click', () => {
-      html.dataset.theme = autoSelector;
-      lightButton.setAttribute('aria-pressed', 'false')
-      darkButton.setAttribute('aria-pressed', 'false')
-      autoButton.setAttribute('aria-pressed', 'true')
+      this.setTheme(autoButton)
     }, false);
   }
 }
