@@ -1,4 +1,4 @@
-<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#" data-theme='auto'>
+<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -43,6 +43,8 @@
   <body data-pageurl="{{page.url}}" data-controller="scrolles">
     {% block content %}{% endblock content %}
     <script>
+      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'auto';
+
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/service-worker.js');

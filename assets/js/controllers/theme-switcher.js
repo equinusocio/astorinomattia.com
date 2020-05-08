@@ -20,11 +20,6 @@ export default class extends Controller {
     this.setPressed(element)
   }
 
-  /* Set initial theme if saved on local storage */
-  initialize() {
-    document.documentElement.dataset.theme = localStorage.getItem('theme') || 'auto';
-  }
-
   /* Init theme switcher actions */
   connect() {
     const lightButton = this.lightTarget
