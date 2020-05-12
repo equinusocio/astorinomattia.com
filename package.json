@@ -13,14 +13,15 @@
     "clean": "run-s clean:*",
     "clean:cache": "rimraf ./.cache",
     "clean:dist": "rimraf ./dist",
+    "clean:bundle": "rimraf ./bundle",
     "generate:covers": "rimraf ./static/images/covers/* && node ./utils/scripts/generate-covers.js",
     "prebuild": "yarn generate:covers",
     "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html",
     "build:html": "eleventy",
-    "build:assets": "parcel build ./assets/css/app.pcss ./assets/js/app.js --out-dir ./dist/assets --no-source-maps",
+    "build:assets": "parcel build ./src/assets/css/app.pcss ./src/assets/js/app.js --out-dir ./bundle --no-source-maps",
     "watch": "cross-env ELEVENTY_ENV=development run-s clean:* build:assets && run-p serve watch:*",
     "serve": "eleventy --serve --port=8080",
-    "watch:assets": "parcel watch ./assets/css/app.pcss ./assets/js/app.js ./assets/images --out-dir ./dist/assets --no-source-maps --no-hmr",
+    "watch:assets": "parcel watch ./assets/css/app.pcss ./src/assets/js/app.js ./assets/images --out-dir ./bundle --no-source-maps --no-hmr",
     "dev": "yarn build && yarn watch"
   },
   "dependencies": {
