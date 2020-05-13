@@ -14,9 +14,12 @@
     </section>
     <article class="PostContent">
       <header class="PostContent__Header">
-        {% if title %}
-          <h1>{{ title }}</h1>
-        {% endif %}
+        <div class="PostContent__SubHeader">
+          {% if title %}
+            <h1>{{ title }}</h1>
+          {% endif %}
+          <small>{{ content | readingTime }} minutes read</small>
+        </div>
         {{ tagList(tags) }}
       </header>
       {{content | safe}}

@@ -7,6 +7,7 @@ const contentParser = require('./utils/transforms/contentParser.js')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const htmlDateFilter = require('./utils/filters/htmlDate.js')
 const dateFilter = require('./utils/filters/date.js')
+const readingTime = require('./utils/filters/readingTime.js')
 const fs = require('fs')
 
 /**
@@ -44,6 +45,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('dateFilter', dateFilter)
   // robot friendly date format for crawlers
   eleventyConfig.addFilter('htmlDate', htmlDateFilter)
+  // Reading time from content
+  eleventyConfig.addFilter('readingTime', readingTime)
 
   /**
    * Add Transforms
