@@ -6,6 +6,7 @@ socialImage: true
 tags:
   - css
   - html
+  - logical properties
 ---
 
 What the `<details>` element is? Well, generally speaking, this element is made to easily create collapsible content without using Javascript. Let's see the basic HTML structure:
@@ -25,12 +26,17 @@ Let's see now how to use the details element to build other widgets. First of al
 
 ```css
 .Button {
+  appearance: none;
   display: inline-flex;
   background-color: #0055FF;
-  padding: 1.5ch 3ch;
-  border-radius: 16px;
+  padding: 1ch 1.4ch;
+  border-radius: 4px;
   cursor: pointer;
   color: #fff;
+}
+
+summary.Button::-webkit-details-marker {
+  display: none;
 }
 ```
 
@@ -39,12 +45,59 @@ Then we can apply it to the summary element along with accessibility related att
 ```html
 <details>
   <summary class="Button" aria-role="button">
-    Click to open
+    Click to open ▾
   </summary>
 </details>
 ```
 
-<img title="By changing the display to inline-flex the marker icon will disappear" src="/images/stories/details-button.png">
+This is what you get with the above CSS and HTML:
+
+<img title="::-webkit-details-marker is used to remove the default arrow" src="/images/stories/details-button.png">
+
+We have now a `<summary>` element dressed as a button. We'll use this class in the following examples.
 
 ## Dropdown menu
 
+To build a dropdown menu using the `details` element, we need first to set its positioning to be `relative` because the popup menu will have a `position: absolute`. We also need to add the `aria-haspopup="menu"` to the summary element and `role="menu"` to the custom menu to make them a bit accessible.
+
+```html
+<details class="Dropdown">
+  <summary class="Button" role="button" aria-haspopup="true">Click to open ▾</summary>
+  <ul class="Menu" role="menu">
+    <li>Item 1</li>
+    <li>This is a super long item 2</li>
+    <li>Item 3</li>
+  </ul>
+</details>
+```
+
+We can add now the style for the custom menu element, we will use a simple css class to target
+
+```css
+.Menu {
+  position: absolute;
+  inset-block-start: calc(100% + 8px);
+  inset-inline-start: 0;
+  background-color: #fbfbfb;
+  padding: 0.5em 1em;
+  min-width: 50px;
+  list-style: none;
+  box-shadow: inset 0 0 0 2px #0055FF;
+}
+
+.Menu > li {
+  padding: 0.5em 0;
+  white-space: nowrap;
+}
+```
+
+There are some key properties here. The `top`
+
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/details-element-trigger?path=index.html&previewSize=100"
+    title="accessible-icon-button on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    style="height: 400px; width: 100%; border: 0;">
+  </iframe>
+</div>
