@@ -156,7 +156,9 @@ Now we can add some style to the `.Modal` element to make it look like a classic
 
 Now we have our modal, but as you can see something is missing, the interactive overlay which should close the modal when clicked.
 
-Let's add the backdrop layer, which as mentioned above should react to the user click. To do it we'll use the `<summary>` element since it already has that behavior, more precisely we are going to add a `::before` pseudo-element to it, but only when the `details` have the `open` attribute.
+So let's add the backdrop layer, which as mentioned above should react to the user click. To do it we'll use the `<summary>` element since it already has that behavior, more precisely we are going to add a `::before` pseudo-element to it, but only when the `details` have the `open` attribute.
+
+In real situations you have to target only the `summary` element inside the details that contains a modal, but for this simple example, the following selector is enough.
 
 ```css
 details[open] summary::before {
@@ -167,8 +169,6 @@ details[open] summary::before {
   z-index: 1;
 }
 ```
-
-You have to target only the `summary` element inside the details that contains a modal, but for this simple example, that selector is enough and now we have an interactive overlay.
 
 <iframe
   loading="lazy"
