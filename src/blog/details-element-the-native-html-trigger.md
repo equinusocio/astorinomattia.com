@@ -98,14 +98,13 @@ There are some key properties here. With the `all` property we're removing all t
 
 Here's the final result, without the JS part that update the aria-related attributes based on the state.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/details-element-trigger?path=index.html&previewSize=100"
-    title="details element as strigger on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 400px; width: 100%; border: 0;">
-  </iframe>
-</div>
+<iframe
+  loading="lazy"
+  src="https://details-element-trigger.glitch.me/index.html"
+  title="details element as strigger on Glitch"
+  style="height: 400px; width: 100%;">
+</iframe>
+
 
 ## Making a modal
 
@@ -130,7 +129,7 @@ Now we can add some style to the `.Modal` element to make it look like a classic
 .Modal {
   /* Functional style */
   position: fixed;
-  inset: 10vh 10vh auto 10vh;
+  inset: 2vh 2vh auto 2vh;
   margin: 0 auto;
   z-index: 2;
 
@@ -142,13 +141,35 @@ Now we can add some style to the `.Modal` element to make it look like a classic
 }
 ```
 
-Now we are have hour modal, as you can see, there is something missing, the interactive overlay which should close the modal when clicked.
+<iframe
+  loading="lazy"
+  src="https://details-element-trigger.glitch.me/modal.html"
+  title="details element as strigger on Glitch"
+  style="height: 400px; width: 100%;">
+</iframe>
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/details-element-trigger?path=modal.html&previewSize=100"
-    title="details element as strigger on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 400px; width: 100%; border: 0;">
-  </iframe>
-</div>
+Now we have our modal, but as you can see something is missing, the interactive overlay which should close the modal when clicked.
+
+Let's add the backdrop layer, which as mentioned above should react to the user click. To do it we'll use the `<summary>` element since it already has that behavior, more precisely we are going to add a `::before` pseudo-element to it, but only when the `details` have the open attribute.
+
+```css
+details[open] summary::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+```
+
+You have to target only the `summary` element inside the details that contains a modal, but for this simple example, that selector is enough and now we have an interactive overlay.
+
+<iframe
+  loading="lazy"
+  src="https://details-element-trigger.glitch.me/modal-full.html"
+  title="details element as strigger on Glitch"
+  style="height: 400px; width: 100%;">
+</iframe>
+
+
+## Adding fun
