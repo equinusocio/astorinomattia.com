@@ -7035,7 +7035,7 @@ postcss-color-hex-alpha@^5.0.3:
     postcss "^7.0.14"
     postcss-values-parser "^2.0.1"
 
-postcss-color-mod-function@^3.0.3:
+postcss-color-mod-function@3.0.3, postcss-color-mod-function@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/postcss-color-mod-function/-/postcss-color-mod-function-3.0.3.tgz#816ba145ac11cc3cb6baa905a75a49f903e4d31d"
   integrity sha512-YP4VG+xufxaVtzV6ZmhEtc+/aTXH3d0JLpnYfxqTvwZPbJhWqp8bSY3nfNzNRFLgB4XSaBA82OE4VjOOKpCdVQ==

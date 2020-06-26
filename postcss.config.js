@@ -9,6 +9,7 @@ module.exports = {
       darkSelector: '[data-theme="dark"]',
       lightSelector: '[data-theme="light"]'
     }),
+    require('postcss-color-mod-function')(),
     require('postcss-responsive-type')(),
     require('postcss-preset-env')({
       stage: 0,
