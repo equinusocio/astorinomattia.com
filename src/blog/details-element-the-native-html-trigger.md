@@ -18,6 +18,13 @@ What the `<details>` element is? Well, generally speaking, this element is made 
 </details>
 ```
 
+<iframe
+  loading="lazy"
+  src="https://details-element-trigger.glitch.me/details.html"
+  title="details element as strigger on Glitch"
+  style="height: 200px; width: 100%;">
+</iframe>
+
 If you inspect the code, you can notice that there is an `open` attribute that is being added when the content is expanded. Well, this is the key point of this story, with this attribute we can build a lot of UI widgets without using javascript at all (this doesn't mean you don't need js at all)
 
 <img title="The open attribute is added and removed by the browser, based on the state" src="/images/stories/details-devtool.png">
@@ -28,7 +35,7 @@ Let's see now how to use the details element to build other widgets. First of al
 .Button {
   appearance: none;
   display: inline-flex;
-  background-color: #0055FF;
+  background-color: hsl(220deg 100% 50%);
   padding: 1ch 1.4ch;
   border-radius: 4px;
   cursor: pointer;
@@ -56,7 +63,7 @@ This is what you get with the above CSS and HTML:
 
 We have now a `<summary>` element dressed as a button. We'll use this class in the following examples.
 
-## Making a dropdown menu
+## Dropdown example
 
 To build a dropdown menu using the `details` element, we need first to set its positioning to be `relative` because the popup menu will have a `position: absolute`. We also need to add the `aria-haspopup="menu"` to the summary element and `role="menu"` to the custom menu to make them a bit accessible.
 
@@ -85,7 +92,7 @@ We can add now the style for the custom menu element, we will use a simple css c
   padding: 0.5em 1em;
   min-width: 50px;
   list-style: none;
-  box-shadow: inset 0 0 0 2px #0055FF;
+  box-shadow: inset 0 0 0 2px hsl(220deg 100% 50%);
 }
 
 .Menu > li {
@@ -105,8 +112,7 @@ Here's the final result, without the JS part that update the aria-related attrib
   style="height: 400px; width: 100%;">
 </iframe>
 
-
-## Making a modal
+## Modal example
 
 Modal dialogs are complex components that require attention and effort to be fully accessible. For example, you should trap the focus inside the modal when it's open, you should hide underlying content from AT when it's open, it should be closed by pressing esc and return the focus to the element which opens it. The <a href="https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html" target="_blank" rel="noopener noreferrer">WAI ARIA site made a full example</a>, check it to learn more about fully accessible modal.
 
@@ -129,13 +135,13 @@ Now we can add some style to the `.Modal` element to make it look like a classic
 .Modal {
   /* Functional style */
   position: fixed;
-  inset: 2vh 2vh auto 2vh;
+  inset: 20vh 2vh auto 2vh;
   margin: 0 auto;
   z-index: 2;
 
   /* Visual style */
   background-color: #fff;
-  border: 2px solid #0055FF;
+  border: 2px solid hsl(220deg 100% 50%);
   padding: 24px;
   max-width: 448px;
 }
@@ -150,12 +156,12 @@ Now we can add some style to the `.Modal` element to make it look like a classic
 
 Now we have our modal, but as you can see something is missing, the interactive overlay which should close the modal when clicked.
 
-Let's add the backdrop layer, which as mentioned above should react to the user click. To do it we'll use the `<summary>` element since it already has that behavior, more precisely we are going to add a `::before` pseudo-element to it, but only when the `details` have the open attribute.
+Let's add the backdrop layer, which as mentioned above should react to the user click. To do it we'll use the `<summary>` element since it already has that behavior, more precisely we are going to add a `::before` pseudo-element to it, but only when the `details` have the `open` attribute.
 
 ```css
 details[open] summary::before {
   content: "";
-  background: rgba(0, 0, 0, 0.3);
+  background: hsl(0 0% 0% / 30%);
   position: fixed;
   inset: 0;
   z-index: 1;
@@ -174,3 +180,34 @@ You have to target only the `summary` element inside the details that contains a
 Remember, this is just half of the work you need to do to make a fully accessible modal. You will need javascript to handle the focus trap, the keyboard interactions, and other things, but using the `details` element we can avoid a bit of js and let the browser doing the rest.
 
 ## Adding fun
+
+If we want to add a bit of movement we can use the `open` attribute to trigger animations when the content is showed up. Starting from the dropdown example, let's add a keyframe animation and apply it once the dropdown is visible.
+
+```css
+details[open] > .Menu {
+  animation: fadeIn 200ms cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: unset;
+    transform: none;
+  }
+}
+```
+
+<iframe
+  loading="lazy"
+  src="https://details-element-trigger.glitch.me/animation.html"
+  title="details element as strigger on Glitch"
+  style="height: 400px; width: 100%;">
+</iframe>
+
+## Conclusion
+
+The `<details>` element can be considered as a native HTML trigger to show hide things without using javascript. You can use it everywhere you have a two-state widget like **visible/hidden** and **open/closed**. The important thing is to remember that the accessibility of interactive elements should be implemented by yourself when using this approach.
