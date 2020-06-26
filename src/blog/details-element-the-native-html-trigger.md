@@ -171,5 +171,6 @@ You have to target only the `summary` element inside the details that contains a
   style="height: 400px; width: 100%;">
 </iframe>
 
+Remember, this is just half of the work you need to do to make a fully accessible modal. You will need javascript to handle the focus trap, the keyboard interactions, and other things, but using the `details` element we can avoid a bit of js and let the browser doing the rest.
 
 ## Adding fun
