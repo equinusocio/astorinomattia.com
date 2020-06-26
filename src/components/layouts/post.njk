@@ -1,5 +1,6 @@
 {% extends 'layouts/base.njk' %}
 {% from "../tag-list.njk" import tagList %}
+{% from "../post-navigation.njk" import postNavigation %}
 
 {% block head %}
   {% if config.syntaxTheme %}
@@ -23,6 +24,9 @@
         {{ tagList(tags) }}
       </header>
       {{content | safe}}
+      {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+      {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+      {{ postNavigation(previousPost, nextPost) }}
     </article>
   </main>
 {% endblock %}

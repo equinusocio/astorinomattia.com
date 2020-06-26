@@ -1,0 +1,47 @@
+.PostNavigation {
+  display: grid;
+  margin-top: 80px;
+  grid-gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.PostNavigation__Item {
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid var(--post-navigation-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+
+  &:only-of-type {
+    max-width: 50%;
+  }
+
+  & > svg {
+    margin-inline-end: 16px;
+  }
+
+  &:hover svg {
+    animation: ghostArrow 300ms ease-out;
+  }
+
+  &:nth-child(2) {
+    text-align: end;
+    justify-content: flex-end;
+
+    & > svg {
+      --direction: 10px;
+
+      margin-inline-end: 0;
+      margin-inline-start: 16px;
+    }
+  }
+}
+
+
+@keyframes ghostArrow {
+  50% {
+    filter: drop-shadow(var(--direction, -10px) 0 0 var(--accent-color));
+  }
+}
