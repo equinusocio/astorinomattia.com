@@ -14,8 +14,10 @@
   justify-content: flex-start;
   text-decoration: none;
 
-  &:only-of-type {
-    max-width: 50%;
+  @media (width >= 48em) {
+    &:only-of-type {
+      max-width: 50%;
+    }
   }
 
   & > svg {
