@@ -56,7 +56,7 @@ This is what you get with the above CSS and HTML:
 
 We have now a `<summary>` element dressed as a button. We'll use this class in the following examples.
 
-## Dropdown menu
+## Making a dropdown menu
 
 To build a dropdown menu using the `details` element, we need first to set its positioning to be `relative` because the popup menu will have a `position: absolute`. We also need to add the `aria-haspopup="menu"` to the summary element and `role="menu"` to the custom menu to make them a bit accessible.
 
@@ -107,14 +107,14 @@ Here's the final result, without the JS part that update the aria-related attrib
   </iframe>
 </div>
 
-## Modal
+## Making a modal
 
-Modal dialogs are complex components that require attention and effort to be fully accessible. For example, you should trap the focus inside the modal when it's open, you should hide underlying content from AT when it's open, it should be closed by pressing esc, and so on. In this examples we'll see only how to use the `details` element to show/hide the modal and what we can do with the `open` attribute.
+Modal dialogs are complex components that require attention and effort to be fully accessible. For example, you should trap the focus inside the modal when it's open, you should hide underlying content from AT when it's open, it should be closed by pressing esc and return the focus to the element which opens it. The <a href="https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html" target="_blank" rel="noopener noreferrer">WAI ARIA site made a full example</a>, check it to learn more about fully accessible modal.
 
-The core principles are the same of the dropdown menu, create a details and you modal inside it.
+In this example we'll see only how to use the `details` element to show/hide the modal and what we can do with the `open` attribute. The core principles are the same of the dropdown menu, create a details and your modal inside it, but this time we don't want the modal to be positioned relative to the `details`, so we can remove the `.Dropdown` class. Here the starting markup:
 
 ```html
-<details class="Dropdown">
+<details>
   <summary class="Button" role="button">
     Open Modal
   </summary>
@@ -124,12 +124,31 @@ The core principles are the same of the dropdown menu, create a details and you 
 </details>
 ```
 
+Now we can add some style to the `.Modal` element to make it look like a classic modal. Code marked as "functional style" is required to positioning the modal, while the "visual style" is just appearance.
 
-<!-- <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+```css
+.Modal {
+  /* Functional style */
+  position: fixed;
+  inset: 10vh 10vh auto 10vh;
+  margin: 0 auto;
+  z-index: 2;
+
+  /* Visual style */
+  background-color: #fff;
+  border: 2px solid #0055FF;
+  padding: 24px;
+  max-width: 448px;
+}
+```
+
+Now we are have hour modal, as you can see, there is something missing, the interactive overlay which should close the modal when clicked.
+
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/details-element-trigger?path=modal.html&previewSize=100"
     title="details element as strigger on Glitch"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     style="height: 400px; width: 100%; border: 0;">
   </iframe>
-</div> -->
+</div>
