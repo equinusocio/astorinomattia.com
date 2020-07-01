@@ -41,7 +41,6 @@
     "eleventy-plugin-pwa": "1.0.8",
     "front-matter": "4.0.2",
     "fs-extra": "9.0.1",
-    "ga-lite": "2.0.5",
     "html-minifier": "4.0.0",
     "modern-normalize": "0.6.0",
     "postcss-color-mod-function": "3.0.3",
