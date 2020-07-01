@@ -9,6 +9,15 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preload" as="font" href="/fonts/ibarra400.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/fonts/ibarra700.woff2" type="font/woff2" crossorigin="anonymous">
+    <script type="text/javascript">
+      window.GUMLET_CONFIG = {
+          hosts: [{
+              current: "equinusocio.dev",
+              gumlet: "eqsc.gumlet.io"
+          }]
+      };
+      (function(){d=document;s=d.createElement("script");s.src="https://cdn.gumlet.com/gumlet.js/2.0/gumlet.min.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
     {% block head %}{% endblock %}
 
     {% if env.IS_DEV %}
