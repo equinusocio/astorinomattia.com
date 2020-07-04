@@ -25,7 +25,7 @@ What the `<details>` element is? Well, generally speaking, this element is made 
   style="height: 200px; width: 100%;">
 </iframe>
 
-If you inspect the code, you can notice that there is an `open` attribute that is being added when the content is expanded. Well, this is the key point of this story, with this attribute we can build a lot of UI widgets without using javascript at all (this doesn't mean you don't need js at all)
+If you inspect the code, you can notice that there is an `open` attribute that is being added when the content is expanded. Well, this is the key point of this story, with this attribute we can build a lot of UI widgets without using javascript (this doesn't mean you don't need js at all)
 
 <img title="The open attribute is added and removed by the browser, based on the state" data-src="/images/stories/details-devtool.png">
 
@@ -204,6 +204,24 @@ details[open] > .Menu {
 <iframe
   loading="lazy"
   src="https://details-element-trigger.glitch.me/animation.html"
+  title="details element as strigger on Glitch"
+  style="height: 400px; width: 100%;">
+</iframe>
+
+## More examples
+
+here some example of popover and vied/edit mode built using the `details` element:
+
+<iframe
+  loading="lazy"
+  src="https://details-element-trigger.glitch.me/example1.html"
+  title="details element as strigger on Glitch"
+  style="height: 400px; width: 100%;">
+</iframe>
+
+<iframe
+  loading="lazy"
+  src="https://details-element-trigger.glitch.me/example2.html"
   title="details element as strigger on Glitch"
   style="height: 400px; width: 100%;">
 </iframe>
