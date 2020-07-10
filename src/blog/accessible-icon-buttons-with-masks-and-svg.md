@@ -9,16 +9,16 @@ tags:
   - html
 ---
 
-In this article we'll see how to make fully accessible icon buttons using __SVG__ and __CSS__, without bloating the html with the inline `<svg>` code  but keeping the customization!
+In this article, we'll see how to make fully accessible icon buttons using __SVG__ and __CSS__, without bloating the html with the inline `<svg>` code  but keeping the customization!
 
-But first, let's define what we want to achieve with our code, what we want from the final ouput of our icon button element:
+But first, let's define what we want to achieve with our code, what we want from the final output of our icon button element:
 
 - Interactive
 - Keyboard controlled
 - Accessible
 - Customizable
 
-...and we will achieve all of this points with just __HTML__ and __CSS__! It's magic, isn't it?
+...and we will achieve all of these points with just __HTML__ and __CSS__! It's magic, isn't it?
 
 ## The markup
 
@@ -36,7 +36,7 @@ If you don't like to use an empty element, you can use your `.sr-only` utility c
 </button>
 ```
 
-You can choose to use the `aria-label` attribute to add a mean to the button or the hidden element readable only by assistive technologies, it's up to you. Using the `button` element we already solved the first three points of our checklist since __it is interactive, keyboard navigable and accessible by default__. No tabindex needed or javascript code to make it keyboard accessibile.
+You can choose to use the `aria-label` attribute to add a mean to the button or the hidden element readable only by assistive technologies, it's up to you. Using the `button` element we already solved the first three points of our checklist since __it is interactive, keyboard navigable and accessible by default__. No tabindex needed or javascript code to make it keyboard-accessible.
 
 - <del>Interactive</del><ins>✓</ins>
 - <del>Keyboard controlled</del><ins>✓</ins>
@@ -47,7 +47,7 @@ You can choose to use the `aria-label` attribute to add a mean to the button or 
 
 So, how we can change colors, sizes, add gradients using a single SVG image from our CSS? The answer is...using the very wide supported `mask-*` properties!
 
-The only constraint is that __the source icon should be black on a trasparent or white background__. That's because the mask property uses the pure black color to shows the visible part of the background, while the white or transparent color is used to obsfuscale the background layer.
+The only constraint is that __the source icon should be black on a transparent or white background__. That's because the mask property uses the pure black color to shows the visible part of the background, while the white or transparent color is used to obfuscate the background layer.
 
 Let's start adding some basic style to our button to set up positioning and box model:
 
@@ -83,9 +83,9 @@ Now, we are going to use a `::pseudo-element` to add the icon. The absolute posi
 }
 ```
 
-We can now add our magic code. First of all we need an icon, and we need it as SVG since we want it to scale without loosing quality. We will use [this icon](https://images.ctfassets.net/gz0sygvqczyz/2szA1GJ3YcnW8P0Zxgx8c1/7f6ed208373a28a462143b58b299ebbc/FX9.svg) for this example.
+We can now add our magic code. First of all, we need an icon, and we need it as SVG since we want it to scale without losing quality. We will use [this icon](https://images.ctfassets.net/gz0sygvqczyz/2szA1GJ3YcnW8P0Zxgx8c1/7f6ed208373a28a462143b58b299ebbc/FX9.svg) for this example.
 
-Using the `mask-` properties we can set our icon as element mask, like we do with design tools like Sketch, Figma and others. Let's add these properties:
+Using the `mask-` properties we can set our icon as element mask as we do with design tools like Sketch, Figma and others. Let's add these properties:
 
 ```css
 .IconButton::before {
@@ -103,10 +103,10 @@ As you can see we defined four things here:
 
 - __The mask url:__ our black svg icon
 - __The mask position:__ set to be always centered
-- __The mask repetition:__ we disbled the tile effect.
-- __The mask size:__ we set it to be containd into the available space, so the icon will be alway fully visible.
+- __The mask repetition:__ we disabled the tile effect.
+- __The mask size:__ we set it to be contained into the available space, so the icon will be always fully visible.
 
-You might have noticed that these properties are the same (and act like) of the `background-` properties. The main difference here is that the image is used as mask and makes our element "transparent" where the image is black, while the white (or transparent) part of the image is used to hide what's on the background. Our icon here is white because we set `background: #fff;` on the pseudo element and the svg icon is filled with `#000`.
+You might have noticed that these properties are the same (and act like) of the `background-` properties. The main difference here is that the image is used as a mask and makes our element "transparent" where the image is black, while the white (or transparent) part of the image is used to hide what's on the background. Our icon here is white because we set `background: #fff;` on the pseudo element and the svg icon is filled with `#000`.
 
 Now, we should see something like this:
 
@@ -149,7 +149,7 @@ We can now flag the last step! 🎉
 
 ## Progressive enhancement
 
-The `mask-` properties are well supported by all the modern browser, but if for some weird reason you need to support obsolete browsers that doesn't support these properties, you can progressive enhance the code in order to provide a __minimal UI experience__.
+The `mask-` properties are well supported by all the modern browser, but if for some weird reason you need to support obsolete browsers that don't support these properties, you can progressive enhance the code in order to provide a __minimal UI experience__.
 
 Be aware that when talking about "minimal UI experience" we mean that things may not look the same, but they just work as expected without breaking the user experience. It doesn't mean "add a ton of code for old browsers just to replicate the visual appearance of the element" because that code will be downloaded even by modern browsers, but never used.
 
