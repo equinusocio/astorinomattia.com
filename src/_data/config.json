@@ -5,7 +5,7 @@
   "lang": "en",
   "authorHandle": "@equinusocio",
   "authorName": "Mattia Astorino",
-  "paymentPointer": "$twitter.xrptipbot.com/equinusocio",
+  "paymentPointer": "$ilp.uphold.com/9ebKEYaNiGUf",
   "syntaxTheme": "prism-mono.css",
   "permalinkClass": ["Permalink"],
   "iframeClass": ["IframesWrapper", "Bleeding"],
