@@ -140,14 +140,14 @@ Go on with a more complex example and define a custom element that allows only o
 
 In this example we built a custom todo list using two separated components. The `todo-list` element is just a wrapper that will accept only `todo-li` elements as children (as for ul/ol with li) and the `todo-li` element is used to define the list tasks with a priority indicator and an encapsulated native checkbox.
 
-![Schermata 2018-11-19 alle 17.42.12](//images.ctfassets.net/gz0sygvqczyz/2YhYmaXUWAESI4uQs6Yeqm/602f69c6b349c910d212058fb0c403ea/Schermata_2018-11-19_alle_17.42.12.png)
+![Schermata 2018-11-19 alle 17.42.12](https://images.ctfassets.net/gz0sygvqczyz/2YhYmaXUWAESI4uQs6Yeqm/602f69c6b349c910d212058fb0c403ea/Schermata_2018-11-19_alle_17.42.12.png)
 
 ## In conclusion
 
 Composition. Web Components are useful to create new HTML elements that will compose web interfaces, as we have always done. Custom and native html elements are the ”tree leaves”, so it is an error consider them as a “big” app containers, or as application data containers. For more info, I suggest you to read the [official documentation][8] written by Google guys, in which you will find all about web components, custom elements, shadow DOM and best practices.
 
 
-[1]: https://cdn-images-1.medium.com/max/1600/1*Ab6dzpZOFBra_jxexg8sQQ.gif
+[1]: https://eqsc.gumlet.io/images/stories/enabling-shadow-dom.gif
 [2]: https://developers.google.com/web/fundamentals/web-components/shadowdom#host
 [3]: https://en.wikipedia.org/wiki/Progressive_enhancement
 [4]: https://www.polymer-project.org/

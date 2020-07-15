@@ -110,7 +110,7 @@ You might have noticed that these properties are the same (and act like) of the 
 
 Now, we should see something like this:
 
-![accessible-icon-button](//images.ctfassets.net/gz0sygvqczyz/3ErL4imaIwMa6waWkI3sr0/0dbe9eb935e6a14b2a0f20434b8dd096/Screenshot_2019-10-19_at_20.07.30.png)
+![accessible-icon-button](https://eqsc.gumlet.io/images/stories/icon-button-sample.png)
 
 This way you can change the background, add gradients ad make fading-out icons by filling them with a gradient from black and to a transparent color.
 Inside the `mask-image` you can also use an icon from your [sprite SVG](https://css-tricks.com/icon-fonts-vs-svg/) file! Pretty awesome and scalable!
@@ -121,7 +121,7 @@ mask-image: url("path/to/sprite.svg#my-icon-id");
 
 Let's see some example using different icons and changing the `::before` background:
 
-![examples](//images.ctfassets.net/gz0sygvqczyz/5ImFRyi2At0EAOuCDTDT4p/30d2ffecc068a53c423639c0489a20e4/examples.png)
+![examples](https://images.ctfassets.net/gz0sygvqczyz/5ImFRyi2At0EAOuCDTDT4p/30d2ffecc068a53c423639c0489a20e4/examples.png)
 
 The first button uses a full black svg icon, the second one adds a linear gradient to the `::pseudo-element` and the third one uses an icon filled with a gradient from black to a transparent color. As always, you can even animate whatever you want and you can combine custom properties to pass the icon path from the html and handle them easily with javascript using `.setProperty()`, for example:
 

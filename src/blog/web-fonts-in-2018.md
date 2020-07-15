@@ -95,5 +95,5 @@ Here the link to test the "standard version" and the optimised one:
 
 ### Result
 
-![standard](//images.ctfassets.net/gz0sygvqczyz/Jj9itpvLMI6WC2m0gGEy0/2aeaef6adc66f7f769e3e4e23cb68970/standard.png) ![opt](//images.ctfassets.net/gz0sygvqczyz/12OTKvbLRyoEsYSq8KqcKe/96ded21bde16f3f2d94d32a76e3c9e7a/opt.png)
+![standard](https://images.ctfassets.net/gz0sygvqczyz/Jj9itpvLMI6WC2m0gGEy0/2aeaef6adc66f7f769e3e4e23cb68970/standard.png) ![opt](https://images.ctfassets.net/gz0sygvqczyz/12OTKvbLRyoEsYSq8KqcKe/96ded21bde16f3f2d94d32a76e3c9e7a/opt.png)
 
