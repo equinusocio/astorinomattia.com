@@ -4,8 +4,6 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pwaPlugin = require('eleventy-plugin-pwa')
 const htmlMinTransform = require('./utils/transforms/htmlmin.js')
 const contentParser = require('./utils/transforms/contentParser.js')
-const localImages = require("eleventy-plugin-local-images");
-const lazyImages = require("eleventy-plugin-lazyimages");
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const htmlDateFilter = require('./utils/filters/htmlDate.js')
 const dateFilter = require('./utils/filters/date.js')
@@ -69,17 +67,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin)
   eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(pwaPlugin)
-  eleventyConfig.addPlugin(localImages, {
-    distPath: "dist",
-    assetPath: "/static/images",
-    selector: "img",
-    attribute: "data-src",
-    verbose: false
-  });
-  eleventyConfig.addPlugin(lazyImages, {
-    cacheFile: "",
-    imgSelector: ".PostContent img"
-  });
 
   /**
    * Create custom data collections
