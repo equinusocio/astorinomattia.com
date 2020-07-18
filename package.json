@@ -9,6 +9,11 @@
     "type": "git",
     "url": "https://github.com/equinusocio/xity-starter"
   },
+  "size-limit": [
+    {
+      "path": "dist/assets/css/app.css"
+    }
+  ],
   "scripts": {
     "clean": "run-s clean:*",
     "clean:cache": "rimraf ./.cache",
@@ -16,9 +21,10 @@
     "clean:bundle": "rimraf ./bundle",
     "generate:covers": "rimraf ./static/images/covers/* && node ./utils/scripts/generate-covers.js",
     "prebuild": "yarn generate:covers",
-    "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html",
+    "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html size",
     "build:html": "eleventy",
     "build:assets": "parcel build ./src/assets/css/app.pcss ./src/assets/js/app.js --out-dir ./bundle --no-source-maps",
+    "size": "size-limit",
     "watch": "cross-env ELEVENTY_ENV=development run-s clean:* build:assets && run-p serve watch:*",
     "serve": "eleventy --serve --port=8080",
     "watch:assets": "parcel watch ./src/assets/css/app.pcss ./src/assets/js/app.js ./assets/images --out-dir ./bundle --no-source-maps --no-hmr",
@@ -54,6 +60,7 @@
     "turbolinks": "5.2.0"
   },
   "devDependencies": {
+    "@size-limit/preset-big-lib": "4.5.5",
     "cross-env": "7.0.2",
     "husky": "4.2.5",
     "npm-run-all": "4.1.5",
@@ -61,6 +68,7 @@
     "postcss-cli": "7.1.1",
     "postcss-easy-import": "3.0.0",
     "rimraf": "3.0.2",
+    "size-limit": "4.5.5",
     "stylelint": "13.6.1",
     "stylelint-config-oval": "1.0.6"
   },
