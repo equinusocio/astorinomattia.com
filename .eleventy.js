@@ -4,7 +4,6 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pwaPlugin = require('eleventy-plugin-pwa')
 const htmlMinTransform = require('./utils/transforms/htmlmin.js')
 const contentParser = require('./utils/transforms/contentParser.js')
-const purgeInlineCss = require('./utils/transforms/purge-inline-css.js')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const htmlDateFilter = require('./utils/filters/htmlDate.js')
 const dateFilter = require('./utils/filters/date.js')
@@ -58,7 +57,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addTransform('htmlmin', htmlMinTransform)
   }
   eleventyConfig.addTransform('contentParser', contentParser)
-  eleventyConfig.addTransform('purge-and-inline-css', purgeInlineCss)
 
   /**
    * Add Plugins
