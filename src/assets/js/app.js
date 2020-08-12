@@ -16,3 +16,16 @@ application.register('post-list', GridList)
  */
 Turbolinks.start()
 
+
+document.addEventListener('turbolinks:request-start', function () {
+})
+
+document.addEventListener('turbolinks:load', function () {
+  const elements = [...document.querySelectorAll('[animate]')]
+  elements.forEach((el) => {
+    console.log(el)
+    el.classList.add('fadeIn')
+  })
+})
+
+
