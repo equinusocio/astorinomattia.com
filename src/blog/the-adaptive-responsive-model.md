@@ -37,11 +37,12 @@ While building a responsive experience we have three approaches to handle our la
 
 ![5c629b5ec96d8](https://images.ctfassets.net/gz0sygvqczyz/7ECGrNclFOLOYPO12yNlOa/6cd743d8e07ad6238462fdef2423d5f0/5c629b5ec96d8.gif)
 
+## Adaptive Design Technique
+
 
 **Restructuring:** With this approach we can develop and deliver different layouts to provide the best experience for a specific environment like a touch-only mobile device, or hybrid-touch devices.
 
 ![5c619176816f9](https://images.ctfassets.net/gz0sygvqczyz/3Ykv98R1ejIg0AFGzmjfsB/1ecefef84320cf91b81486556dbce506/5c619176816f9.png)
-
 
 
 ## Introducing the A+R model
