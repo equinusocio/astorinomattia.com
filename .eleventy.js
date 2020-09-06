@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pwaPlugin = require('eleventy-plugin-pwa')
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const htmlMinTransform = require('./utils/transforms/htmlmin.js')
 const contentParser = require('./utils/transforms/contentParser.js')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
@@ -67,6 +68,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin)
   eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(pwaPlugin)
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://equinusocio.dev",
+    },
+  });
 
   /**
    * Create custom data collections
