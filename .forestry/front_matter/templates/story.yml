@@ -13,7 +13,7 @@ fields:
     required: true
 - type: text
   name: metaDesc
-  label: metaDesc
+  label: Description
 - type: boolean
   name: socialImage
   label: Social image
