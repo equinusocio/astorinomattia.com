@@ -1,7 +1,7 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: cms
+admin_path: dist/cms
 webhook_url: 
 sections:
 - type: directory
