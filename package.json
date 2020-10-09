@@ -21,7 +21,7 @@
     "clean:bundle": "rimraf ./bundle",
     "generate:covers": "rimraf ./static/images/covers/* && node ./utils/scripts/generate-covers.js",
     "prebuild": "yarn generate:covers",
-    "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html size",
+    "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html",
     "build:html": "eleventy",
     "build:assets": "parcel build ./src/assets/css/app.pcss ./src/assets/js/app.js --out-dir ./bundle --no-source-maps",
     "size": "size-limit",
