@@ -1,0 +1,19 @@
+---
+label: Story
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: metaDesc
+  label: metaDesc
+- type: boolean
+  name: socialImage
+  label: socialImage
+- type: list
+  name: tags
+  label: tags
