@@ -4,16 +4,31 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
 - type: datetime
   name: date
-  label: date
+  label: Date
+  config:
+    date_format: YYYY-MM-DD
+    required: true
 - type: text
   name: metaDesc
   label: metaDesc
 - type: boolean
   name: socialImage
-  label: socialImage
+  label: Social image
 - type: list
   name: tags
-  label: tags
+  label: Tags
+  config:
+    use_select: false
+- name: external_url
+  type: text
+  config:
+    required: false
+  label: External url
+- name: permalink
+  type: text
+  config:
+    required: false
+  label: Permalink
