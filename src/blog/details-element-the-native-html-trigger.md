@@ -1,14 +1,15 @@
 ---
 title: details element, the native html trigger
-date: '2020-06-26'
-metaDesc: "Let's see how to to use the <details> element as a native on/off trigger with an eye to accessibility."
+date: 2020-06-26
+metaDesc: Let's see how to to use the <details> element as a native on/off trigger
+  with an eye to accessibility.
 socialImage: true
 tags:
-  - css
-  - html
-  - logical properties
----
+- css
+- html
+- logical properties
 
+---
 What the `<details>` element is? Well, generally speaking, this element is made to easily create collapsible content without using Javascript. Let's see the basic HTML structure:
 
 ```html
@@ -19,10 +20,10 @@ What the `<details>` element is? Well, generally speaking, this element is made 
 ```
 
 <iframe
-  loading="lazy"
-  src="https://details-element-trigger.glitch.me/details.html"
-  title="details element as strigger on Glitch"
-  style="height: 200px; width: 100%;">
+loading="lazy"
+src="https://details-element-trigger.glitch.me/details.html"
+title="details element as strigger on Glitch"
+style="height: 200px; width: 100%;">
 </iframe>
 
 If you inspect the code, you can notice that there is an `open` attribute that is being added when the content is expanded. Well, this is the key point of this story, with this attribute we can build a lot of UI widgets without using javascript (this doesn't mean you don't need js at all)
@@ -47,7 +48,7 @@ summary.Button::-webkit-details-marker {
 }
 ```
 
-Then we can apply it to the summary element along with accessibility related attributes.
+Then we can apply it to the summary element along with accessibility-related attributes.
 
 ```html
 <details>
@@ -106,10 +107,10 @@ There are some key properties here. With the `all` property we're removing all t
 Here's the final result, without the JS part that update the aria-related attributes based on the state.
 
 <iframe
-  loading="lazy"
-  src="https://details-element-trigger.glitch.me/index.html"
-  title="details element as strigger on Glitch"
-  style="height: 400px; width: 100%;">
+loading="lazy"
+src="https://details-element-trigger.glitch.me/index.html"
+title="details element as strigger on Glitch"
+style="height: 400px; width: 100%;">
 </iframe>
 
 ## Modal example
@@ -148,10 +149,10 @@ Now we can add some style to the `.Modal` element to make it look like a classic
 ```
 
 <iframe
-  loading="lazy"
-  src="https://details-element-trigger.glitch.me/modal.html"
-  title="details element as strigger on Glitch"
-  style="height: 400px; width: 100%;">
+loading="lazy"
+src="https://details-element-trigger.glitch.me/modal.html"
+title="details element as strigger on Glitch"
+style="height: 400px; width: 100%;">
 </iframe>
 
 Now we have our modal, but as you can see something is missing, the interactive overlay which should close the modal when clicked.
@@ -171,10 +172,10 @@ details[open] summary::before {
 ```
 
 <iframe
-  loading="lazy"
-  src="https://details-element-trigger.glitch.me/modal-full.html"
-  title="details element as strigger on Glitch"
-  style="height: 400px; width: 100%;">
+loading="lazy"
+src="https://details-element-trigger.glitch.me/modal-full.html"
+title="details element as strigger on Glitch"
+style="height: 400px; width: 100%;">
 </iframe>
 
 Remember, this is just half of the work you need to do to make a fully accessible modal. You will need javascript to handle the focus trap, the keyboard interactions, and other things, but using the `details` element we can avoid a bit of js and let the browser doing the rest.
@@ -202,10 +203,10 @@ details[open] > .Menu {
 ```
 
 <iframe
-  loading="lazy"
-  src="https://details-element-trigger.glitch.me/animation.html"
-  title="details element as strigger on Glitch"
-  style="height: 400px; width: 100%;">
+loading="lazy"
+src="https://details-element-trigger.glitch.me/animation.html"
+title="details element as strigger on Glitch"
+style="height: 400px; width: 100%;">
 </iframe>
 
 ## More examples
@@ -213,17 +214,17 @@ details[open] > .Menu {
 here some example of popover and vied/edit mode built using the `details` element:
 
 <iframe
-  loading="lazy"
-  src="https://details-element-trigger.glitch.me/example1.html"
-  title="details element as strigger on Glitch"
-  style="height: 400px; width: 100%;">
+loading="lazy"
+src="https://details-element-trigger.glitch.me/example1.html"
+title="details element as strigger on Glitch"
+style="height: 400px; width: 100%;">
 </iframe>
 
 <iframe
-  loading="lazy"
-  src="https://details-element-trigger.glitch.me/example2.html"
-  title="details element as strigger on Glitch"
-  style="height: 400px; width: 100%;">
+loading="lazy"
+src="https://details-element-trigger.glitch.me/example2.html"
+title="details element as strigger on Glitch"
+style="height: 400px; width: 100%;">
 </iframe>
 
 ## Conclusion
