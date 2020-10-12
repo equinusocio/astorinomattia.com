@@ -1,24 +1,23 @@
 ---
 title: Web Components — the right way
-date: '2018-04-26'
-metaDesc: "We have been heard about web components, here i will explain the technology purpose and what your should avoid."
+date: 2018-04-26
+metaDesc: We have been heard about web components, here i will explain the technology
+  purpose and what your should avoid.
 socialImage: true
 tags:
-  - web components
-  - tips
----
+- web components
+- tips
 
-From about two years we have been heard about **web components**, well this article will not explain how they work (for that [there is Google](http://bfy.tw/H9oY
-)), but rather we will address the purpose of this technology, when and how use it.
+---
+From about two years we have been heard about **web components**, well this article will not explain how they work (for that [there is Google](http://bfy.tw/H9oY)), but rather we will address the purpose of this technology, when and how using it.
 
 We can consider web components as a tool to **extend HTML, not to replace it**. The available technologies follow the same rules that we are all used to —from always— see in the most famous language markup in the world.
 
-> Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilise them in your web apps.
-> **MDN**
+> Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilise them in your web apps. **MDN**
 
 ## HTML — Accelerated course
 
-Every web developer knows — or at least should — the basics of HTML and how to define the markup of a web element that will be represented by the browser in a certain way and with a specific behaviour.
+Every web developer knows — or at least should — the basics of HTML and how to define the markup of a web element that will be represented by the browser in a certain way and with specific behavior.
 
 ```html
 <select multiple>
@@ -29,30 +28,30 @@ Every web developer knows — or at least should — the basics of HTML 
 </select>
 ```
 
-In the above example, like the greatest part of HTML elements, the node can accept a content that will be shown (and stylised) by the browser or by CSS user. But as we all know, there are also elements that can not accept children nodes (well known as void elements) —for example the `<img>` and `<input>` tags — and other tags that require only some types of nodes.
+In the above example, like the greatest part of HTML elements, the node can accept a content that will be shown (and stylized) by the browser or by CSS user. But as we all know, there are also elements that can not accept children nodes (well known as void elements) —for example, the `<img>` and `<input>` tags — and other tags that require only some types of nodes.
 
 The `<select>` element, like more other, is a node that uses a shadow DOM similar logic; for this reason, if you want, you can see the content of these elements in the same way as per web components:
 
-![enabling-shadow-dom][1]
+![enabling-shadow-dom](https://eqsc.gumlet.io/images/stories/enabling-shadow-dom.gif)
 
 This is approximately the mechanic beyond this language, so we can define two different HTML element models:
 
-- **Modular elements** — Allow children nodes (normal elements)
-- **Self-closing elements** — Does not allow children nodes (void elements)
+* **Modular elements** — Allow children nodes (normal elements)
+* **Self-closing elements** — Does not allow children nodes (void elements)
 
 ## Custom elements
 
-As we wrote, the technologies beyond web components aim to **extend HTML**, not to replace it. What does it mean? That we have tools to create new HTML elements that would not naturally exist if not implemented by user-agents (browsers), or to extend the behaviour of those ones already existing by adding [functionalities and custom styles][2].
+As we wrote, the technologies beyond web components aim to **extend HTML**, not to replace it. What does it mean? That we have tools to create new HTML elements that would not naturally exist if not implemented by user-agents (browsers) or to extend the behavior of those ones already existing by adding [functionalities and custom styles](https://developers.google.com/web/fundamentals/web-components/shadowdom#host).
 
 ### When?
 
 The answer is easier than you expect. Define new HTML elements is necessary when the available ones do not meet functionality and design needs.
 
-If we need to create a new `<my-button>` element with a customised style, we must think about the [progressive enhancement][3]. So we should add functionalities and styles, rather than completely recreate the element from scratch.
+If we need to create a new `<my-button>` element with a customized style, we must think about the [progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement). So we should add functionalities and styles, rather than completely recreate the element from scratch.
 
 ## The wrong way
 
-If we surf on the Internet, we can find some *pattern libraries* fully composed by custom elements (using or not some frameworks, like [Polymer][4]), *tests*, *examples*, *playgrounds* …and they all have one thing in common, **they are all created using a wrong pattern**. Do you remember? We are extending the HTML, so we should follow its paradigms and its composition. Here some examples:
+If we surf on the Internet, we can find some _pattern libraries_ fully composed of custom elements (using or not some frameworks, like [Polymer](https://www.polymer-project.org/)), _tests_, _examples_, _playgrounds_ …and they all have one thing in common, **they are all created using a wrong pattern**. Do you remember? We are extending the HTML, so we should follow its paradigms and its composition. Here some examples:
 
 ```html
 <my-app>
@@ -68,7 +67,7 @@ An entire app inside the shadow root. It’s the same as putting the app inside 
     <button><slot></slot></button>
 ```
 
-A native `<button>` element wrapped… inside another custom button. [It’s the same as putting a `<button>` inside another `<button>`][5].
+A native `<button>` element wrapped… inside another custom button. [It’s the same as putting a `<button>` inside another `<button>`](https://inception.davepedu.com/).
 
 ```html
 <my-select options="{...}">
@@ -81,17 +80,16 @@ A native `<button>` element wrapped… inside another custom button. [It’s the
 
 Does this snippet really need a description? Think about the `<select>` example above.
 
-They are many other wrong examples around, but these are the most misleading that I found, compared to the fundamental HTML principle, the **composition** ([read more about it][6]).
+They are many other wrong examples around, but these are the most misleading that I found, compared to the fundamental HTML principle, the **composition** ([read more about it](https://developers.google.com/web/fundamentals/web-components/shadowdom#composition_slot)).
 
 > Composition is one of the least understood features of shadow DOM, but it’s arguably the most important.
-> **[Google Web Fundamentals][6]**
+> [**Google Web Fundamentals**](https://developers.google.com/web/fundamentals/web-components/shadowdom#composition_slot)
 
 ## The right way
 
 When we develop a web component, we must consider the two models described above. So we can create custom elements that allow children nodes (through the `<slot>` tag), or create self-closing elements (**void** elements).
 
-For example, let’s consider to create a custom element that shows a tooltip balloon near any element passed as a child, as we would do with the HTML.
-
+For example, let’s consider creating a custom element that shows a tooltip balloon near any element passed as a child, as we would do with the HTML.
 
 ```html
 <!-- my-tooltip component -->
@@ -112,7 +110,7 @@ As we can see, our component will wrap a slotted element that user can pass as c
 
 The above `<my-tooltip>` element, if we want, can also allow users to customise the tooltip balloon style — that is in the **#shadow-root** —  only through a set of custom properties, if we define them inside the `:host` selector. You can read more about defining CSS api (or style-hooks) here:
 
-> [How to define CSS api][7]
+> [How to define CSS api](https://equinsuocha.io/blog/how-to-define-css-api/)
 
 Go on with a more complex example and define a custom element that allows only one type of child node, as per `<ul>` and `<li>` tags to generate a list:
 
@@ -144,14 +142,4 @@ In this example we built a custom todo list using two separated components. The 
 
 ## In conclusion
 
-Composition. Web Components are useful to create new HTML elements that will compose web interfaces, as we have always done. Custom and native html elements are the ”tree leaves”, so it is an error consider them as a “big” app containers, or as application data containers. For more info, I suggest you to read the [official documentation][8] written by Google guys, in which you will find all about web components, custom elements, shadow DOM and best practices.
-
-
-[1]: https://eqsc.gumlet.io/images/stories/enabling-shadow-dom.gif
-[2]: https://developers.google.com/web/fundamentals/web-components/shadowdom#host
-[3]: https://en.wikipedia.org/wiki/Progressive_enhancement
-[4]: https://www.polymer-project.org/
-[5]: https://inception.davepedu.com/
-[6]: https://developers.google.com/web/fundamentals/web-components/shadowdom#composition_slot
-[7]: https://equinsuocha.io/blog/how-to-define-css-api/
-[8]: https://developers.google.com/web/fundamentals/web-components/
+Composition. Web Components are useful to create new HTML elements that will compose web interfaces, as we have always done. Custom and native html elements are the ”tree leaves”, so it is an error consider them as a “big” app containers, or as application data containers. For more info, I suggest you to read the [official documentation](https://developers.google.com/web/fundamentals/web-components/) written by Google guys, in which you will find all about web components, custom elements, shadow DOM and best practices.
