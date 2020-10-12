@@ -3,7 +3,13 @@ metaTitle: Mattia Astorino
 metaDesc: UX Engineer in Milan and member of Open Source Design.
 ---
 {% extends 'layouts/page.njk' %}
-{% from "post-list.njk" import postList %}
+
+{% block head %}
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script type="text/javascript">
+    Paddle.Setup({ vendor: 37697 });
+  </script>
+{% endblock %}
 
 {% block leftContent %}
   <p class="PageDescription">My personal laboraty when i test and destroy things, and where i share my side projects.</p>
@@ -11,5 +17,5 @@ metaDesc: UX Engineer in Milan and member of Open Source Design.
 {% endblock leftContent %}
 
 {% block rightContent %}
-  {{ postList(collections.posts) }}
+  <button class="paddle_button" data-product="633584" data-theme="none">Buy Now!</button>
 {% endblock rightContent %}
