@@ -9,7 +9,7 @@ tags:
 - tips
 
 ---
-From about two years we have been heard about **web components**, well this article will not explain how they work (for that [there is Google](http://bfy.tw/H9oY)), but rather we will address the purpose of this technology, when and how using it.
+For about two years we have been heard about **web components**, well this article will not explain how they work (for that [there is Google](http://bfy.tw/H9oY)), but rather we will address the purpose of this technology, when and how using it.
 
 We can consider web components as a tool to **extend HTML, not to replace it**. The available technologies follow the same rules that we are all used to —from always— see in the most famous language markup in the world.
 
@@ -82,8 +82,7 @@ Does this snippet really need a description? Think about the `<select>` example 
 
 They are many other wrong examples around, but these are the most misleading that I found, compared to the fundamental HTML principle, the **composition** ([read more about it](https://developers.google.com/web/fundamentals/web-components/shadowdom#composition_slot)).
 
-> Composition is one of the least understood features of shadow DOM, but it’s arguably the most important.
-> [**Google Web Fundamentals**](https://developers.google.com/web/fundamentals/web-components/shadowdom#composition_slot)
+> Composition is one of the least understood features of shadow DOM, but it’s arguably the most important. [**Google Web Fundamentals**](https://developers.google.com/web/fundamentals/web-components/shadowdom#composition_slot)
 
 ## The right way
 
@@ -102,13 +101,13 @@ For example, let’s consider creating a custom element that shows a tooltip bal
 ```html
 <!-- usage -->
 <my-tooltip class="UserClass" text="Don't click me. I'm serious." position="right">
-  <button>CLick Me</button>
+  <button>Click Me</button>
 </my-tooltip>
 ```
 
-As we can see, our component will wrap a slotted element that user can pass as child. This element is not encapsulated in the component `#shadow-root` so who consume the component can use any element they want.
+As we can see, our component will wrap a slotted element where the user can pass a child. This element is not encapsulated in the component `#shadow-root` so those who consume the component can use any element they want.
 
-The above `<my-tooltip>` element, if we want, can also allow users to customise the tooltip balloon style — that is in the **#shadow-root** —  only through a set of custom properties, if we define them inside the `:host` selector. You can read more about defining CSS api (or style-hooks) here:
+The above `<my-tooltip>` element, if we want, can also allow users to customize the tooltip balloon style — that is in the **#shadow-root** —  only through a set of custom properties if we define them inside the `:host` selector. You can read more about defining CSS API (or style-hooks) here:
 
 > [How to define CSS api](https://equinsuocha.io/blog/how-to-define-css-api/)
 
@@ -136,10 +135,10 @@ Go on with a more complex example and define a custom element that allows only o
   </todo-list>
 ```
 
-In this example we built a custom todo list using two separated components. The `todo-list` element is just a wrapper that will accept only `todo-li` elements as children (as for ul/ol with li) and the `todo-li` element is used to define the list tasks with a priority indicator and an encapsulated native checkbox.
+In this example, we built a custom todo list using two separate components. The `todo-list` element is just a wrapper that will accept only `todo-li` elements as children (as for ul/or with li) and the `todo-li` element is used to define the list tasks with a priority indicator and an encapsulated native checkbox.
 
 ![Schermata 2018-11-19 alle 17.42.12](https://images.ctfassets.net/gz0sygvqczyz/2YhYmaXUWAESI4uQs6Yeqm/602f69c6b349c910d212058fb0c403ea/Schermata_2018-11-19_alle_17.42.12.png)
 
 ## In conclusion
 
-Composition. Web Components are useful to create new HTML elements that will compose web interfaces, as we have always done. Custom and native html elements are the ”tree leaves”, so it is an error consider them as a “big” app containers, or as application data containers. For more info, I suggest you to read the [official documentation](https://developers.google.com/web/fundamentals/web-components/) written by Google guys, in which you will find all about web components, custom elements, shadow DOM and best practices.
+Composition. Web Components are useful to create new HTML elements that will compose web interfaces, as we have always done. Custom and native HTML elements are the ”tree leaves”, so it is an error consider them as a “big” app containers, or as application data containers. For more info, I suggest reading the [official documentation](https://developers.google.com/web/fundamentals/web-components/) written by Google guys, in which you will find all about web components, custom elements, shadow DOM, and best practices.
