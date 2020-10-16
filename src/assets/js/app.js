@@ -9,7 +9,7 @@ const application = Application.start()
 
 /* Register Stimulus controllers */
 application.register('theme-switcher', ThemeSwitcher)
-application.register('post-list', GridList)
+application.register('grid-list', GridList)
 
 /**
  * Init Turbolinks within the site

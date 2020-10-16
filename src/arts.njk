@@ -3,6 +3,7 @@ metaTitle: Mattia Astorino
 metaDesc: UX Engineer in Milan and member of Open Source Design.
 ---
 {% extends 'layouts/page.njk' %}
+{% from "product-card.njk" import productCard %}
 
 {% block head %}
   <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
@@ -12,12 +13,15 @@ metaDesc: UX Engineer in Milan and member of Open Source Design.
 {% endblock %}
 
 {% block leftContent %}
-  <p class="PageDescription">My personal laboraty when i test and destroy things, and where i share my side projects.</p>
+  <p class="PageDescription" animate>Welcome to my private corner. I made these illustrations in my spare time and if you want, you can buy them in high resolution!</p>
   {% include "./components/socials.njk" %}
 {% endblock leftContent %}
 
 {% block rightContent %}
-  {% for item in products %}
-    <button class="paddle_button" data-product="{{ item.id }}" data-theme="none">Buy</button>
-  {% endfor %}
+  <div class="GridList" data-controller="grid-list" >
+    {% for item in products | reverse %}
+      {{ productCard(item.id, item.name, item.icon, item.base_price, item.currency) }}
+      {{ productCard(item.id, item.name, item.icon, item.base_price, item.currency) }}
+    {% endfor %}
+  </div>
 {% endblock rightContent %}

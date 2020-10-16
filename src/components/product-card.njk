@@ -1,0 +1,19 @@
+{% macro productCard(id, title, image, price, currency) %}
+  <div class="ProductCard NeumoBig" data-target="grid-list.item">
+    <picture class="ProductCard__Image">
+      <img src="{{ image }}" width="280" height="280" alt="" />
+    </picture>
+
+    <h5 class="ProductCard__Title">{{ title }}</h5>
+
+    <p data-size='small'>
+      4.096 x 4096px — PNG - TIFF - PDF
+    </p>
+
+    <button type="button" class="ProductCard__Cta paddle_button" data-product="{{ id }}" data-theme="none">
+      <strong>
+        {{ price + (price * 22 / 100) }} €
+      </strong>
+    </button>
+  </div>
+{% endmacro %}

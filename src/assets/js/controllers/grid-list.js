@@ -1,10 +1,10 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ["post"]
+  static targets = ["item"]
 
   connect() {
-    const posts = this.postTargets;
+    const items = this.itemTargets;
 
     let observer = new IntersectionObserver(entries => {
       entries.forEach((entry, i) => {
@@ -17,7 +17,7 @@ export default class extends Controller {
       threshold: 0.7
     });
 
-    posts.forEach(post => {
+    items.forEach(post => {
       observer.observe(post);
     });
   }

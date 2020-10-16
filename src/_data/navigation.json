@@ -4,6 +4,11 @@
       "text": "Writing",
       "url": "/",
       "external": false
+    },
+    {
+      "text": "Arts",
+      "url": "/arts",
+      "external": false
     }
   ]
 }
