@@ -27,6 +27,7 @@
   transform: translateZ(0);
   margin-bottom: 32px;
   mix-blend-mode: var(--product-card-image-blend);
+  z-index: 1;
 
   &::before {
     content: '';
@@ -42,7 +43,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    image-rendering: -webkit-optimize-contrast;
   }
 }
 

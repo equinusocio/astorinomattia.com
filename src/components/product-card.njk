@@ -1,7 +1,7 @@
 {% macro productCard(id, title, image, price, currency) %}
-  <div class="ProductCard NeumoBig" data-target="grid-list.item">
+  <div class="ProductCard NeumoBig" data-target="grid-list.item" data-controller="product-card">
     <picture class="ProductCard__Image">
-      <img src="{{ image }}" width="280" height="280" alt="" />
+      <img src="{{ image }}" width="280" height="280" alt="" data-target="product-card.image" data-zoomable />
     </picture>
 
     <h5 class="ProductCard__Title">{{ title }}</h5>
@@ -12,7 +12,7 @@
 
     <button type="button" class="ProductCard__Cta paddle_button" data-product="{{ id }}" data-theme="none">
       <strong>
-        {{ price + (price * 22 / 100) }} €
+        {{ (price + (price * 22 / 100)) | round(0) }} €
       </strong>
     </button>
   </div>
