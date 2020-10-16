@@ -8,7 +8,6 @@ const contentParser = require('./utils/transforms/contentParser.js')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const htmlDateFilter = require('./utils/filters/htmlDate.js')
 const dateFilter = require('./utils/filters/date.js')
-const toFixed = require('./utils/filters/toFixed.js')
 const readingTime = require('./utils/filters/readingTime.js')
 const fs = require('fs')
 
@@ -49,8 +48,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('htmlDate', htmlDateFilter)
   // Reading time from content
   eleventyConfig.addFilter('readingTime', readingTime)
-  // Return fixed number with 0 decimals
-  eleventyConfig.addFilter('toFixed', toFixed)
 
   /**
    * Add Transforms
