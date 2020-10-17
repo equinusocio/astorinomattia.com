@@ -6,10 +6,7 @@ metaDesc: UX Engineer in Milan and member of Open Source Design.
 {% from "product-card.njk" import productCard %}
 
 {% block head %}
-  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
-  <script type="text/javascript">
-    Paddle.Setup({ vendor: 37697 });
-  </script>
+  <meta name="turbolinks-visit-control" content="reload">
 {% endblock %}
 
 {% block leftContent %}
@@ -24,3 +21,10 @@ metaDesc: UX Engineer in Milan and member of Open Source Design.
     {% endfor %}
   </div>
 {% endblock rightContent %}
+
+{% block bodyScripts %}
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script type="text/javascript">
+    Paddle.Setup({ vendor: 37697 });
+  </script>
+{% endblock %}
