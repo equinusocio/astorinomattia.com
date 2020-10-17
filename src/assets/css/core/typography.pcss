@@ -1,8 +1,7 @@
 h1 {
   --ne-headings-line-height: 1.2;
 
-  font-size: responsive 2.37rem 3.37rem;
-  font-range: 240px 768px;
+  font-size: clamp(2.37rem, 5vw, 3.37rem);
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 800;
   color: var(--contrast-color);
@@ -10,8 +9,7 @@ h1 {
 }
 
 h2 {
-  font-size: responsive 1.93rem 2.81rem;
-  font-range: 240px 768px;
+  font-size: clamp(1.93rem, 5vw, 2.81rem);
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 700;
   color: var(--contrast-color);
@@ -19,8 +17,7 @@ h2 {
 }
 
 h3 {
-  font-size: responsive 1.62rem 2.37rem;
-  font-range: 240px 768px;
+  font-size: clamp(1.62rem, 5vw, 2.37rem);
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 700;
   color: var(--contrast-color);
@@ -28,8 +25,7 @@ h3 {
 }
 
 h4 {
-  font-size: responsive 1.37rem 1.93rem;
-  font-range: 240px 768px;
+  font-size: clamp(1.37rem, 5vw, 1.93rem);
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 700;
   color: var(--contrast-color);
@@ -37,7 +33,7 @@ h4 {
 }
 
 h5 {
-  font-size: responsive 1.37rem 1.62rem;
+  font-size: clamp(1.37rem, 5vw, 1.62rem);
   font-range: 240px 768px;
   font-family: 'Ibarra Real Nova', serif;
   font-weight: 700;
@@ -46,12 +42,11 @@ h5 {
 }
 
 p {
-  font-size: responsive 1rem 1.37rem;
-  font-range: 240px 768px;
+  font-size: clamp(1rem, 3vw, 1.37rem);
 }
 
 [data-size='small'] {
-  font-size: responsive 0.8rem 0.87rem;
+  font-size: clamp(0.8rem, 3vw, 0.87rem);
   font-range: 240px 320px;
 }
 
