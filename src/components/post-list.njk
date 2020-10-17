@@ -2,7 +2,7 @@
 
 {% macro postList(postsList) %}
 {% if postsList.length %}
-  <div class="GridList" data-controller="post-list" >
+  <div class="GridList" data-controller="grid-list" >
     {% for item in postsList | reverse %}
       {% if item.data.external_url %}
         {% set isExternal = true %}

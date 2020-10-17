@@ -1,0 +1,30 @@
+---
+metaTitle: Mattia Astorino
+metaDesc: UX Engineer in Milan and member of Open Source Design.
+---
+{% extends 'layouts/page.njk' %}
+{% from "product-card.njk" import productCard %}
+
+{% block head %}
+  <meta name="turbolinks-visit-control" content="reload">
+{% endblock %}
+
+{% block leftContent %}
+  <p class="PageDescription" animate>Welcome to my private corner. I made these illustrations in my spare time and if you want, you can buy them in high resolution!</p>
+  {% include "./components/socials.njk" %}
+{% endblock leftContent %}
+
+{% block rightContent %}
+  <div class="GridList" data-controller="grid-list" >
+    {% for item in products %}
+      {{ productCard(item.id, item.name, item.icon, item.base_price, item.currency) }}
+    {% endfor %}
+  </div>
+{% endblock rightContent %}
+
+{% block bodyScripts %}
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script type="text/javascript">
+    Paddle.Setup({ vendor: 37697 });
+  </script>
+{% endblock %}
