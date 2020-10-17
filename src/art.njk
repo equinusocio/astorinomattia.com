@@ -17,7 +17,7 @@ metaDesc: UX Engineer in Milan and member of Open Source Design.
 {% block rightContent %}
   <div class="GridList" data-controller="grid-list" >
     {% for item in products %}
-      {{ productCard(item.id, item.name, item.icon, item.base_price, item.currency) }}
+      {{ productCard(item.id, item.name, item.icon, item.base_price, item.description, item.currency) }}
     {% endfor %}
   </div>
 {% endblock rightContent %}
