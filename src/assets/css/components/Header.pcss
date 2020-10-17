@@ -1,9 +1,11 @@
 .Header {
   display: flex;
   padding-bottom: 40px;
+  justify-content: space-between;
 
   @media (width >= 60em) {
     margin-bottom: 48px;
+    justify-content: flex-start;
   }
 }
 
@@ -37,7 +39,7 @@
     }
   }
 
-  @media (width >= 48em) {
+  @media (width >= 60em) {
     &::after {
       content: '';
       height: 3px;
