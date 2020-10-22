@@ -7,7 +7,7 @@ export default class extends Controller {
 
   openCheckout(event) {
     const prodID = event.target.dataset.id
-    window.Paddle.Checkout.open({
+    Paddle.Checkout.open({
       product: prodID,
       coupon: process.env.GLOBAL_COUPON
     });
