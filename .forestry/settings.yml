@@ -16,6 +16,10 @@ front_matter_path: ''
 use_front_matter_path: false
 file_template: 'uploads/:filename:'
 build:
+  preview_env:
+  - VENDOR_ID=37697
+  - VENDOR_AUTH_CODE=749d0cc1a049393168205ca8b693a2f0eb7cb6a1d5905fb4f8
+  - GLOBAL_COUPON=""
   preview_output_directory: dist
   install_dependencies_command: yarn
   preview_docker_image: forestryio/node:12
