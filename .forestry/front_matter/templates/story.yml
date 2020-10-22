@@ -32,5 +32,3 @@ fields:
   config:
     required: false
   label: Permalink
-pages:
-- src/blog/css-stacking-context-made-easy.md
