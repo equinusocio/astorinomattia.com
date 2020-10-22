@@ -1,4 +1,3 @@
-require('dotenv').config()
 import { Controller } from 'stimulus'
 import mediumZoom from 'medium-zoom'
 
