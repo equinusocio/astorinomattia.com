@@ -21,8 +21,8 @@ Let's see what CSS properties and HTML elements trig a stacking context:
 
 * The `<html>` element
 * Element with `position` set to `relative` or `absolute`
-* Element with `position` set to `fixed` or `sticky` with `z-index` other than `auto`
-* Element that is a child of a `flexbox` or `grid` container, with `z-index` other than `auto`
+* Element with `position` set to `fixed` or `sticky` 
+* Element that is a child of a `flexbox` or `grid` container
 * Element with `opacity` value less than **1**
 * Element with `mix-blend-mode` different from `normal`
 * Element with `transform`, `filter`, `perspective`, `clip-path`, `mask`, `mask-image`, `mask-border` with value different from `none`
