@@ -19,4 +19,9 @@ A practical and common example of this is the CSS `opacity` property. When you a
 
 Let's see what CSS properties and HTML elements trig a stacking context:
 
-* the `<html>` element
+* The `<html>` element
+* Any element with `position` set to `relative` or `absolute` and with `z-index` value other than `auto`
+* Any element with `position` set to `fixed` or `sticky` with `z-index` other than `auto`
+* Any element that is a child of a `flexbox` or `grid` container, with `z-index` other than `auto`
+* Any element with `opacity` value less than **1**
+* Any element with `mix-blend-mode` different from `normal`
