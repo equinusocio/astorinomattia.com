@@ -13,6 +13,10 @@ If `z-index: 99999;` is something that you face often when you work with CSS, th
 
 ## Stacking context
 
-This term indicates a three-dimensional conceptualization of the HTML elements that are stacked across the imaginary z-axis, based on some attributes these elements can stack on top of each or hinerit properties from their parents. 
+This term indicates a three-dimensional conceptualization of the HTML elements that are stacked across the imaginary z-axis, based on some attributes these elements can stack on top of each or inherit properties from their parents.
 
-A practical and common example is the CSS `opacity` property. When you apply this property to an element, every child element, at any level, will be rendered with the same opacity level.
+A practical and common example of this is the CSS `opacity` property. When you apply this property to an element, every child element, at any level, will be rendered with the same opacity level. This property will cause the element to create a stacking context.
+
+Let's see what CSS properties and HTML elements trig a stacking context:
+
+* the `<html>` element
