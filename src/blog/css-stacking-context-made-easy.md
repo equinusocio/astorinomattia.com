@@ -20,8 +20,15 @@ A practical and common example of this is the CSS `opacity` property. When you a
 Let's see what CSS properties and HTML elements trig a stacking context:
 
 * The `<html>` element
-* Any element with `position` set to `relative` or `absolute` and with `z-index` value other than `auto`
-* Any element with `position` set to `fixed` or `sticky` with `z-index` other than `auto`
-* Any element that is a child of a `flexbox` or `grid` container, with `z-index` other than `auto`
-* Any element with `opacity` value less than **1**
-* Any element with `mix-blend-mode` different from `normal`
+* Element with `position` set to `relative` or `absolute` and with `z-index` value other than `auto`
+* Element with `position` set to `fixed` or `sticky` with `z-index` other than `auto`
+* Element that is a child of a `flexbox` or `grid` container, with `z-index` other than `auto`
+* Element with `opacity` value less than **1**
+* Element with `mix-blend-mode` different from `normal`
+* Element with `transform`, `filter`, `perspective`, `clip-path`, `mask`, `mask-image`, `mask-border` with value different from `none`
+* Element with `isolation` set to `isolate`
+* Element with `-webkit-overflow-scrolling` set to `touch`
+* Element with `contain` set to `layout` or `paint`, or keywords that include them, like `contain: strict` and `contain: content`
+* Element with `will-change` that specify one of the above properties
+
+While most of the above conditions are really rare, let's take the most common one: an `absolute` positioned element inside a container.
