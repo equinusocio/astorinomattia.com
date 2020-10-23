@@ -33,4 +33,4 @@ Let's see what CSS properties and HTML elements trig a stacking context:
 
 While most of the above conditions are really rare, let's take the most common one: an absolute-positioned element inside a container. When we want to set coordinates of an absolute element and make them relative to a parent boundary we add `position: relative` on that parent element, creating in fact a stacking-context (see the second point above)
 
-## Why you don't need high z values
+## Handling z-index
