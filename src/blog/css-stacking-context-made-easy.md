@@ -21,7 +21,7 @@ Let's see what CSS properties and HTML elements trig a stacking context:
 
 * The `<html>` element
 * Element with `position` set to `relative` or `absolute`
-* Element with `position` set to `fixed` or `sticky` 
+* Element with `position` set to `fixed` or `sticky`
 * Element that is a child of a `flexbox` or `grid` container
 * Element with `opacity` value less than **1**
 * Element with `mix-blend-mode` different from `normal`
@@ -31,6 +31,6 @@ Let's see what CSS properties and HTML elements trig a stacking context:
 * Element with `contain` set to `layout` or `paint`, or keywords that include them, like `contain: strict` and `contain: content`
 * Element with `will-change` that specify one of the above properties
 
-While most of the above conditions are really rare, let's take the most common one: an absolute-positioned element inside a container. When we want to set coordinates of an absolute element and make them relative to a parent boundary we add `position: relative` on that parent element, creating in fact a stacking-context (see the second point above)
+While most of the above conditions can be rare, let's take the most common one: an absolute-positioned element inside a container. When we want to set the coordinates of an absolute element and make them relative to a parent boundary we add `position: relative` on that parent element, creating in fact a stacking-context (see the second point above)
 
 ## Handling z-index
