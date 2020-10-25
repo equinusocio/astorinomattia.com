@@ -39,27 +39,21 @@ You can consider the stacking-context as a **virtual cardboard box** seen from t
 
 The `z-index` property let you define the position of the element across the Z-axis, inside a stacking context — from here referenced as "_box"_. If you take two real cardboard boxes, you know that you can put one on top of each other, and you can put many elements inside each of them. The elements that are inside the upper box will be positioned (or rendered speaking of CSS) above the elements that are inside the underlying box. The only difference is that in CSS, these boxes haven't "solid" boundaries, and elements can overflow outside them.
 
-Let's start from this HTML snippet:
+Let's take this markup structure:
 
-\`\`\`html
-
-<div class="A">
-
-</div>
-
-<div>
-
-</div>
-
-\`\`\`
-
-Here the visual representation of these two boxes, seen from the `CSS` point of view:
+    <div class="A">
+    	<div class="One"></div>
+        <div class="Two"></div>
+    </div>
+    <div class="B">
+    	<div class="One"></div>
+    </div>
 
 ![Side view of a visual representation of the CSS stacking-context](/images/uploads/z-index-side.svg)
 
 Are you still there? Now, follow me.
 
-In the above image, `.A` and `.B` are our two boxes (stacking-context) and they are siblings inside HTML. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case, our `<HTML>` element is the container and the main context holder as stated in the first point of the above list.
+In the above image, `.A` and `.B` are our two boxes (stacking-context) and they are siblings inside the HTML. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case, our `<HTML>` element is the container and the main context holder as stated in the first point of the above list.
 
 Now, you can notice that not only `.B` is rendered above `.A`, but also his content. You can imagine `.A > .Two` as a book inside the underling cardboard box, it's above `.One` but still inside the box `.A`, and so rendered under `.B`, speaking in terms of HTML composition.
 
