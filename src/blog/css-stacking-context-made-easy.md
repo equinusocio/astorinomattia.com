@@ -9,7 +9,7 @@ external_url: ''
 permalink: ''
 
 ---
-If `z-index: 99999;` is something that you write often when you work with CSS, this story is for you. We will see how to handle the `z-index`  property and the stacking context in your CSS.
+If `z-index: 99999;` is something you write often when you work with CSS, this story is for you. We will see how to handle the stacking context and the `z-index` property in your CSS.
 
 ## Stacking context
 
@@ -33,7 +33,7 @@ Let's see what CSS properties and HTML elements trig a stacking context:
 
 While most of the above conditions can be rare, let's take the most common one: an absolute-positioned element inside a container. When we want to set the coordinates of an absolute element and make them relative to a parent boundary we add `position: relative` on that parent element, creating in fact a stacking-context (see the second point above)
 
-You can consider the stacking-context as a **virtual cardboard box** seen from the top, that stacks elements inside it, but with non-solid boundaries.
+You can consider the stacking-context as a **virtual cardboard box** seen from the top, that stacks elements inside it, but without any solid boundaries.
 
 ## z-index and voodoo magic
 
