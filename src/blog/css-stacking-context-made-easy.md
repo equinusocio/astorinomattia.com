@@ -35,7 +35,7 @@ While most of the above conditions can be rare, let's take the most common one: 
 
 You can consider the stacking-context as a **virtual cardboard box** seen from the top, that stacks elements inside it, but with non-solid boundaries.
 
-## Handling z-index
+## z-index and voodoo
 
 The `z-index` property let you define the position of the element across the Z-axis, inside a stacking context — from here referenced as "_box"_. If you take two real cardboard boxes, you know that you can put one on top of each other, and you can put many elements inside each of them. The elements that are inside the upper box will be positioned (or rendered speaking of CSS) above the elements that are inside the underlying box. The only difference is that in CSS, these boxes haven't "solid" boundaries, and elements can overflow outside them.
 
@@ -45,8 +45,10 @@ Here the visual representation of these two boxes, seen from the `CSS` point of 
 
 Are you still there? Now, follow me.
 
-In the above image, `.A` and `.B` are our two boxes (stacking-context) and they are siblings inside HTML. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case, our `<HTML>` element is the container and the main context holder as stated in the first point of the above list. You can notice that not only `.B` is rendered above `.A`, but also his content. You can imagine `.A > .Two` as a book inside the underling cardboard box, it's above `.One` but still inside the box `.A` speaking in terms of HTML composition.
+In the above image, `.A` and `.B` are our two boxes (stacking-context) and they are siblings inside HTML. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case, our `<HTML>` element is the container and the main context holder as stated in the first point of the above list.
 
-Here is the visual representation of the same concept, but seen from the top, or in other words, from the user point of view.
+Now, you can notice that not only `.B` is rendered above `.A`, but also his content. You can imagine `.A > .Two` as a book inside the underling cardboard box, it's above `.One` but still inside the box `.A`, and so rendered under `.B`, speaking in terms of HTML composition.
+
+Here is the visual representation of the same structure, but seen from the top, or in other words, from the user point of view.
 
 ![](/images/uploads/z-index-top.svg)
