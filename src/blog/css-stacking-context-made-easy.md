@@ -49,6 +49,8 @@ Let's take this markup structure:
     	<div class="One"></div>
     </div>
 
+Here the visual representation of these two boxes, seen from the `CSS` point of view:
+
 ![Side view of a visual representation of the CSS stacking-context](/images/uploads/z-index-side.svg)
 
 Are you still there? Now, follow me.
