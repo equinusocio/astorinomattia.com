@@ -37,8 +37,10 @@ You can consider the stacking-context as a **virtual cardboard box** seen from t
 
 ## Handling z-index
 
-The `z-index` property let you define the position of the element across the Z-axis, inside a stacking context — from here referenced as "_box"_. If you take two real cardboard boxes_,_ you can put one on top of each other, but every box can have many elements inside it. The elements that are inside the upper box will be positioned (or rendered speaking of CSS) above the elements that are inside the underlying box. The only difference is that in CSS, these boxes haven't "solid" boundaries, and elements can overflow outside them.
+The `z-index` property let you define the position of the element across the Z-axis, inside a stacking context — from here referenced as "_box"_. If you take two real cardboard boxes, you know that you can put one on top of each other, and you can put many elements inside each of them. The elements that are inside the upper box will be positioned (or rendered speaking of CSS) above the elements that are inside the underlying box. The only difference is that in CSS, these boxes haven't "solid" boundaries, and elements can overflow outside them.
 
 Here the visual representation of these two boxes, seen from the `CSS` point of view:
 
-![](/images/uploads/z-index-side.svg)
+![Side view of a visual representation of the CSS stacking-context](/images/uploads/z-index-side.svg)
+
+In the above image, `.A` and `.B` are our two boxes (stacking-context) and they are siblings inside HTML. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case, our page/body is the container and the main context holder.
