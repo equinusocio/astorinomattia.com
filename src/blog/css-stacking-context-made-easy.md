@@ -1,5 +1,5 @@
 ---
-title: CSS stacking context and z-index made easy
+title: CSS stacking contexts and z-index made easy
 date: 2020-10-29T00:00:00+01:00
 metaDesc: If you have roubles with z-index and positioning, this is for you. Let's
   see how to understand the CSS stacking context.
@@ -41,13 +41,15 @@ The `z-index` property let you define the position of the element across the Z-a
 
 Let's take this markup structure:
 
-    <div class="A">
-    	<div class="One"></div>
-        <div class="Two"></div>
-    </div>
-    <div class="B">
-    	<div class="One"></div>
-    </div>
+```html
+<div class="A">
+  <div class="One"></div>
+  <div class="Two"></div>
+</div>
+<div class="B">
+  <div class="Three"></div>
+</div>
+```
 
 Here the visual representation of these two boxes, with some `CSS` applied:
 
@@ -55,12 +57,26 @@ Here the visual representation of these two boxes, with some `CSS` applied:
 
 Are you still there? Now, follow me.
 
-In the above image, `.A` and `.B` are our two boxes (stacking-context) and they are siblings inside the HTML. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case, our `<HTML>` element is the container and the main context holder as stated in the first point of the above list.
+In the above image, `.A` and `.B` are our two boxes (stacking-contexts) and they are siblings inside the same HTML parent. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case our `<HTML>` element is the container and the main context holder as stated in the first point of the above list.
 
-Now, you can notice that not only `.B` is rendered above `.A`, but also his content. You can imagine `.A > .Two` as a book inside the underling cardboard box, it's above `.One` but still inside the box `.A`, and so rendered under `.B`, speaking in terms of HTML composition.
+Now, you can notice that `.B` is not the only element rendered above `.A`, but also his content. You can imagine `.One` and `.Two` as a books inside our cardboard boxes. `.Two` is above `.One` but they still are inside the box `.A`, and so rendered under the box `.B`.
 
-Here is the visual representation of the same structure, but seen from the top, or in other words, from the user point of view.
+Here is the visual representation of the same structure, but from the top view, or in other words, from the user point of view.
 
 ![](/images/uploads/z-index-top.svg)
 
-## Handling z-index
+For this reason, putting an [over 9000](https://i.imgur.com/Okh8Z8i.gif) z-index on the element `.Two` doesn't make it rendered above `.Three`, because it's inside a stacking context that has a lower priority compared to sibling elments and contexts.
+
+## Handling indexes
+
+The stacking-context system is pretty easy once you get it, the hard part is managing your `CSS` code and keep it organized. My approach is to define one big document scope in which define a bunch of layers, and multiple smaller scopes when required inside each components.
+
+### Document scope
+
+I define 3 `z-index` levels to use across the whole project, like for dropdowns, fixed headers, modals, and contextual popups.
+
+Supposing to write a correct HTML structure, every elements will be start from level `0` (initial) by default, popups and contextual dialogs will use the level `1`, fixed headers will use the level `2` while modal dialogs will use the level `3`. With just 3 level of `z-index` you can probably handle 99.9% of the use cases. The key is to assign the appropriate level to UI elements based on their role and usage inside the whole UI.
+
+### Smaller scopes
+
+Each UI component are placed on the level `0` but they can define as many levels as required inside them. So if needed, each component can create a "private" stackng context in which handle its elements and z-indexs, al starting from the level `0` of the document scope.
