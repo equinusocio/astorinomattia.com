@@ -1,6 +1,6 @@
 ---
 title: CSS stacking context made easy
-date: 2020-10-29T00:00:00+01:00
+date: 2020-10-29T00:00:00.000+01:00
 metaDesc: If you have roubles with z-index and positioning, this is for you. Let's
   see how to understand the CSS stacking context.
 socialImage: false
@@ -25,7 +25,7 @@ Let's see what CSS properties and HTML elements trig a stacking context:
 * Element that is a child of a `flexbox` or `grid` container
 * Element with `opacity` value less than **1**
 * Element with `mix-blend-mode` different from `normal`
-* Element with `transform`, `filter`, `perspective`, `clip-path`, `mask`, `mask-image`, `mask-border` with value different from `none`
+* Element with `transform`, `filter`, `perspective`, `clip-path`, `mask`, `mask-image`, `mask-border` with a value different from `none`
 * Element with `isolation` set to `isolate`
 * Element with `-webkit-overflow-scrolling` set to `touch`
 * Element with `contain` set to `layout` or `paint`, or keywords that include them, like `contain: strict` and `contain: content`
