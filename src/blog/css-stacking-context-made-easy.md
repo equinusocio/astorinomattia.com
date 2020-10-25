@@ -1,6 +1,6 @@
 ---
 title: CSS stacking context made easy
-date: 2020-10-29T00:00:00.000+01:00
+date: 2020-10-29T00:00:00+01:00
 metaDesc: If you have roubles with z-index and positioning, this is for you. Let's
   see how to understand the CSS stacking context.
 socialImage: false
@@ -9,7 +9,7 @@ external_url: ''
 permalink: ''
 
 ---
-If `z-index: 99999;` is something that you face often when you work with CSS, this article is for you. We will see how to handle the `z-index` and the stacking context in your CSS.
+If `z-index: 99999;` is something that you write often when you work with CSS, this story is for you. We will see how to handle the `z-index` and the stacking context in your CSS.
 
 ## Stacking context
 
@@ -32,5 +32,7 @@ Let's see what CSS properties and HTML elements trig a stacking context:
 * Element with `will-change` that specify one of the above properties
 
 While most of the above conditions can be rare, let's take the most common one: an absolute-positioned element inside a container. When we want to set the coordinates of an absolute element and make them relative to a parent boundary we add `position: relative` on that parent element, creating in fact a stacking-context (see the second point above)
+
+You can consider the stacking-context as a virtual box seen from the top, that stacks elements inside it, but with non-solid boundaries.
 
 ## Handling z-index
