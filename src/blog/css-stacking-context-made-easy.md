@@ -43,6 +43,8 @@ Here the visual representation of these two boxes, seen from the `CSS` point of 
 
 ![Side view of a visual representation of the CSS stacking-context](/images/uploads/z-index-side.svg)
 
+Are you still there? Now, follow me.
+
 In the above image, `.A` and `.B` are our two boxes (stacking-context) and they are siblings inside HTML. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case, our `<HTML>` element is the container and the main context holder as stated in the first point of the above list. You can notice that not only `.B` is rendered above `.A`, but also his content. You can imagine `.A > .Two` as a book inside the underling cardboard box, it's above `.One` but still inside the box `.A` speaking in terms of HTML composition.
 
 Here is the visual representation of the same concept, but seen from the top, or in other words, from the user point of view.
