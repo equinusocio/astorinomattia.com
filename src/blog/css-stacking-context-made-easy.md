@@ -59,7 +59,7 @@ Are you still there? Now, follow me.
 
 In the above image, `.A` and `.B` are our two boxes (stacking-contexts) and they are siblings inside the same HTML parent. The `.B` element is projected and rendered above `.A` cause its `z-index` property, in this case our `<HTML>` element is the container and the main context holder as stated in the first point of the above list.
 
-Now, you can notice that `.B` is not the only element rendered above `.A`, but also his content. You can imagine `.One` and `.Two` as a books inside our cardboard boxes. `.Two` is above `.One` but they still are inside the box `.A`, and so rendered under the box `.B`.
+Now, you can notice that `.B` is not the only element rendered above `.A`, but also his content, more precisely the `.Three` element. You can imagine `.One` and `.Two` as books inside our cardboard boxes. `.Two` is above `.One` but they still are both inside the box `.A`, and so rendered under the box `.B`.
 
 Here is the visual representation of the same structure, but from the top view, or in other words, from the user point of view.
 
