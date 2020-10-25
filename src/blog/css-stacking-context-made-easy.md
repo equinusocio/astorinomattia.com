@@ -33,6 +33,8 @@ Let's see what CSS properties and HTML elements trig a stacking context:
 
 While most of the above conditions can be rare, let's take the most common one: an absolute-positioned element inside a container. When we want to set the coordinates of an absolute element and make them relative to a parent boundary we add `position: relative` on that parent element, creating in fact a stacking-context (see the second point above)
 
-You can consider the stacking-context as a virtual box seen from the top, that stacks elements inside it, but with non-solid boundaries.
+You can consider the stacking-context as a **virtual cardboard box** seen from the top, that stacks elements inside it, but with non-solid boundaries.
 
 ## Handling z-index
+
+The `z-index` property let you define the position of the element across the Z-axis, inside a stacking context — from here referenced as _box_. If we take two _boxes_
