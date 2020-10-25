@@ -79,4 +79,4 @@ Supposing to write a correct HTML structure, every elements will be start from l
 
 ### Smaller scopes
 
-Each UI component are placed on the level `0` but they can define as many levels as required inside them. So if needed, each component can create a "private" stackng context in which handle its elements and z-indexs, al starting from the level `0` of the document scope.
+Each UI component are placed on the level `0` but they can define as many levels as required inside them. So if needed, each component can create a "private" stacking context in which handle its elements and z-indexes, al starting from the level `0` of the document scope.
