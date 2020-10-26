@@ -4,11 +4,11 @@ date: 2020-10-25
 metaDesc: If you have troubles with z-index and positioning, this is for you. Let's
   see how to understand the CSS stacking context.
 socialImage: false
-tags: []
-external_url: ''
-permalink: ''
-
+tags:
+- css
+- html
 ---
+
 If `z-index: 99999;` is something you write often when you work with CSS, this story is for you. We will see how to handle the stacking context and the `z-index` property in your CSS.
 
 ## Stacking context
@@ -53,7 +53,7 @@ Let's take this markup structure:
 
 Here the visual representation of these two boxes, with some `CSS` applied:
 
-![Side view of a visual representation of the CSS stacking-context](/images/uploads/z-index-side.svg)
+<img title="Side view of a visual representation of the CSS stacking-context" data-src="https://eqsc.gumlet.io/images/uploads/z-index-side.svg">
 
 Are you still there? Now, follow me.
 
@@ -63,7 +63,8 @@ Now, you can notice that `.B` is not the only element rendered above `.A`, but a
 
 Here is the visual representation of the same structure, but from the top view, or in other words, from the user point of view.
 
-![](/images/uploads/z-index-top.svg)
+
+<img title="Side view of a visual representation of the CSS stacking-context" data-src="https://eqsc.gumlet.io/images/uploads/z-index-top.svg">
 
 For this reason, putting an [over 9000](https://i.imgur.com/Okh8Z8i.gif) z-index on the element `.Two` doesn't make it rendered above `.Three`, because it's inside a stacking context that has a lower priority compared to sibling elments and contexts.
 
