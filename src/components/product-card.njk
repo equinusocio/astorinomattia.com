@@ -11,10 +11,10 @@
       <button type="button" class="ProductCard__Cta" data-action="product-card#openCheckout" data-id="{{ id }}">
         <strong>
           {% if sale_price > 0 %}
-            <s style="opacity: 0.5">{{ (price + (price * 22 / 100)) | round(0) }}</s>
-            {{ (sale_price + (sale_price * 22 / 100)) | round(0) }} €
+            <s style="opacity: 0.5">{{ price }}</s>
+            {{ sale_price }} €
           {% else %}
-            {{ (price + (price * 22 / 100)) | round(0) }} €
+            {{ price }} €
           {% endif %}
         </strong>
       </button>
