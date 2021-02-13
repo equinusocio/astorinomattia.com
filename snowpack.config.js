@@ -6,12 +6,22 @@ module.exports = {
     assets: { url: '/static' },
   },
   plugins: [
+    ["@snowpack/plugin-babel", {
+      transformOptions: {
+        "presets": [
+          "@babel/preset-env"
+        ],
+        "plugins": [
+          "@babel/plugin-proposal-class-properties"
+        ]
+      }
+    }],
     /* https://www.snowpack.dev/reference/configuration#plugins */
     '@snowpack/plugin-postcss',
     [
       '@snowpack/plugin-run-script',
       { cmd: 'eleventy', watch: '$1 --watch --quiet' },
-    ]
+    ],
   ],
   routes: [
     /* https://www.snowpack.dev/guides/routing#nav-primary

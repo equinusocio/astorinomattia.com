@@ -1,8 +1,5 @@
 body {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
-    monospace;
-  min-height: 100vh;
-  padding: 0;
+  font-weight: 300;
 }
 
 main {

@@ -5,7 +5,8 @@
   "files.associations": {
     "*.css": "postcss",
     ".stylelintrc": "json",
-    ".eslintrc": "json"
+    ".eslintrc": "json",
+    ".html": "nunjucks"
   },
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {

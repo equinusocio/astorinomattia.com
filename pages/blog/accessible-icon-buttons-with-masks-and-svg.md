@@ -67,8 +67,9 @@ Now, we are going to use a `::pseudo-element` to add the icon. The absolute posi
 
 ```css
 .IconButton::before {
+
   /* Icon positioning related code */
-  content: "";
+  content: '';
   display: block;
   width: 50%;
   height: 50%;
@@ -89,10 +90,11 @@ Using the `mask-` properties we can set our icon as element mask as we do with d
 
 ```css
 .IconButton::before {
+
   /* Previous code... */
 
   /* Masking code */
-  mask-image: url("https://cdn.glitch.com/a10b6199-a788-4cef-8bd8-21f95dbcba93%2Fdownload-cloud.svg?v=1571346192759");
+  mask-image: url('https://cdn.glitch.com/a10b6199-a788-4cef-8bd8-21f95dbcba93%2Fdownload-cloud.svg?v=1571346192759');
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
@@ -116,7 +118,7 @@ This way you can change the background, add gradients ad make fading-out icons b
 Inside the `mask-image` you can also use an icon from your [sprite SVG](https://css-tricks.com/icon-fonts-vs-svg/) file! Pretty awesome and scalable!
 
 ```css
-mask-image: url("path/to/sprite.svg#my-icon-id");
+mask-image: url('path/to/sprite.svg#my-icon-id');
 ```
 
 Let's see some example using different icons and changing the `::before` background:
@@ -138,12 +140,15 @@ We can now flag the last step! 🎉
 
 ## Live demo
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 420px;
+  width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/accessible-icon-button?path=style.css&previewSize=0"
     title="accessible-icon-button on Glitch"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 400px; width: 100%; border: 0;">
+    style="height: 400px;
+  width: 100%;
+  border: 0;">
   </iframe>
 </div>
 

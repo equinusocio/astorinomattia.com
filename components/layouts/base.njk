@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ config.url }}/feed.xml"/>
-    {% include "meta.njk" %}
+    <meta name="color-scheme" content="dark light">
+
+    {# Icons #}
     <link rel="icon" href="/favicon.png" type="image/png"/>
+
+    {# Social and metas #}
+    {% include "meta.njk" %}
+
+    {# Warmup #}
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1/modern-normalize.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    {# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1/modern-normalize.min.css"/> #}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@native-elements/core@1/native-elements.css"/>
-     {% block head %}{% endblock %}
+
+    {# Google Fonts #}
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" />
+    </noscript>
+
+    {# Styles #}
+    <link rel="stylesheet" href="/static/css/config.css" />
     <link rel="stylesheet" href="/static/css/theme.css" />
     <link rel="stylesheet" href="/static/css/app.css" />
+
+    {# Scripts #}
     <script src="https://cdn.jsdelivr.net/npm/what-input@5.2.6/dist/what-input.min.js" defer></script>
     <script type="module" src="/static/js/app.js" defer></script>
+    <script type="text/javascript">
+      window.GUMLET_CONFIG = {
+          hosts: [{
+              current: "equinusocio.dev",
+              gumlet: "eqsc.gumlet.io"
+          }]
+      };
+      (function(){d=document;s=d.createElement("script");s.src="https://cdn.gumlet.com/gumlet.js/2.0/gumlet.min.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
+    {% block head %}{% endblock %}
   </head>
   <body>
     {% block content %}{% endblock content %}

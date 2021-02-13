@@ -1,20 +1,11 @@
 :root {
-  --color-100: #08080c;
-  --color-90: #161a1d;
-  --color-80: #333d46;
-  --color-70: #44515d;
-  --color-60: #576776;
-  --color-50: #6d8193;
-  --color-40: #8e9dab;
-  --color-30: #b3bdc7;
-  --color-20: #e3e7ea;
-  --color-10: #f8f9f9;
-  --color-0: #fff;
+  --ne-global-background: var(--color-0);
+  --ne-global-foreground: var(--color-100);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ne-global-background: #000;
-    --ne-global-foreground: #8691aa;
+    --ne-global-background: var(--color-100);
+    --ne-global-foreground: var(--color-20);
   }
 }
