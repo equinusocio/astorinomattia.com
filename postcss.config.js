@@ -10,13 +10,8 @@ module.exports = {
     'postcss-normalize': {},
     /* More info at https://github.com/csstools/postcss-preset-env */
     'postcss-preset-env': {
-      stage: 0,
-      insertAfter: {
-        'custom-media-queries': require('postcss-mixins')(),
-      },
+      stage: 0
     },
-    // github.com/seaneking/postcss-responsive-type */
-    'postcss-responsive-type': {},
     'postcss-inset': {},
     /* More info at https://cssnano.co/ */
     cssnano: {
@@ -29,11 +24,6 @@ module.exports = {
           reduceIdents: false,
         },
       ],
-    },
-    /* More info at https://github.com/postcss/postcss-reporter */
-    'postcss-reporter': {
-      clearReportedMessages: true,
-      throwError: true,
     },
   },
 };

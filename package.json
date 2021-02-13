@@ -1,45 +1,12 @@
 {
-  "name": "my-app",
-  "version": "0.0.0",
-  "private": true,
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run ts:check && npm run test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx}": "eslint",
-    "*.css": "stylelint"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>"
-    ],
-    "moduleNameMapper": {
-      "\\.(css)$": "identity-obj-proxy",
-      "\\.svg": "<rootDir>/.jest/__mocks__/svgr-mock.ts",
-      "^jest-helpers/(.*)": "<rootDir>/.jest/$1",
-      "^components/(.*)": "<rootDir>/src/components/$1",
-      "^core/(.*)": "<rootDir>/src/core/$1"
-    },
-    "setupFiles": [
-      "<rootDir>/.jest/env.ts",
-      "jest-canvas-mock"
-    ],
-    "transform": {
-      "^.+\\.(tsx|ts|js|jsx)?$": "ts-jest"
-    },
-    "testPathIgnorePatterns": [
-      "node_modules",
-      "cypress"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.test.json"
-      }
-    }
+  "name": "TODO",
+  "description": "TODO",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "sapper dev",
+    "build": "sapper build --legacy",
+    "export": "sapper export --legacy",
+    "start": "node __sapper__/build"
   },
   "browserslist": [
     "last 1 Chrome versions",
@@ -47,61 +14,35 @@
     "last 1 Safari versions",
     "last 1 Edge versions"
   ],
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "export": "next export -o dist",
-    "start": "next start",
-    "test": "jest",
-    "ts:check": "tsc --noEmit"
-  },
   "dependencies": {
-    "@native-elements/core": "1.5.4",
-    "next": "10.0.6",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "what-input": "5.2.10"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "11.0.0",
-    "@commitlint/config-conventional": "11.0.0",
-    "@lasalefamine/eslint-config": "0.2.4",
-    "@next/bundle-analyzer": "10.0.6",
-    "@testing-library/jest-dom": "5.11.9",
-    "@testing-library/react": "11.2.5",
-    "@testing-library/react-hooks": "5.0.3",
-    "@types/jest": "26.0.20",
-    "@types/node": "14.14.27",
-    "@types/react": "17.0.2",
-    "@typescript-eslint/eslint-plugin": "4.15.0",
-    "@typescript-eslint/parser": "4.15.0",
-    "babel-plugin-jsx-remove-data-test-id": "3.0.0",
-    "babel-plugin-module-resolver": "4.1.0",
+    "compression": "1.7.1",
     "cssnano": "4.1.10",
     "cssnano-preset-advanced": "4.0.7",
-    "cypress": "6.4.0",
-    "eslint": "7.20.0",
-    "eslint-plugin-cypress": "2.11.2",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-react": "7.22.0",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "husky": "5.0.9",
-    "identity-obj-proxy": "3.0.0",
-    "jest": "26.6.3",
-    "jest-canvas-mock": "2.3.1",
-    "lint-staged": "10.5.4",
+    "polka": "next",
+    "postcss": "8.2.6",
     "postcss-easy-import": "3.0.0",
     "postcss-inset": "1.0.0",
-    "postcss-mixins": "6.2.3",
+    "postcss-load-config": "3.0.1",
     "postcss-normalize": "9.0.0",
     "postcss-preset-env": "6.7.0",
-    "postcss-reporter": "6.0.1",
-    "postcss-responsive-type": "1.0.0",
-    "react-test-renderer": "17.0.1",
-    "stylelint": "13.10.0",
-    "stylelint-config-oval": "1.0.6",
-    "ts-jest": "26.5.1",
-    "typescript": "4.1.5"
+    "sirv": "1.0.0",
+    "svelte-preprocess": "4.6.8"
+  },
+  "devDependencies": {
+    "sapper": "0.28.0",
+    "svelte": "3.17.3",
+    "@babel/core": "7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/plugin-transform-runtime": "7.0.0",
+    "@babel/preset-env": "7.0.0",
+    "@babel/runtime": "7.0.0",
+    "@rollup/plugin-babel": "5.0.0",
+    "@rollup/plugin-commonjs": "14.0.0",
+    "@rollup/plugin-node-resolve": "8.0.0",
+    "@rollup/plugin-replace": "2.2.0",
+    "@rollup/plugin-url": "5.0.0",
+    "rollup": "2.3.4",
+    "rollup-plugin-svelte": "7.0.0",
+    "rollup-plugin-terser": "7.0.0"
   }
 }

@@ -1,4 +1,0 @@
-{
-  "extends": ["stylelint-config-oval"],
-  "ignoreFiles": ["!**/*.css", "packages/**/dist/*", "**/*.tsx",  "node_modules"],
-}
