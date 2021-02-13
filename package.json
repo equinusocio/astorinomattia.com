@@ -1,12 +1,20 @@
 {
-  "name": "TODO",
-  "description": "TODO",
-  "version": "0.0.1",
+  "name": "xity-starter",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A blog-ready 11ty starter based on PostCSS and Parcel, with a RSS feed and Native Elements.",
+  "author": "Mattia Astorino",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/equinusocio/xity-starter"
+  },
   "scripts": {
-    "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
-    "start": "node __sapper__/build"
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+    "update:deps": "yarn upgrade-interactive --latest && yarn upgrade",
+    "update:cssdb": "npx browserslist@latest --update-db"
   },
   "browserslist": [
     "last 1 Chrome versions",
@@ -14,35 +22,41 @@
     "last 1 Safari versions",
     "last 1 Edge versions"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn ts:check && yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.css": "stylelint"
+  },
   "dependencies": {
-    "compression": "1.7.1",
-    "cssnano": "4.1.10",
-    "cssnano-preset-advanced": "4.0.7",
-    "polka": "next",
-    "postcss": "8.2.6",
-    "postcss-easy-import": "3.0.0",
-    "postcss-inset": "1.0.0",
-    "postcss-load-config": "3.0.1",
-    "postcss-normalize": "9.0.0",
-    "postcss-preset-env": "6.7.0",
-    "sirv": "1.0.0",
-    "svelte-preprocess": "4.6.8"
+    "dotenv": "^8.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "paddle-sdk": "^2.2.0",
+    "stylelint-config-oval": "^1.0.6",
+    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
-    "sapper": "0.28.0",
-    "svelte": "3.17.3",
-    "@babel/core": "7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "7.0.0",
-    "@babel/plugin-transform-runtime": "7.0.0",
-    "@babel/preset-env": "7.0.0",
-    "@babel/runtime": "7.0.0",
-    "@rollup/plugin-babel": "5.0.0",
-    "@rollup/plugin-commonjs": "14.0.0",
-    "@rollup/plugin-node-resolve": "8.0.0",
-    "@rollup/plugin-replace": "2.2.0",
-    "@rollup/plugin-url": "5.0.0",
-    "rollup": "2.3.4",
-    "rollup-plugin-svelte": "7.0.0",
-    "rollup-plugin-terser": "7.0.0"
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "@snowpack/plugin-postcss": "^1.1.0",
+    "@snowpack/plugin-run-script": "^2.3.0",
+    "@tbranyen/jsdom": "^13.0.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "eleventy-plugin-pwa": "^1.0.8",
+    "html-minifier": "^4.0.0",
+    "husky": "^5.0.9",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "postcss-dark-theme-class": "^0.5.1",
+    "postcss-import": "^14.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "slugify": "^1.4.6",
+    "snowpack": "^3.0.11",
+    "stylelint": "^13.10.0"
   }
 }

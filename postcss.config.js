@@ -1,21 +1,21 @@
-/* eslint-disable @typescript-eslint/no-var-requires, global-require */
-
 module.exports = {
-  plugins: {
-    /* More info at https://github.com/TrySound/postcss-easy-import */
-    'postcss-easy-import': {
-      extensions: '.css',
-    },
-    /* More info https://github.com/csstools/postcss-normalize */
-    'postcss-normalize': {},
-    /* More info at https://github.com/csstools/postcss-preset-env */
-    'postcss-preset-env': {
-      stage: 0
-    },
-    'postcss-inset': {},
-    /* More info at https://cssnano.co/ */
-    cssnano: {
+  plugins: [
+    // https://github.com/postcss/postcss-import
+    require('postcss-import')(),
+    // https://github.com/postcss/postcss-dark-theme-class
+    require('postcss-dark-theme-class')({
+      darkSelector: '[data-theme="dark"]',
+      lightSelector: '[data-theme="light"]'
+    }),
+    // https://preset-env.cssdb.org
+    require('postcss-preset-env')({
+      stage: 0,
+    }),
+    // https://cssnano.co
+    require('cssnano')({
       preset: [
+        // https://cssnano.co/docs/presets
+        // https://cssnano.co/docs/what-are-optimisations#what-optimisations-do-you-support
         'advanced',
         {
           discardComments: {
@@ -24,6 +24,6 @@ module.exports = {
           reduceIdents: false,
         },
       ],
-    },
-  },
-};
+    }),
+  ],
+}

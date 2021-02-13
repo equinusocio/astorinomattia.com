@@ -1,0 +1,15 @@
+{
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "files.associations": {
+    "*.css": "postcss",
+    ".stylelintrc": "json",
+    ".eslintrc": "json"
+  },
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  }
+}

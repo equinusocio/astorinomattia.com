@@ -1,0 +1,8 @@
+{% macro postItem(url, title, date) %}
+  <li ne-prose>
+    <h3>
+      <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+    </h3>
+    <time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
+  </li>
+{% endmacro %}
