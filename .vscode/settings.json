@@ -1,0 +1,21 @@
+{
+  "eslint.alwaysShowStatus": true,
+  "javascript.validate.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.enable": true,
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "files.associations": {
+    "*.css": "postcss",
+    "*.module.css": "postcss",
+    ".stylelintrc": "json",
+    "yarn.lock": "yaml",
+    ".eslintrc": "json"
+  },
+  "stylelint.autoFixOnSave": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

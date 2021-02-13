@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+      "editorconfig.editorconfig",
+      "dbaeumer.vscode-eslint",
+      "ms-vscode.vscode-typescript-next",
+      "csstools.postcss",
+      "hex-ci.stylelint-plus"
+  ]
+}

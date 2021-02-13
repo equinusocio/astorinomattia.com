@@ -1,0 +1,35 @@
+html {
+  height: 100%;
+  -webkit-touch-callout: none;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: hsl(env(--secondary-70));
+}
+
+/* Handle Hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(env(--primary-100));
+}

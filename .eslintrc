@@ -1,0 +1,13 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["cypress"],
+  "extends": [
+    "@lasalefamine/eslint-config",
+    "@lasalefamine/eslint-config/hooks",
+    "@lasalefamine/eslint-config/a11y",
+    "plugin:cypress/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  }
+}
