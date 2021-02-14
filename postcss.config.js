@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     // https://github.com/postcss/postcss-import
-    require('postcss-import')(),
+    // require('postcss-import')(),
     // https://github.com/postcss/postcss-dark-theme-class
     require('postcss-dark-theme-class')({
       darkSelector: '[data-theme="dark"]',

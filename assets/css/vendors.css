@@ -1,0 +1,13 @@
+
+body {
+  border: 10px solid green;
+}
+
+.turbolinks-progress-bar {
+  height: 5px;
+  top: 4px;
+  left: 4px;
+  right: 20px;
+  border-radius: 5px;
+  background-color: var(--accent-color, #34f);
+}
