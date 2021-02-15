@@ -1,11 +1,13 @@
-@import './vendors.css';
+/* Basic */
 
-* {
+@import './config.css';
+@import './core.css';
 
-  /* stylelint-disable-next-line declaration-no-important */
-  margin: 0 !important;
-}
+/* Vendors */
 
-body {
-  font-weight: 300;
-}
+@import './vendors/turbolinks.css';
+
+/* Themes */
+
+@import './themes/light.css';
+@import './themes/dark.css';
