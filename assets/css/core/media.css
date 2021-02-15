@@ -1,0 +1,30 @@
+/** Breakpoints
+  *  Conversion Table (base 16px)
+  *  extraSmall = 30em → 480px
+  *  small = 48em → 768px
+  *  medium = 60em → 960px
+  *  large = 80em → 1280px
+  *  extraLarge = 100em → 1600px
+  */
+
+/* Mobile First Media Queries */
+
+@custom-media --from-extraSmall (min-width: 30em);
+@custom-media --from-small      (min-width: 48em);
+@custom-media --from-medium     (min-width: 60em);
+@custom-media --from-large      (min-width: 80em);
+@custom-media --from-extraLarge (min-width: 100em);
+
+/* Orientation Media Queries */
+
+@custom-media --portrait        (orientation: portrait);
+@custom-media --landscape       (orientation: landscape);
+
+/* Color Scheme Media Queries */
+
+@custom-media --dark-scheme     (prefers-color-scheme: dark);
+@custom-media --light-scheme    (prefers-color-scheme: light);
+
+/* Motion Media Queries */
+
+@custom-media --no-motion       (prefers-reduced-motion: reduce);

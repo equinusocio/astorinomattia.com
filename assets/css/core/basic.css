@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  background-color: var(--global-background);
+  font-size: 137%;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--global-foreground);
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+}

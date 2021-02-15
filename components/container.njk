@@ -1,0 +1,11 @@
+{% macro Container(
+  class,
+  attributes
+) %}
+  <div
+    {{ attributes }}
+    class="Container {{ class }}"
+  >
+    {{ caller() }}
+  </div>
+{% endmacro %}

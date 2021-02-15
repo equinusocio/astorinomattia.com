@@ -1,4 +1,34 @@
-<header>
+{% from "grid.njk" import Grid %}
+{% from "container.njk" import Container %}
+
+{% call Container() -%}
+  <header class="Header">
+    {% call Grid(inline=true) -%}
+
+      {# Colorful logo #}
+      <span class="Header__Logo" aria-hidden role="presentation"></span>
+
+      {# Navigation #}
+      {% if config.navigation %}
+        <nav>
+          {% call Grid(inline=true) -%}
+            {% for item in config.navigation %}
+              <a
+                href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}
+                {% if page.url == item.url %} aria-current="page" {% endif %}
+                {% if item.external == item.url %} rel="external" target="_blank" {% endif %}
+              >
+                <b>{{ item.text }}</b>
+              </a>
+            {% endfor %}
+          {%- endcall %}
+        </nav>
+      {% endif %}
+    {%- endcall %}
+  </header>
+{% endcall %}
+
+{# <header>
   {% if config.navigation %}
     <nav>
       {% for item in config.navigation %}
@@ -13,4 +43,4 @@
     </nav>
   {% endif %}
   {% include "theme-switcher.njk" %}
-</header>
+</header> #}

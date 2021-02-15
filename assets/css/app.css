@@ -1,7 +1,17 @@
-/* Basic */
+/* Configs */
 
 @import './config.css';
-@import './core.css';
+
+/* Core */
+
+@import './core/basic.css';
+@import './core/typography.css';
+
+/* Components */
+
+@import './components/grid.css';
+@import './components/header.css';
+@import './components/container.css';
 
 /* Vendors */
 
@@ -9,5 +19,5 @@
 
 /* Themes */
 
-@import './themes/light.css';
-@import './themes/dark.css';
+@import './themes/light.theme.css';
+@import './themes/dark.theme.css';

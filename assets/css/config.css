@@ -1,6 +1,6 @@
 :root {
 
-  /* Palette */
+  /* Base Colors */
 
   --color-100: #08080c;
   --color-90: #161a1d;
@@ -14,9 +14,9 @@
   --color-10: #f8f9f9;
   --color-0: #fff;
 
-  /* Native Elements config */
+  /* Semantic Color */
 
-  --ne-body-font-family: 'Roboto', sans-serif;
-  --ne-root-font-size: 137%;
-  --ne-body-font-size: 1rem;
+  --accent-color: 358 100% 77%;
+  --gradient-1: 320 100% 68%;
+  --gradient-2: 32 100% 68%;
 }

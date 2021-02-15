@@ -8,6 +8,8 @@ module.exports = {
     // https://preset-env.cssdb.org
     require('postcss-preset-env')({
       stage: 0,
+      'prefers-color-scheme-query': false,
+      'gap-properties': false,
     }),
     // https://cssnano.co
     require('cssnano')({
