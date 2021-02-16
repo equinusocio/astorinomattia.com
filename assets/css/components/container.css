@@ -1,9 +1,18 @@
 .Container {
-  max-width: 1300px;
-  padding: 0 1.09rem;
-  margin: 0 auto;
+  &[data-container-fullwidth='false'] {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
 
-  @media (width >= 60em) {
-    padding: 0 1.45rem;
+  &[data-container-padding='true'] {
+    padding:
+      0
+      calc(env(safe-area-inset-right) + 0.72rem)
+      0
+      calc(env(safe-area-inset-left) + 0.72rem);
+
+    @media (width >= 60em) {
+      padding: 0 1.45rem;
+    }
   }
 }

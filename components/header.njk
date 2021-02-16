@@ -1,30 +1,33 @@
 {% from "grid.njk" import Grid %}
+{% from "container.njk" import Container %}
 
-<header class="Header">
-  {% call Grid(inline=true, verticalAlign="center") -%}
+{% call Container(fullWidth=true) -%}
+  <header class="Header">
+    {% call Grid(inline=true, verticalAlign="center") -%}
 
-    {# Colorful logo #}
-    <span class="Header__Logo" aria-hidden="true" role="presentation"></span>
+      {# Colorful logo #}
+      <span class="Header__Logo" aria-hidden="true" role="presentation"></span>
 
-    {# Navigation #}
-    {% if config.navigation %}
-      <nav class="Header__Navigation">
-        {% call Grid(inline=true) -%}
-          {% for item in config.navigation %}
-            <a
-              class="Header__NavigationItem"
-              href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}
-              {% if page.url == item.url %} aria-current="page" {% endif %}
-              {% if item.external == item.url %} rel="external" target="_blank" {% endif %}
-            >
-              <b>{{ item.text }}</b>
-            </a>
-          {% endfor %}
-        {%- endcall %}
-      </nav>
-    {% endif %}
-  {%- endcall %}
+      {# Navigation #}
+      {% if config.navigation %}
+        <nav class="Header__Navigation">
+          {% call Grid(inline=true) -%}
+            {% for item in config.navigation %}
+              <a
+                class="Header__NavigationItem"
+                href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}
+                {% if page.url == item.url %} aria-current="page" {% endif %}
+                {% if item.external == item.url %} rel="external" target="_blank" {% endif %}
+              >
+                <b>{{ item.text }}</b>
+              </a>
+            {% endfor %}
+          {%- endcall %}
+        </nav>
+      {% endif %}
+    {%- endcall %}
 
-  {# Theme Switcher #}
-  {% include "theme-switcher.njk" %}
-</header>
+    {# Theme Switcher #}
+    {% include "theme-switcher.njk" %}
+  </header>
+{% endcall %}
