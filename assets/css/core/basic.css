@@ -34,3 +34,7 @@ body {
 [data-whatintent='touch'] *:focus {
   outline: none;
 }
+
+svg {
+  fill: currentColor;
+}

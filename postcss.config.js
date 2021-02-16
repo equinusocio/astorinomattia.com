@@ -9,7 +9,7 @@ module.exports = {
     require('postcss-preset-env')({
       stage: 0,
       'prefers-color-scheme-query': false,
-      'gap-properties': false,
+      'gap-properties': false
     }),
     // https://cssnano.co
     require('cssnano')({

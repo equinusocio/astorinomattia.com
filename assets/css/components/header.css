@@ -13,54 +13,74 @@
   width: 24px;
   height: 24px;
   border-radius: 100%;
-  background: linear-gradient(135deg, hsl(var(--gradient-color-1)) 0%, hsl(var(--gradient-color-2)) 100%);
+  background:
+    linear-gradient(
+      135deg,
+      hsl(var(--gradient-color-1)) 0%,
+      hsl(var(--gradient-color-2)) 100%
+    );
+
+  &:active {
+    animation: rubber 0.5s;
+    animation-direction: alternate;
+  }
 }
 
 .Header__Navigation {
   font-size: 0.8rem;
 }
 
-/*
-.Header__Navigation {
-  display: grid;
-  grid-auto-flow: column dense;
-  align-items: center;
-  grid-gap: 16px;
-  margin-right: 24px;
 
-  @media (width >= 60em) {
-    grid-gap: 32px;
-  }
+.Header__NavigationItem {
+  position: relative;
 
-  & .Header__Logo {
-    display: inline-flex;
-    min-width: 32px;
-  }
-
-  & > a {
-    color: var(--ne-global-foreground);
-    font-size: 1.13rem;
-    text-decoration: none;
-
-    &:hover {
-      color: var(--contrast-color);
-    }
-
-    &[aria-current='page'] {
-      color: var(--accent-color);
-    }
-  }
-
-  @media (width >= 60em) {
-    &::after {
-      content: '';
-      height: 3px;
-      background-color: var(--header-rule-color);
-      transition: background-color 80ms;
-      flex-grow: 1;
-      width: 40px;
-      display: block;
-    }
+  &[aria-current='page']::after {
+    position: absolute;
+    top: calc(100% + 0.18rem);
+    left: -0.18rem;
+    right: -0.18rem;
+    background-color: hsl(var(--accent-color));
+    height: 4px;
+    border-radius: 4px;
+    display: block;
+    content: '';
+    animation-name: scaleX;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 }
- */
+
+@keyframes scaleX {
+  0% {
+    transform: scaleX(var(--fromX, 0));
+  }
+
+  100% {
+    transform: scaleX(var(--toX, 1));
+  }
+}
+@keyframes rubber {
+  from {
+    transform: scale(1, 1);
+  }
+
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+}

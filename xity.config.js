@@ -32,7 +32,7 @@ module.exports = {
     },
     {
       "text": "Blog",
-      "url": "/blog",
+      "url": "/blog/",
       "external": false
     },
     {

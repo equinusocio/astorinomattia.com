@@ -1,0 +1,31 @@
+.ThemeSwitcher {
+  display: flex;
+}
+
+.ThemeSwitcher__ThemeButton {
+  border: 0;
+  background: none;
+  display: inline-flex;
+  flex-shrink: 0;
+  color: inherit;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @nest html[data-theme='light'] &[data-theme-name='light'] {
+    color: hsl(var(--accent-color));
+  }
+  @nest html[data-theme='dark'] &[data-theme-name='dark'] {
+    color: hsl(var(--accent-color));
+  }
+  @nest html[data-theme='auto'] &[data-theme-name='auto'] {
+    color: hsl(var(--accent-color));
+  }
+
+  & svg {
+    margin: 0;
+    width: auto;
+    height: auto;
+  }
+}
