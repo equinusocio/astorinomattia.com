@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 0;
+  padding: 0.9rem 0.9rem;
 
   @media (width >= 60em) {
-    padding: 1.8rem 0;
+    padding: 1.8rem 1.45rem;
   }
 }
 
