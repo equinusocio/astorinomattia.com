@@ -1,9 +1,22 @@
 ---
 layout: home
-title: H1 Title
+title: What I do
 ---
 
-<h2>H2 Title</h2>
-<h3>H3 Title</h3>
+{% from "grid.njk" import Grid %}
+{% from "container.njk" import Container %}
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia suscipit accusamus tenetur illum cupiditate perferendis, dolores nemo quis voluptatem obcaecati esse deserunt modi illo a quae nesciunt expedita maxime totam.</p>
+{% call Container() -%}
+  {% call Grid(columns=1, rowGap="1.09rem") -%}
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+    {% call Grid(columns=2, columnGap="4rem", horizontalAlign="start") -%}
+      {% call Grid(columns=1, rowGap="1.81rem") -%}
+        <p>I’m Mattia Astorino. As UX Engineer I build web interfaces, components library and design systems with a special love to CSS.</p>
+        <p>I’m also an open source developer, and in my spare time I do photography and digital art with my iPad Pro</p>
+      {% endcall %}
+      <div>b</div>
+    {% endcall %}
+  {% endcall %}
+{% endcall %}

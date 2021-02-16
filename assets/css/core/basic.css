@@ -18,6 +18,10 @@ body {
   color: var(--global-foreground);
   font-family: Roboto, sans-serif;
   font-size: var(--bodyFontSize);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 [tabindex='-1'] {

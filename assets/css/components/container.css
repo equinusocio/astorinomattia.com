@@ -1,6 +1,7 @@
 .Container {
   &[data-container-fullwidth='false'] {
-    max-width: 1300px;
+    width: 100%;
+    max-width: 1900px;
     margin: 0 auto;
   }
 
@@ -12,7 +13,7 @@
       calc(env(safe-area-inset-left) + 0.72rem);
 
     @media (width >= 60em) {
-      padding: 0 1.45rem;
+      padding: 0 4rem;
     }
   }
 }

@@ -33,6 +33,7 @@
 
 .Header__NavigationItem {
   position: relative;
+  font-weight: 700;
 
   &[aria-current='page']::after {
     position: absolute;

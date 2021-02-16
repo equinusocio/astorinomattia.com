@@ -5,6 +5,7 @@
   inline = false,
   verticalAlign = "unset",
   horizontalAlign = "unset",
+  responsive = true,
   class,
   attributes
 ) %}
@@ -12,6 +13,7 @@
     {{ attributes }}
     class="Grid {{ class }}"
     data-grid-inline="{{ inline }}"
+    data-grid-responsive="{{ responsive }}"
     style="
       --columnGap: {{ columnGap }};
       --rowGap: {{ rowGap }};

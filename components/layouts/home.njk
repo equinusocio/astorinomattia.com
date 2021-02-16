@@ -1,11 +1,11 @@
 {% extends 'layouts/base.njk' %}
+{% from "grid.njk" import Grid %}
 
 {% block content %}
   <main tabindex="-1">
-    {% include "header.njk" %}
-    {% if title %}
-      <h1>{{ title }}</h1>
-    {% endif %}
-    {{ content | safe }}
+    {% call Grid(rowGap="2.18rem", columns=1, verticalAlign="start") -%}
+      {% include "header.njk" %}
+      {{ content | safe }}
+    {% endcall %}
   </main>
 {% endblock %}
