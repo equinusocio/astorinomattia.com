@@ -1,5 +1,9 @@
 .Container {
   max-width: 1300px;
-  padding: 0 1.45rem;
+  padding: 0 1.09rem;
   margin: 0 auto;
+
+  @media (width >= 60em) {
+    padding: 0 1.45rem;
+  }
 }

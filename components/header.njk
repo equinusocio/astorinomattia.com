@@ -3,14 +3,14 @@
 
 {% call Container() -%}
   <header class="Header">
-    {% call Grid(inline=true) -%}
+    {% call Grid(inline=true, verticalAlign="center") -%}
 
       {# Colorful logo #}
       <span class="Header__Logo" aria-hidden role="presentation"></span>
 
       {# Navigation #}
       {% if config.navigation %}
-        <nav>
+        <nav class="Header__Navigation">
           {% call Grid(inline=true) -%}
             {% for item in config.navigation %}
               <a
@@ -25,22 +25,8 @@
         </nav>
       {% endif %}
     {%- endcall %}
+
+    {# Theme Switcher #}
+    {% include "theme-switcher.njk" %}
   </header>
 {% endcall %}
-
-{# <header>
-  {% if config.navigation %}
-    <nav>
-      {% for item in config.navigation %}
-        <a
-          href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}
-          {% if page.url == item.url %} aria-current="page" {% endif %}
-          {% if item.external == item.url %} rel="external" target="_blank" {% endif %}
-        >
-          <b>{{ item.text }}</b>
-        </a>
-      {% endfor %}
-    </nav>
-  {% endif %}
-  {% include "theme-switcher.njk" %}
-</header> #}

@@ -1,13 +1,23 @@
 .Header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 0;
+
+  @media (width >= 60em) {
+    padding: 1.8rem 0;
+  }
 }
 
 .Header__Logo {
-  width: 1.09rem;
-  height: 1.09rem;
+  width: 24px;
+  height: 24px;
   border-radius: 100%;
-  background: linear-gradient(135deg, hsl(var(--gradient-1)) 0%, hsl(var(--gradient-2)) 100%);
+  background: linear-gradient(135deg, hsl(var(--gradient-color-1)) 0%, hsl(var(--gradient-color-2)) 100%);
+}
+
+.Header__Navigation {
+  font-size: 0.8rem;
 }
 
 /*
