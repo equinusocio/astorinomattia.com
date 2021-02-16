@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  box-sizing: inherit;
 
   &::before,
   &::after {
@@ -16,7 +17,7 @@ html {
 body {
   color: var(--global-foreground);
   font-family: Roboto, sans-serif;
-  font-size: 1rem;
+  font-size: var(--bodyFontSize);
 }
 
 [tabindex='-1'] {

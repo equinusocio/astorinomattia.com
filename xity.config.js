@@ -15,7 +15,7 @@ module.exports = {
   /**
    * Content settings
    */
-  syntaxTheme: 'prism-material-light.css',
+  syntaxTheme: 'prism-mono.css',
   permalinkClass: ['permalink'],
   iframeClass: ['iframes-wrapper'],
   codeClass: ['code-wrapper'],

@@ -1,3 +1,90 @@
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+
+:--headings {
+
+  @media (width <= 48em) {
+    --bodyFontSize: 0.8rem;
+  }
+}
+
+h1 {
+  line-height: 1.2;
+  font-weight: 900;
+  min-height: 0.01vh;
+  font-size: max(2.37rem, min(5vw, 3.37rem));
+  font-size:
+    calc(
+      var(--bodyFontSize)
+      * var(--headingsScale)
+      * var(--headingsScale)
+      * var(--headingsScale)
+      * var(--headingsScale)
+      * var(--headingsScale)
+    );
+}
+
+h2 {
+  line-height: 1.2;
+  font-weight: 900;
+  min-height: 0.01vh;
+  font-size:
+    calc(
+      var(--bodyFontSize)
+      * var(--headingsScale)
+      * var(--headingsScale)
+      * var(--headingsScale)
+      * var(--headingsScale)
+    );
+}
+
+h3 {
+  line-height: 1.2;
+  font-weight: 900;
+  min-height: 0.01vh;
+  font-size:
+    calc(
+      var(--bodyFontSize)
+      * var(--headingsScale)
+      * var(--headingsScale)
+      * var(--headingsScale)
+    );
+}
+
+h4 {
+  line-height: 1.2;
+  font-weight: 900;
+  min-height: 0.01vh;
+  font-size:
+    calc(
+      var(--bodyFontSize)
+      * var(--headingsScale)
+      * var(--headingsScale)
+    );
+}
+
+h5 {
+  line-height: 1.2;
+  font-weight: 900;
+  min-height: 0.01vh;
+  font-size:
+    calc(
+      var(--bodyFontSize)
+      * var(--headingsScale)
+    );
+}
+
+h6 {
+  line-height: 1.2;
+  font-weight: 900;
+  min-height: 0.01vh;
+  font-size: var(--bodyFontSize);
+}
+
+p {
+  min-height: 0.01vh;
+  font-size: max(0.8rem, min(5vw, var(--bodyFontSize)));
+}
+
 a {
   text-decoration: none;
   font-size: inherit;
