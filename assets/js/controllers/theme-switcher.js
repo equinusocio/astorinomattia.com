@@ -5,9 +5,11 @@ export default class extends Controller {
 
   /* Set the current button theme as active if match the current theme */
   setPressed(element) {
-    const currentPressed = this.scope.element.querySelector('[aria-pressed="true"]')
-    currentPressed.setAttribute('aria-pressed', false);
-    element.setAttribute('aria-pressed', true);
+    if (!element.hasAttribute('aria-current')) {
+      const currentPressed = this.scope.element.querySelector('[aria-current]')
+      currentPressed ? currentPressed.removeAttribute('aria-current') : null;
+      element.setAttribute('aria-current', true);
+    }
   }
 
   /* Set the activated theme to root and save it to localStorage */
@@ -22,21 +24,19 @@ export default class extends Controller {
 
   /* Init theme switcher actions */
   connect() {
-    const lightButton = this.lightTarget
-    const darkButton = this.darkTarget
-    const autoButton = this.autoTarget
+    const currentTheme = localStorage.getItem('theme');
 
+    if (currentTheme) {
+      localStorage.setItem('theme', currentTheme)
 
-    lightButton.addEventListener('click', () => {
-      this.setTheme(lightButton)
-    }, false);
+      const elementToActivate = this.scope.element.querySelector(`[data-theme-name="${currentTheme}"]`)
+      this.setPressed(elementToActivate)
+    }
 
-    darkButton.addEventListener('click', () => {
-      this.setTheme(darkButton)
-    }, false);
-
-    autoButton.addEventListener('click', () => {
-      this.setTheme(autoButton)
-    }, false);
+    [this.lightTarget, this.darkTarget, this.autoTarget].forEach(element => {
+      element.addEventListener('click', (event) => {
+        this.setTheme(event.target)
+      }, false);
+    });
   }
 }
