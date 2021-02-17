@@ -1,9 +1,9 @@
 {% extends 'layouts/base.njk' %}
-{% from "grid.njk" import Grid %}
+{% from "stack.njk" import Stack %}
 
 {% block content %}
   <main tabindex="-1">
-    {% call Grid(rowGap="2.18rem", columns=1, verticalAlign="start") -%}
+    {% call Stack(rowGap="2.18rem", columns=1, verticalAlign="start") -%}
       {% include "header.njk" %}
       {{ content | safe }}
     {% endcall %}

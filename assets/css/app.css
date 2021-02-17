@@ -9,7 +9,7 @@
 
 /* Components */
 
-@import './components/grid.css';
+@import './components/stack.css';
 @import './components/header.css';
 @import './components/container.css';
 @import './components/theme-switcher.css';

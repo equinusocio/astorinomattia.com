@@ -1,9 +1,9 @@
-{% from "grid.njk" import Grid %}
+{% from "stack.njk" import Stack %}
 {% from "container.njk" import Container %}
 
 {% call Container() -%}
   <header class="Header">
-    {% call Grid(inline=true, verticalAlign="center") -%}
+    {% call Stack(inline=true, verticalAlign="center") -%}
 
       {# Colorful logo #}
       <span class="Header__Logo" aria-hidden="true" role="presentation"></span>
@@ -11,7 +11,7 @@
       {# Navigation #}
       {% if config.navigation %}
         <nav class="Header__Navigation">
-          {% call Grid(inline=true) -%}
+          {% call Stack(inline=true) -%}
             {% for item in config.navigation %}
               <a
                 class="Header__NavigationItem"

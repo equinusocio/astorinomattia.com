@@ -1,19 +1,18 @@
-{% macro Grid(
+{% macro Stack(
   columnGap = "1.45rem",
   rowGap = "1.45rem",
   columns = 3,
   inline = false,
   verticalAlign = "unset",
   horizontalAlign = "unset",
-  responsive = true,
   class,
   attributes
 ) %}
   <div
     {{ attributes }}
-    class="Grid {{ class }}"
-    data-grid-inline="{{ inline }}"
-    data-grid-responsive="{{ responsive }}"
+    class="Stack {{ class }}"
+    data-stack-inline="{{ inline }}"
+    data-stack-responsive="{{ responsive }}"
     style="
       --columnGap: {{ columnGap }};
       --rowGap: {{ rowGap }};

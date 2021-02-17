@@ -3,16 +3,16 @@ layout: home
 title: What I do
 ---
 
-{% from "grid.njk" import Grid %}
+{% from "stack.njk" import Stack %}
 {% from "container.njk" import Container %}
 
 {% call Container() -%}
-  {% call Grid(columns=1, rowGap="1.09rem") -%}
+  {% call Stack(columns=1, rowGap="1.09rem") -%}
     {% if title %}
       <h1>{{ title }}</h1>
     {% endif %}
-    {% call Grid(columns=2, columnGap="4rem", horizontalAlign="start") -%}
-      {% call Grid(columns=1, rowGap="1.81rem") -%}
+    {% call Stack(columns=2, columnGap="4rem", horizontalAlign="start") -%}
+      {% call Stack(columns=1, rowGap="1.81rem") -%}
         <p>I’m Mattia Astorino. As UX Engineer I build web interfaces, components library and design systems with a special love to CSS.</p>
         <p>I’m also an open source developer, and in my spare time I do photography and digital art with my iPad Pro</p>
       {% endcall %}
