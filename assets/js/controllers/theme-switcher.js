@@ -22,6 +22,10 @@ export default class extends Controller {
     this.setPressed(element)
   }
 
+  handleClick(event) {
+    this.setTheme(event.target)
+  }
+
   /* Init theme switcher actions */
   connect() {
     const currentTheme = localStorage.getItem('theme');
@@ -32,11 +36,5 @@ export default class extends Controller {
       const elementToActivate = this.scope.element.querySelector(`[data-theme-name="${currentTheme}"]`)
       this.setPressed(elementToActivate)
     }
-
-    [this.lightTarget, this.darkTarget, this.autoTarget].forEach(element => {
-      element.addEventListener('click', (event) => {
-        this.setTheme(event.target)
-      }, false);
-    });
   }
 }

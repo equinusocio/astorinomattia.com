@@ -14,8 +14,7 @@
             {% for item in config.navigation %}
               <a
                 class="Header__NavigationItem"
-                data-audio-fx-target="trigger"
-                href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}
+                href="{{ item.url }}"
                 {% if page.url == item.url %} aria-current="page" {% endif %}
                 {% if item.external == item.url %} rel="external" target="_blank" {% endif %}
               >
