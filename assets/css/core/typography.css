@@ -83,10 +83,15 @@ h6 {
 p {
   min-height: 0.01vh;
   font-size: max(0.8rem, min(5vw, var(--bodyFontSize)));
+  max-width: 40ch;
 }
 
 a {
   text-decoration: none;
   font-size: inherit;
   color: inherit;
+}
+
+small {
+  font-size: 0.63rem;
 }

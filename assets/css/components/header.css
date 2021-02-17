@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.9rem 0;
+  font-size: 0.8rem;
 
   @media (width >= 60em) {
     padding: 1.8rem 0;
@@ -26,16 +27,11 @@
   }
 }
 
-.Header__Navigation {
-  font-size: 0.8rem;
-}
-
-
 .Header__NavigationItem {
   position: relative;
-  font-weight: 700;
 
   &[aria-current='page']::after {
+    pointer-events: none;
     position: absolute;
     top: calc(100% + 0.18rem);
     left: -0.18rem;

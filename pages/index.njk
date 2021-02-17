@@ -11,12 +11,18 @@ title: What I do
     {% if title %}
       <h1>{{ title }}</h1>
     {% endif %}
-    {% call Stack(columns=2, columnGap="4rem", horizontalAlign="start") -%}
-      {% call Stack(columns=1, rowGap="1.81rem") -%}
-        <p>I’m Mattia Astorino. As UX Engineer I build web interfaces, components library and design systems with a special love to CSS.</p>
-        <p>I’m also an open source developer, and in my spare time I do photography and digital art with my iPad Pro</p>
-      {% endcall %}
-      <div>b</div>
+    {% call Stack(inline=true, columns=1, horizontalAlign="start") -%}
+      <div>
+        {% call Stack(columns=2, columnGap="4rem", rowGap="1.81rem", verticalAlign="start") -%}
+          {% call Stack(columns=1, rowGap="1.81rem") -%}
+            <p>I’m Mattia Astorino. As UX Engineer I build web interfaces, components library and design systems with a special love to CSS.</p>
+            <p>I’m also an open source developer, and in my spare time I do photography and digital art with my iPad Pro</p>
+          {% endcall %}
+          <div>
+            {% include "socials.njk" %}
+          </div>
+        {% endcall %}
+      </div>
     {% endcall %}
   {% endcall %}
 {% endcall %}
