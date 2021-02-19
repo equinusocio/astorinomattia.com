@@ -1,0 +1,17 @@
+{% macro Slider(
+  class,
+  gap = "1.09rem",
+  columnSize = "25vw",
+  attributes
+) %}
+  <div
+    {{ attributes }}
+    class="Slider {{ class }}"
+    style="
+      --gap: {{ gap }};
+      --columnSize: {{ columnSize }};
+    "
+  >
+    {{ caller() }}
+  </div>
+{% endmacro %}

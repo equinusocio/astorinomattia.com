@@ -1,0 +1,21 @@
+.Slider {
+  --size: 25vw;
+  --gap: 24px;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--size);
+  gap: calc(var(--gap) / 2);
+  padding-inline: var(--gap);
+  padding-block: calc(var(--gap) / 2);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: var(--gap);
+  outline-offset: -5px;
+
+  & > * {
+    scroll-snap-align: start;
+    background-color: cyan;
+  }
+}
