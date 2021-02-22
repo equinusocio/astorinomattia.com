@@ -6,12 +6,13 @@
   grid-auto-flow: column;
   grid-auto-columns: var(--size);
   gap: calc(var(--gap) / 2);
-  padding-inline: var(--gap);
-  padding-block: var(--gap);
+  padding-inline: 0.72rem;
+
+  /* padding-block: var(--gap); */
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
-  scroll-padding: calc(var(--gap) / 2);
+  scroll-padding: var(--gap);
 
   @media (width < 48em) {
     -ms-overflow-style: none;
@@ -35,6 +36,9 @@
   @media (width >= 48em) {
     grid-auto-flow: unset;
     grid-template-columns: repeat(auto-fit, minmax(min(10ch, 100%), 1fr));
+  }
+  @media (width >= 60em) {
+    padding: 0 4rem;
   }
 
   & > * {
