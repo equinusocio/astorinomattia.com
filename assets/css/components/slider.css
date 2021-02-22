@@ -1,21 +1,51 @@
 .Slider {
   --size: 25vw;
-  --gap: 24px;
+  --gap: 0.72rem;
 
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: var(--size);
   gap: calc(var(--gap) / 2);
   padding-inline: var(--gap);
-  padding-block: calc(var(--gap) / 2);
+  padding-block: var(--gap);
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
-  scroll-padding-inline: var(--gap);
-  outline-offset: -5px;
+  scroll-padding: calc(var(--gap) / 2);
+
+  @media (width < 48em) {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 6px;
+      border: 3px solid transparent;
+    }
+  }
+  @media (width >= 48em) {
+    grid-auto-flow: unset;
+    grid-template-columns: repeat(auto-fit, minmax(min(10ch, 100%), 1fr));
+  }
 
   & > * {
     scroll-snap-align: start;
     background-color: cyan;
+  }
+
+  &::after {
+    display: block;
+    height: 100%;
+    width: calc(var(--gap) / 2);
+    content: '';
   }
 }
