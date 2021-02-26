@@ -1,10 +1,7 @@
 .Slider {
-  --size: 25vw;
-  --gap: 0.72rem;
-
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: var(--size);
+  grid-auto-columns: var(--columnSize);
   gap: calc(var(--gap) / 2);
   padding-inline: 0.72rem;
 
@@ -35,7 +32,7 @@
   }
   @media (width >= 48em) {
     grid-auto-flow: unset;
-    grid-template-columns: repeat(auto-fit, minmax(min(10ch, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(20ch, 100%), 1fr));
   }
   @media (width >= 60em) {
     padding: 0 4rem;
@@ -43,7 +40,6 @@
 
   & > * {
     scroll-snap-align: start;
-    background-color: cyan;
   }
 
   &::after {

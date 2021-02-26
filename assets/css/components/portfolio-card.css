@@ -1,0 +1,9 @@
+.PortfolioCard {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+}
+
+.PortfolioCard__Content {
+  background-color: red;
+}

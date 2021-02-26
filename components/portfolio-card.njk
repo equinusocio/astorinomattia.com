@@ -1,0 +1,14 @@
+{% macro PortfolioCard(
+  label="",
+  title="",
+  text="",
+  url="#"
+) %}
+  <a class="PortfolioCard" href="{{ url }}">
+    <div class="PortfolioCard__Content">
+      <p>{{ label }}</p>
+      <p>{{ title }}</p>
+      <p>{{ text }}</p>
+    </div>
+  </a>
+{% endmacro %}

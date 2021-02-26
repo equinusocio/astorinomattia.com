@@ -6,6 +6,7 @@ title: What I do
 {% from "stack.njk" import Stack %}
 {% from "container.njk" import Container %}
 {% from "slider.njk" import Slider %}
+{% from "portfolio-card.njk" import PortfolioCard %}
 
 {% call Stack(columns=1, rowGap="4.72rem") -%}
   {% call Container() -%}
@@ -34,15 +35,12 @@ title: What I do
       <h2>Porfolio</h2>
     {% endcall %}
     {% call Slider() -%}
-      <div>a</div>
-      <div>b</div>
-      <div>c</div>
-      <div>a</div>
-      <div>b</div>
-      <div>c</div>
-      <div>a</div>
-      <div>b</div>
-      <div>c</div>
+      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
+      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
+      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
+      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
+      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
+      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
     {% endcall %}
   {% endcall %}
 {% endcall %}
