@@ -29,6 +29,7 @@
 
 .Header__NavigationItem {
   position: relative;
+  color: var(--header-navigation-item-foreground);
 
   &[aria-current='page']::after {
     pointer-events: none;

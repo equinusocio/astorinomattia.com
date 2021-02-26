@@ -8,9 +8,9 @@
   &[data-container-padding='true'] {
     padding:
       0
-      calc(env(safe-area-inset-right) + 0.72rem)
+      calc(env(safe-area-inset-right) + 1.09rem)
       0
-      calc(env(safe-area-inset-left) + 0.72rem);
+      calc(env(safe-area-inset-left) + 1.09rem);
 
     @media (width >= 60em) {
       padding: 0 4rem;

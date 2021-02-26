@@ -1,14 +1,29 @@
+{% from "label.njk" import Label %}
+{% from "stack.njk" import Stack %}
+
 {% macro PortfolioCard(
   label="",
   title="",
   text="",
-  url="#"
+  url="#",
+  color1 = "var(--color-90)",
+  color2 = "var(--color-80)"
 ) %}
-  <a class="PortfolioCard" href="{{ url }}">
-    <div class="PortfolioCard__Content">
-      <p>{{ label }}</p>
-      <p>{{ title }}</p>
-      <p>{{ text }}</p>
-    </div>
+  <a class="PortfolioCard" href="{{ url }}" target="_blank" rel="noopener noreferrer" style="--c1: {{ color1 }}; --c2: {{ color2 }}">
+    {% call Stack(
+      columns=1,
+      rowGap="0.72rem",
+      class="PortfolioCard__Content",
+      verticalAlign="start"
+    ) -%}
+      <div>
+        {% call Label(uppercase=true, class="PortfolioCard__Label") -%}
+          {{ label }}
+        {% endcall %}
+
+        <h3>{{ title }}</h3>
+      </div>
+      <p class="PortfolioCard__Text">{{ text }}</p>
+    {% endcall %}
   </a>
 {% endmacro %}

@@ -1,0 +1,9 @@
+.Label {
+  color: var(--label-foreground);
+  font-weight: 700;
+  font-size: 0.63rem;
+
+  &[data-label-uppercase='true'] {
+    text-transform: uppercase;
+  }
+}

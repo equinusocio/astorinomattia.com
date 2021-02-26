@@ -1,0 +1,13 @@
+{% macro Label(
+  uppercase = false,
+  class,
+  attributes
+) %}
+  <span
+    class="Label {{ class }}"
+    data-label-uppercase="{{ uppercase }}"
+    {{ attributes }}
+  >
+    {{ caller() }}
+  </span>
+{% endmacro %}

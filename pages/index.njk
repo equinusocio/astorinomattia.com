@@ -35,12 +35,16 @@ title: What I do
       <h2>Porfolio</h2>
     {% endcall %}
     {% call Slider() -%}
-      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
-      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
-      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
-      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
-      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
-      {{ PortfolioCard(label="LABEL", title="TITLE", text="TEXT") }}
+      {% for item in portfolio %}
+        {{ PortfolioCard(
+          label=item.label,
+          title=item.title,
+          text=item.text,
+          url=item.url,
+          color1=item.color1,
+          color2=item.color2
+        )}}
+      {% endfor %}
     {% endcall %}
   {% endcall %}
 {% endcall %}

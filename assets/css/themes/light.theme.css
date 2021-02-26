@@ -1,4 +1,12 @@
 :root {
   --global-background: var(--color-0);
   --global-foreground: var(--color-100);
+
+  /* Header */
+
+  --header-navigation-item-foreground: var(--color-100);
+
+  /* Label */
+
+  --label-foreground: var(--color-60);
 }

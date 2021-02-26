@@ -2,13 +2,14 @@
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: var(--columnSize);
-  gap: calc(var(--gap) / 2);
-  padding-inline: 0.72rem;
+  gap: var(--gap);
+  padding-inline: 1.09rem;
+  -webkit-overflow-scrolling: touch;
 
   /* padding-block: var(--gap); */
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   scroll-padding: var(--gap);
 
   @media (width < 48em) {
@@ -32,7 +33,7 @@
   }
   @media (width >= 48em) {
     grid-auto-flow: unset;
-    grid-template-columns: repeat(auto-fit, minmax(min(20ch, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(25ch, 100%), 1fr));
   }
   @media (width >= 60em) {
     padding: 0 4rem;
@@ -45,7 +46,7 @@
   &::after {
     display: block;
     height: 100%;
-    width: calc(var(--gap) / 2);
+    width: 1.09rem;
     content: '';
   }
 }
