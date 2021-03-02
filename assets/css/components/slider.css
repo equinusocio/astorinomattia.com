@@ -35,7 +35,7 @@
     grid-template-columns: repeat(auto-fit, minmax(min(28ch, 100%), 1fr));
   }
   @media (width >= 60em) {
-    padding: 0 4rem;
+    padding: var(--gap) 4rem;
   }
 
   & > * {
