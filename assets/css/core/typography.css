@@ -81,9 +81,12 @@ h6 {
 }
 
 p {
-  min-height: 0.01vh;
   font-size: max(0.8rem, min(5vw, var(--bodyFontSize)));
-  max-width: 40ch;
+  line-height: 1.5;
+
+  &[data-width='small'] {
+    max-width: 40ch;
+  }
 }
 
 a {
@@ -93,5 +96,5 @@ a {
 }
 
 small {
-  font-size: 0.63rem;
+  font-size: 0.72rem;
 }

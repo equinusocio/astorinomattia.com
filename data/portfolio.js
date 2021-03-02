@@ -31,4 +31,12 @@ module.exports = [
     color1: "#144B7F",
     color2: "#1B1C36"
   },
+  {
+    title: "XITY Starter",
+    label: "Blog Starter",
+    text: "Blog-ready starter based Eleventy, the most powerful static site generator",
+    url: "https://github.com/equinusocio/xity-starter",
+    color1: "#FF1A43",
+    color2: "#8EA1E6"
+  },
 ]

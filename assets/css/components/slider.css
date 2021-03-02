@@ -5,8 +5,7 @@
   gap: var(--gap);
   padding-inline: 1.09rem;
   -webkit-overflow-scrolling: touch;
-
-  /* padding-block: var(--gap); */
+  padding-block: var(--gap);
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
@@ -33,7 +32,7 @@
   }
   @media (width >= 48em) {
     grid-auto-flow: unset;
-    grid-template-columns: repeat(auto-fit, minmax(min(25ch, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(28ch, 100%), 1fr));
   }
   @media (width >= 60em) {
     padding: 0 4rem;
