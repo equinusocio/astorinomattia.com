@@ -8,7 +8,7 @@ title: What I do
 {% from "slider.njk" import Slider %}
 {% from "portfolio-card.njk" import PortfolioCard %}
 
-{% call Stack(columns=1, rowGap="4.72rem") -%}
+{% call Stack(columns=1, rowGap="min(12vw, 4.72rem)") -%}
   {% call Container() -%}
     {% call Stack(columns=1, rowGap="1.09rem") -%}
       {% if title %}
