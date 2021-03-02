@@ -74,7 +74,7 @@ module.exports = function (eleventyConfig) {
   /**
    * Create custom data collections
    * for blog and feed
-   * Code from https://github.com/hankchizljaw/hylia
+   * @link https://github.com/hankchizljaw/hylia
    */
   // Blog posts collection
   const now = new Date()
@@ -85,9 +85,9 @@ module.exports = function (eleventyConfig) {
     ]
   })
 
-  /*
+  /**
    * Disable use gitignore for avoiding ignoring of /bundle folder during watch
-   * https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore
+   * @link https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore
    */
   eleventyConfig.setUseGitIgnore(false)
 
