@@ -1,7 +1,7 @@
 ---
 layout: home
 title: What I do
-maxPosts: 4
+maxPosts: 6
 ---
 
 {% from "stack.njk" import Stack %}
@@ -49,7 +49,7 @@ maxPosts: 4
 
   {% if collections.posts.length %}
     {% call Section(title="Writing", url="/blog") -%}
-      {% call Slider(desktopColumnSize="45ch", columnGap="4rem") -%}
+      {% call Slider(desktopColumnSize="35ch", columnGap="4rem") -%}
         {% for item in collections.posts | reverse %}
 
           {% if item.data.external_url %}

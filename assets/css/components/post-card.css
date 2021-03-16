@@ -6,7 +6,7 @@
     counter-increment: post-counter;
     position: absolute;
     top: 0;
-    left: -2.8rem;
+    right: 2.8rem;
     z-index: -1;
     display: block;
     color: var(--postc-dard-counter-foreground, var(--color-10));
