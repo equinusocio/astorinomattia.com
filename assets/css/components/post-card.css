@@ -2,9 +2,17 @@
   position: relative;
   padding: 1.45rem 1.45rem 1.45rem 0;
 
-  &::after {
+  &::before {
     counter-increment: post-counter;
+    position: absolute;
+    top: 0;
+    left: -2.8rem;
+    z-index: -1;
     display: block;
+    color: var(--postc-dard-counter-foreground, var(--color-10));
+    line-height: 1;
+    font-size: 7rem;
+    font-weight: 100;
     content: counters(post-counter, '.', decimal-leading-zero);
   }
 }

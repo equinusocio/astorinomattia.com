@@ -1,0 +1,40 @@
+{% from "stack.njk" import Stack %}
+{% from "container.njk" import Container %}
+
+{% macro Section(
+  title,
+  class,
+  url,
+  attributes
+) %}
+  <section
+    {{ attributes }}
+    class="Section {{ class }}"
+  >
+    {% call Stack(columns=1, rowGap="0.72rem") -%}
+      {% call Container(class="Section__Head") -%}
+        <h2>{{ title }}</h2>
+        {% if url %} <a href="{{ url }}">View all</a> {% endif %}
+      {% endcall %}
+
+      {{ caller() }}
+    {% endcall %}
+  </section>
+{% endmacro %}
+
+{#
+{% macro Section(
+  head = "ciao",
+) %}
+  <section>
+    {% call Stack(columns=1, rowGap="0.72rem") -%}
+      {% call Container(class="Section__Title") -%}
+        <h2>{{ head }}</h2>
+        <a href="/blog">View all</a>
+      {% endcall %}
+
+      {{ caller() }}
+
+    {% endcall %}
+  </section>
+{% endmacro %} #}

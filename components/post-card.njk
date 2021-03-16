@@ -14,7 +14,7 @@
         {% call Label() %}
           <time class="PostCard__Date" datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
         {% endcall %}
-        <h2 class="PostCard__Title">{{ title }}</h2>
+        <h3 class="PostCard__Title">{{ title }}</h3>
 
         <p>
           {{ abstract }}

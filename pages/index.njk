@@ -1,6 +1,7 @@
 ---
 layout: home
 title: What I do
+maxPosts: 4
 ---
 
 {% from "stack.njk" import Stack %}
@@ -8,6 +9,7 @@ title: What I do
 {% from "slider.njk" import Slider %}
 {% from "portfolio-card.njk" import PortfolioCard %}
 {% from "post-card.njk" import PostCard %}
+{% from "section.njk" import Section %}
 
 {% call Stack(columns=1, rowGap="min(16vw, 4.72rem)") -%}
   {% call Container() -%}
@@ -30,10 +32,7 @@ title: What I do
     {% endcall %}
   {% endcall %}
 
-  {% call Stack(columns=1, rowGap="0.72rem") -%}
-    {% call Container() -%}
-      <h2>Porfolio</h2>
-    {% endcall %}
+  {% call Section(title="Porfolio") -%}
     {% call Slider() -%}
       {% for item in portfolio %}
         {{ PortfolioCard(
@@ -48,15 +47,8 @@ title: What I do
     {% endcall %}
   {% endcall %}
 
-
   {% if collections.posts.length %}
-    {% call Stack(columns=1, rowGap="0.72rem") -%}
-      {% call Container() -%}
-        {% call Stack(columns=1, rowGap="0.72rem") -%}
-          <h2>Writing</h2>
-        {% endcall %}
-      {% endcall %}
-
+    {% call Section(title="Writing", url="/blog") -%}
       {% call Slider(desktopColumnSize="45ch", columnGap="4rem") -%}
         {% for item in collections.posts | reverse %}
 
@@ -68,13 +60,12 @@ title: What I do
             {% set isExternal = false %}
           {% endif %}
 
-          {% if loop.index <= 4 %}
+          {% if loop.index <= maxPosts %}
             {{ PostCard(postUrl, item.data.title, item.date, item.data.metaDesc, isExternal) }}
           {% endif %}
 
         {% endfor %}
       {% endcall %}
-
     {% endcall %}
   {% endif %}
 {% endcall %}

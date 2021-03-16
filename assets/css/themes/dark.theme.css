@@ -10,5 +10,9 @@
     /* Label */
 
     --label-foreground: var(--color-40);
+
+    /* PostCard */
+
+    --postc-dard-counter-foreground: var(--color-90);
   }
 }
