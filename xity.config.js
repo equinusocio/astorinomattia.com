@@ -26,11 +26,6 @@ module.exports = {
    */
   navigation: [
     {
-      "text": "Home",
-      "url": "/",
-      "external": false
-    },
-    {
       "text": "Blog",
       "url": "/blog/",
       "external": false

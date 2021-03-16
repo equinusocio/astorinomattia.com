@@ -9,8 +9,9 @@
         <nav class="Header__Navigation">
           {% call Stack(inline=true) -%}
             {# Colorful logo #}
-            <span class="Header__Logo" aria-hidden="true" role="presentation"></span>
+            <a href="/" aria-label="Home" {% if page.url == '/' %} aria-current="page" {% endif %} class="Header__Logo" ></a>
 
+            {# Navigation items #}
             {% for item in config.navigation %}
               <a
                 class="Header__NavigationItem"
