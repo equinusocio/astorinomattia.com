@@ -1,0 +1,9 @@
+.PostCard {
+  background-color: red;
+
+  &::after {
+    counter-increment: post-counter;
+    display: block;
+    content: counters(post-counter, '.', decimal-leading-zero);
+  }
+}

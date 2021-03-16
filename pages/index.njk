@@ -7,6 +7,7 @@ title: What I do
 {% from "container.njk" import Container %}
 {% from "slider.njk" import Slider %}
 {% from "portfolio-card.njk" import PortfolioCard %}
+{% from "post-card.njk" import PostCard %}
 
 {% call Stack(columns=1, rowGap="min(12vw, 4.72rem)") -%}
   {% call Container() -%}
@@ -49,12 +50,27 @@ title: What I do
   {% endcall %}
 
 
-  {% call Stack(columns=1, rowGap="0.72rem") -%}
-    {% call Container() -%}
-      <h2>Writing</h2>
-    {% endcall %}
-    {% call Slider() -%}
+  {% if collections.posts.length %}
+    {% call Stack(columns=1, rowGap="0.72rem") -%}
+      {% call Container() -%}
+        <h2>Writing</h2>
+      {% endcall %}
+
+      {% call Slider() -%}
+        {% set postList = collections.posts %}
+        {% for item in postList | reverse %}
+          {% if item.data.external_url %}
+            {% set isExternal = true %}
+            {% set postUrl = item.data.external_url %}
+          {% else %}
+            {% set postUrl = item.url %}
+            {% set isExternal = false %}
+          {% endif %}
+
+          {{ PostCard(postUrl, item.data.title, item.date, item.data.metaDesc, isExternal) }}
+        {% endfor %}
+      {% endcall %}
 
     {% endcall %}
-  {% endcall %}
+  {% endif %}
 {% endcall %}

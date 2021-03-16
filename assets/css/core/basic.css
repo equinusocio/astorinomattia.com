@@ -20,6 +20,7 @@ body {
   font-size: var(--bodyFontSize);
   font-weight: 400;
   line-height: 1.5;
+  counter-reset: post-counter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
