@@ -1,3 +1,6 @@
+{% from "label.njk" import Label %}
+{% from "stack.njk" import Stack %}
+
 {% macro PostCard(
   url,
   title,
@@ -6,24 +9,28 @@
   isExternal
 ) %}
   <article class="PostCard">
-    <header>
-      <time class="PostCard__Date" datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
-      <h5 class="PostCard__Title">{{ title }}</h5>
-    </header>
+    {% call Stack(columns=1, rowGap="1.45rem") -%}
+      {% call Stack(columns=1, rowGap="0.72rem") -%}
+        {% call Label() %}
+          <time class="PostCard__Date" datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
+        {% endcall %}
+        <h2 class="PostCard__Title">{{ title }}</h2>
 
-    <p>
-      {{ abstract }}
-    </p>
+        <p>
+          {{ abstract }}
+        </p>
+      {% endcall %}
 
-    <a href="{{ url }}" rel="bookmark" data-size="small" class="PostCard__Cta">
-      <strong>
-        Read this story
-        {% if isExternal %}
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12"><path d="M6.793 3.793L.586 10 2 11.414l6.207-6.207L11 8V1H4l2.793 2.793z" fill="var(--contrast-color)" /></svg>
-        {% else %}
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12"><path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" /></svg>
-        {% endif %}
-      </strong>
-    </a>
+      <a href="{{ url }}" rel="bookmark" data-size="small" class="PostCard__Cta">
+        <strong>
+          Read this story
+          {% if isExternal %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12"><path d="M6.793 3.793L.586 10 2 11.414l6.207-6.207L11 8V1H4l2.793 2.793z" fill="var(--contrast-color)" /></svg>
+          {% else %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12"><path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" /></svg>
+          {% endif %}
+        </strong>
+      </a>
+    {% endcall %}
   </article>
 {% endmacro %}

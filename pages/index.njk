@@ -9,7 +9,7 @@ title: What I do
 {% from "portfolio-card.njk" import PortfolioCard %}
 {% from "post-card.njk" import PostCard %}
 
-{% call Stack(columns=1, rowGap="min(12vw, 4.72rem)") -%}
+{% call Stack(columns=1, rowGap="min(16vw, 4.72rem)") -%}
   {% call Container() -%}
     {% call Stack(columns=1, rowGap="1.09rem") -%}
       {% if title %}
@@ -22,9 +22,8 @@ title: What I do
               <p data-width="small">I’m Mattia Astorino. As UX Engineer I build web interfaces, components library and design systems with a special love to CSS.</p>
               <p data-width="small">I’m also an open-source developer, and in my spare time I do photography and digital art with my iPad Pro.</p>
             {% endcall %}
-            <div>
-              {% include "socials.njk" %}
-            </div>
+
+            {% include "socials.njk" %}
           {% endcall %}
         </div>
       {% endcall %}
@@ -53,12 +52,14 @@ title: What I do
   {% if collections.posts.length %}
     {% call Stack(columns=1, rowGap="0.72rem") -%}
       {% call Container() -%}
-        <h2>Writing</h2>
+        {% call Stack(columns=1, rowGap="0.72rem") -%}
+          <h2>Writing</h2>
+        {% endcall %}
       {% endcall %}
 
-      {% call Slider() -%}
-        {% set postList = collections.posts %}
-        {% for item in postList | reverse %}
+      {% call Slider(desktopColumnSize="45ch", columnGap="4rem") -%}
+        {% for item in collections.posts | reverse %}
+
           {% if item.data.external_url %}
             {% set isExternal = true %}
             {% set postUrl = item.data.external_url %}
@@ -67,7 +68,10 @@ title: What I do
             {% set isExternal = false %}
           {% endif %}
 
-          {{ PostCard(postUrl, item.data.title, item.date, item.data.metaDesc, isExternal) }}
+          {% if loop.index <= 4 %}
+            {{ PostCard(postUrl, item.data.title, item.date, item.data.metaDesc, isExternal) }}
+          {% endif %}
+
         {% endfor %}
       {% endcall %}
 

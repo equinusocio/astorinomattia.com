@@ -1,15 +1,19 @@
 {% macro Slider(
   class,
-  gap = "1.09rem",
+  rowGap = "1.09rem",
+  columnGap = "1.09rem",
   columnSize = "max(300px, 83vw)",
+  desktopColumnSize = "28ch",
   attributes
 ) %}
   <div
     {{ attributes }}
     class="Slider {{ class }}"
     style="
-      --gap: {{ gap }};
+      --rGap: {{ rowGap }};
+      --cGap: {{ columnGap }};
       --columnSize: {{ columnSize }};
+      --desktopColumnSize: {{ desktopColumnSize }}
     "
   >
     {{ caller() }}

@@ -1,9 +1,16 @@
 .PostCard {
-  background-color: red;
+  position: relative;
+  padding: 1.45rem 1.45rem 1.45rem 0;
 
   &::after {
     counter-increment: post-counter;
     display: block;
     content: counters(post-counter, '.', decimal-leading-zero);
+  }
+}
+
+.PostCard__Title {
+  & .Permalink {
+    display: none;
   }
 }

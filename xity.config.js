@@ -16,10 +16,10 @@ module.exports = {
    * Content settings
    */
   syntaxTheme: 'prism-mono.css',
-  permalinkClass: ['permalink'],
-  iframeClass: ['iframes-wrapper'],
-  codeClass: ['code-wrapper'],
-  figureClass: ['figure'],
+  permalinkClass: ['Permalink'],
+  iframeClass: ['IframesWrapper'],
+  codeClass: ['CodeWrapper'],
+  figureClass: ['Figure'],
   /**
    * Main navigation items.
    * Used by components/header.njk
