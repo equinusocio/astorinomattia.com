@@ -17,14 +17,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     {# Google Fonts #}
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" />
     </noscript>
 
     {# Styles #}
-    <link rel="stylesheet" href="/static/css/app.css" />
+    {# <link rel="stylesheet" href="/static/css/app.css" /> #}
+    <link rel="preload" href="/static/css/app.css" as="style">
+    <link rel="stylesheet" href="/static/css/app.css" media="print" onload="this.media='all'">
 
     {# Scripts #}
     <script src="https://cdn.jsdelivr.net/npm/what-input@5.2.6/dist/what-input.min.js" defer></script>
