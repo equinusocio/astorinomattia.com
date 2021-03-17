@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     // https://github.com/postcss/postcss-dark-theme-class
+    require('postcss-import')(),
     require('postcss-dark-theme-class')({
       darkSelector: '[data-theme="dark"]',
       lightSelector: '[data-theme="light"]'

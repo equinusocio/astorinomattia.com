@@ -20,10 +20,6 @@
 @import './components/post-card.css';
 @import './components/section.css';
 
-/* Vendors */
-
-@import './vendors/turbolinks.css';
-
 /* Themes */
 
 @import './themes/light.theme.css';
