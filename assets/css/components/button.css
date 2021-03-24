@@ -19,6 +19,7 @@
 
   &:hover,
   &:focus {
+    color: var(--global-foreground);
     background:
       radial-gradient(
         circle at top left,
