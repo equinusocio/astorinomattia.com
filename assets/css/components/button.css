@@ -19,7 +19,7 @@
     );
 
   &::before {
-    --size: 0;
+    --size: 300px;
 
     content: '';
     position: absolute;
@@ -29,11 +29,12 @@
     height: var(--size);
     background: radial-gradient(circle closest-side, hsl(var(--gradient-color-2)), transparent);
     transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease;
+    transition: opacity 0.25s ease;
+    opacity: 0;
   }
 
   &:hover::before {
-    --size: 300px;
+    opacity: 1;
   }
 
   & svg {

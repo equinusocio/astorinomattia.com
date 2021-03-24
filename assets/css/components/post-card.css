@@ -1,3 +1,5 @@
+@import '../core/media.css';
+
 .PostCard {
   position: relative;
   padding: 1.45rem 1.45rem 1.45rem 0;
@@ -24,6 +26,9 @@
 }
 
 .PostCard__Abstract {
-  min-height: 4.54rem;
   opacity: 0.8;
+
+  @media (--from-large) {
+    min-height: 4.54rem;
+  }
 }

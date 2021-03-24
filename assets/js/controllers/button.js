@@ -15,11 +15,10 @@ export default class extends Controller {
           let x = e.clientX - rect.left;
           let y = e.clientY - rect.top;
 
-          btn.style.setProperty('--x', x + 'px');
-          btn.style.setProperty('--y', y + 'px');
+          btn.style.setProperty('--x', `${x}px`);
+          btn.style.setProperty('--y', `${y}px`);
         });
       });
-
     }
   }
 }
