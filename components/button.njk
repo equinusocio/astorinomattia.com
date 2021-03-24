@@ -1,0 +1,14 @@
+{% macro Button(
+  href,
+  external
+) %}
+  {% if href %}
+    <a
+      class="Button"
+      {% if external %} rel="noopener noreferrer" target="_blank" {% endif %}
+      href="{{ href }}"
+    >{{ caller() }}</a>
+  {% else %}
+    <button class="Button" type="button" {{ attributes }}>{{ caller() }}</button>
+  {% endif %}
+{% endmacro %}

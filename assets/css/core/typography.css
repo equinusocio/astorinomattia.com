@@ -90,7 +90,8 @@ p {
 }
 
 a {
-  text-decoration: none;
+  text-decoration-thickness: 3px;
+  text-decoration-color: hsl(var(--accent-color));
   font-size: inherit;
   color: inherit;
 }

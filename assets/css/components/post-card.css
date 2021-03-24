@@ -22,3 +22,7 @@
     display: none;
   }
 }
+
+.PostCard__Abstract {
+  min-height: 4.54rem;
+}

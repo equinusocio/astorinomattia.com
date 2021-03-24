@@ -1,5 +1,5 @@
 ---
-title: details element, the native html trigger
+title: Details element, the native html trigger
 date: 2020-06-26
 metaDesc: Let's see how to to use the <details> element as a native on/off trigger
   with an eye to accessibility.
@@ -23,7 +23,8 @@ What the `<details>` element is? Well, generally speaking, this element is made 
 loading="lazy"
 src="https://details-element-trigger.glitch.me/details.html"
 title="details element as strigger on Glitch"
-style="height: 200px; width: 100%;">
+style="height: 200px;
+  width: 100%;">
 </iframe>
 
 If you inspect the code, you can notice that there is an `open` attribute that is being added when the content is expanded. Well, this is the key point of this story, with this attribute we can build a lot of UI widgets without using javascript (this doesn't mean you don't need js at all)
@@ -110,7 +111,8 @@ Here's the final result, without the JS part that update the aria-related attrib
 loading="lazy"
 src="https://details-element-trigger.glitch.me/index.html"
 title="details element as strigger on Glitch"
-style="height: 400px; width: 100%;">
+style="height: 400px;
+  width: 100%;">
 </iframe>
 
 ## Modal example
@@ -134,6 +136,7 @@ Now we can add some style to the `.Modal` element to make it look like a classic
 
 ```css
 .Modal {
+
   /* Functional style */
   position: fixed;
   inset: 20vh 2vh auto 2vh;
@@ -152,7 +155,8 @@ Now we can add some style to the `.Modal` element to make it look like a classic
 loading="lazy"
 src="https://details-element-trigger.glitch.me/modal.html"
 title="details element as strigger on Glitch"
-style="height: 400px; width: 100%;">
+style="height: 400px;
+  width: 100%;">
 </iframe>
 
 Now we have our modal, but as you can see something is missing, the interactive overlay which should close the modal when clicked.
@@ -163,7 +167,7 @@ In real situations you have to target only the `summary` element inside the deta
 
 ```css
 details[open] summary::before {
-  content: "";
+  content: '';
   background: hsl(0 0% 0% / 30%);
   position: fixed;
   inset: 0;
@@ -175,7 +179,8 @@ details[open] summary::before {
 loading="lazy"
 src="https://details-element-trigger.glitch.me/modal-full.html"
 title="details element as strigger on Glitch"
-style="height: 400px; width: 100%;">
+style="height: 400px;
+  width: 100%;">
 </iframe>
 
 Remember, this is just half of the work you need to do to make a fully accessible modal. You will need javascript to handle the focus trap, the keyboard interactions, and other things, but using the `details` element we can avoid a bit of js and let the browser doing the rest.
@@ -206,7 +211,8 @@ details[open] > .Menu {
 loading="lazy"
 src="https://details-element-trigger.glitch.me/animation.html"
 title="details element as strigger on Glitch"
-style="height: 400px; width: 100%;">
+style="height: 400px;
+  width: 100%;">
 </iframe>
 
 ## More examples
@@ -217,14 +223,16 @@ here some example of popover and vied/edit mode built using the `details` elemen
 loading="lazy"
 src="https://details-element-trigger.glitch.me/example1.html"
 title="details element as strigger on Glitch"
-style="height: 400px; width: 100%;">
+style="height: 400px;
+  width: 100%;">
 </iframe>
 
 <iframe
 loading="lazy"
 src="https://details-element-trigger.glitch.me/example2.html"
 title="details element as strigger on Glitch"
-style="height: 400px; width: 100%;">
+style="height: 400px;
+  width: 100%;">
 </iframe>
 
 ## Conclusion

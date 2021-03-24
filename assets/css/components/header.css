@@ -30,6 +30,7 @@
 .Header__NavigationItem {
   position: relative;
   color: var(--header-navigation-item-foreground);
+  text-decoration: none;
 
   &[aria-current='page']::after {
     pointer-events: none;
