@@ -1,14 +1,27 @@
 {% macro Button(
   href,
-  external
+  external,
+  label
 ) %}
   {% if href %}
     <a
       class="Button"
+      data-button-target="button"
+      {% if label %} aria-label="Read {{ label | lower }}" {% endif %}
       {% if external %} rel="noopener noreferrer" target="_blank" {% endif %}
       href="{{ href }}"
-    >{{ caller() }}</a>
+    >
+      <span>{{ caller() }}</span>
+    </a>
   {% else %}
-    <button class="Button" type="button" {{ attributes }}>{{ caller() }}</button>
+    <button
+      data-button-target="button"
+      {% if label %} aria-label="Read {{ label | lower }}" {% endif %}
+      class="Button"
+      type="button"
+      {{ attributes }}
+    >
+      <span>{{ caller() }}</span>
+    </button>
   {% endif %}
 {% endmacro %}

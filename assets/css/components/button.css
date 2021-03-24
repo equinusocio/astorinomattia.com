@@ -1,6 +1,8 @@
 .Button {
   text-decoration: none;
-  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
   align-items: center;
   padding: 0.36rem 0.72rem;
   color: var(--color-100);
@@ -8,8 +10,7 @@
   font-size: 0.72rem;
   font-family: inherit;
   border: 0;
-  border-radius: 100px;
-  gap: 16px;
+  border-radius: 8px;
   background-image:
     radial-gradient(
       circle at top left,
@@ -17,17 +18,31 @@
       hsl(var(--gradient-color-2))
     );
 
-  &:hover,
-  &:focus {
-    color: var(--global-foreground);
-    background:
-      radial-gradient(
-        circle at top left,
-        hsl(var(--gradient-color-1)),
-        hsl(var(--gradient-color-2))
-      );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  &::before {
+    --size: 0;
+
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, hsl(var(--gradient-color-2)), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+
+  &:hover::before {
+    --size: 300px;
+  }
+
+  & svg {
+    margin-left: 0.32rem;
+    pointer-events: none;
+  }
+
+  & span {
+    position: relative;
   }
 }
 

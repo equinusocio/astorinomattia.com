@@ -22,7 +22,7 @@
         </p>
       {% endcall %}
 
-      {% call Button(href=url, external=isExternal) -%}
+      {% call Button(href=url, label=title, external=isExternal) -%}
         Read this story
         {% if isExternal %}
           <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12"><path d="M6.793 3.793L.586 10 2 11.414l6.207-6.207L11 8V1H4l2.793 2.793z" fill="var(--contrast-color)" /></svg>
