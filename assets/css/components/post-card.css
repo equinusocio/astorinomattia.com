@@ -25,4 +25,5 @@
 
 .PostCard__Abstract {
   min-height: 4.54rem;
+  opacity: 0.8;
 }
