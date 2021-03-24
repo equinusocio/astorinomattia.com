@@ -1,6 +1,9 @@
 :root {
   --global-background: var(--color-0);
   --global-foreground: var(--color-100);
+  --mark-color-cyan: #b0e9fb;
+  --mark-color-green: #ccffed;
+  --mark-color-pink: #f9d8e6;
 
   /* Header */
 

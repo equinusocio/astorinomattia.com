@@ -10,6 +10,7 @@ maxPosts: 6
 {% from "portfolio-card.njk" import PortfolioCard %}
 {% from "post-card.njk" import PostCard %}
 {% from "section.njk" import Section %}
+{% from "mark.njk" import Mark %}
 
 {% call Stack(columns=1, rowGap="min(16vw, 4.72rem)") -%}
   {% call Container() -%}
@@ -21,8 +22,8 @@ maxPosts: 6
         <div>
           {% call Stack(columns=2, columnGap="4rem", rowGap="1.81rem", verticalAlign="start") -%}
             {% call Stack(columns=1, rowGap="1.81rem") -%}
-              <p data-width="small">I’m Mattia Astorino. As UX Engineer I build web interfaces, components library and design systems with a special love to CSS.</p>
-              <p data-width="small">I’m also an open-source developer, and in my spare time I do photography and digital art with my iPad Pro.</p>
+              <p data-width="small">I’m Mattia Astorino. As {% call Mark(color="var(--mark-color-cyan)") -%}UX Engineer{% endcall %} I build web interfaces, components library and design systems with a special love to CSS.</p>
+              <p data-width="small">I’m also an {% call Mark(color="var(--mark-color-green)") -%}open-source developer{% endcall %}, and in my spare time I do {% call Mark(color="var(--mark-color-pink)") -%}photography{% endcall %} and digital art with my iPad Pro.</p>
             {% endcall %}
 
             {% include "socials.njk" %}
