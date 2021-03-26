@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ config.lang }}" data-theme="auto" prefix="og: http://ogp.me/ns#">
+<html lang="{{ config.lang }}" data-theme="auto" prefix="og: http://ogp.me/ns#" data-controller="cursor">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -36,6 +36,16 @@
     <script src="https://cdn.jsdelivr.net/npm/what-input@5.2.6/dist/what-input.min.js" defer></script>
     <script type="module" src="/js/app.js" defer></script>
     <script type="text/javascript">
+      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'auto';
+
+      {% if not env.IS_DEV %}
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+      {% endif %}
+
       window.GUMLET_CONFIG = {
           hosts: [{
               current: "equinusocio.dev",
@@ -47,17 +57,8 @@
     {% block head %}{% endblock %}
   </head>
   <body data-controller="audio-fx button">
-    {% block content %}{% endblock content %}
-    <script>
-      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'auto';
+    {# {% include "cursor.njk" %} #}
 
-      {% if not env.IS_DEV %}
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js');
-          });
-        }
-      {% endif %}
-    </script>
+    {% block content %}{% endblock content %}
   </body>
 </html>

@@ -7,6 +7,7 @@ module.exports = {
     'assets/css/vendors': { url: '/css' },
   },
   plugins: [
+      /* https://www.snowpack.dev/reference/configuration#plugins */
     ["@snowpack/plugin-babel", {
       transformOptions: {
         "presets": [
@@ -17,7 +18,6 @@ module.exports = {
         ]
       }
     }],
-    /* https://www.snowpack.dev/reference/configuration#plugins */
     '@snowpack/plugin-postcss',
     [
       '@snowpack/plugin-run-script',

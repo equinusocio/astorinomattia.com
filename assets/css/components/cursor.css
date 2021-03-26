@@ -1,0 +1,15 @@
+.Cursor {
+  --size: 24px;
+  --computed-x: calc(var(--x) - (var(--size) / 2));
+  --computed-y: calc(var(--y) - (var(--size) / 2));
+
+  width: var(--size);
+  height: var(--size);
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  fill: hsl(var(--accent-color));
+  opacity: 0.2;
+  transition: transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translate(var(--computed-x), var(--computed-y));
+}

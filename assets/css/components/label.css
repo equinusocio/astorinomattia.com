@@ -2,6 +2,7 @@
   color: var(--label-foreground);
   font-weight: 700;
   font-size: 0.63rem;
+  filter: saturate(0);
 
   &[data-label-uppercase='true'] {
     text-transform: uppercase;
