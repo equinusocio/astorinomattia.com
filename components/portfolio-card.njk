@@ -9,7 +9,7 @@
   color1 = "var(--color-90)",
   color2 = "var(--color-80)"
 ) %}
-  <a class="PortfolioCard" href="{{ url }}" target="_blank" rel="noopener noreferrer" style="--c1: {{ color1 }}; --c2: {{ color2 }}">
+  <a data-button-target="button" class="PortfolioCard" href="{{ url }}" target="_blank" rel="noopener noreferrer" style="--c1: {{ color1 }}; --c2: {{ color2 }}">
     {% call Stack(
       columns=1,
       rowGap="0.72rem",
