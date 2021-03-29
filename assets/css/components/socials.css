@@ -3,7 +3,7 @@
     width: 24px;
     height: 24px;
     transition: transform 200ms;
-    pointer-events: fill;
+    pointer-events: none;
   }
 }
 

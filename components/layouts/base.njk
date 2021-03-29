@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ config.lang }}" data-theme="auto" prefix="og: http://ogp.me/ns#" data-controller="cursor">
+<html lang="{{ config.lang }}" data-theme="auto" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -56,9 +56,8 @@
     </script>
     {% block head %}{% endblock %}
   </head>
-  <body data-controller="audio-fx button">
-    {# {% include "cursor.njk" %} #}
-
+  <body data-controller="audio-fx button cursor">
+    {% include "cursor.njk" %}
     {% block content %}{% endblock content %}
   </body>
 </html>

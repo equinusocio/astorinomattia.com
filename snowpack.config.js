@@ -36,6 +36,7 @@ module.exports = {
   ],
   optimize: {
     /* https://www.snowpack.dev/guides/optimize-and-bundle#option-1%3A-built-in-optimizations */
+    // bundle: true,
     preload: true,
     splitting: true,
     treeshake: true,

@@ -4,8 +4,17 @@
   background-image: linear-gradient(var(--color), var(--color));
   background-position: 0% 100%;
   background-repeat: no-repeat;
-  background-size: 100% 1.5ex;
+  background-size: 0 1.3ex;
   word-break: break-word;
   display: inline-block;
-  transition: background-size 200ms ease-out;
+  animation: highlight 800ms 1 cubic-bezier(0, 0, 0.34, 1);
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  animation-delay: calc(var(--i, 1) * 800ms);
+}
+
+@keyframes highlight {
+  to {
+    background-size: 100% 1.3ex;
+  }
 }

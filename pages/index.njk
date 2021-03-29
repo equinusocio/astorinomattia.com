@@ -33,7 +33,7 @@ maxPosts: 3
     {% endcall %}
   {% endcall %}
 
-  {% call Section(title="Porfolio") -%}
+  {% call Section(title="Public artifacts") -%}
     {% call Slider() -%}
       {% for item in portfolio %}
         {{ PortfolioCard(
@@ -49,7 +49,7 @@ maxPosts: 3
   {% endcall %}
 
   {% if collections.posts.length %}
-    {% call Section(title="Writing", url="/blog") -%}
+    {% call Section(title="Latest stories", url="/blog") -%}
       {% call Slider(desktopColumnSize="35ch", columnGap="4rem") -%}
         {% for item in collections.posts | reverse %}
 

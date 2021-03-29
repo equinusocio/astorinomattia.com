@@ -3,6 +3,7 @@
 .PostCard {
   position: relative;
   padding: 1.45rem 1.45rem 1.45rem 0;
+  cursor: default;
 
   &::before {
     counter-increment: post-counter;
@@ -16,6 +17,21 @@
     font-size: 7rem;
     font-weight: 100;
     content: counters(post-counter, '.', decimal-leading-zero);
+    transition: transform 150ms cubic-bezier(0.3, 0.07, 0.34, 1);
+  }
+
+  & > * {
+    transition: transform 150ms cubic-bezier(0.3, 0.07, 0.34, 1);
+  }
+
+  &:hover::before {
+    transform: translate(-0.36rem, -0.36rem);
+    transition: transform 300ms cubic-bezier(0.3, 0.07, 0.34, 1);
+  }
+
+  &:hover > * {
+    transform: translate(0.36rem, 0.36rem);
+    transition: transform 500ms cubic-bezier(0.3, 0.07, 0.34, 1);
   }
 }
 

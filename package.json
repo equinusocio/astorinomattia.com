@@ -37,12 +37,12 @@
     "@babel/preset-env": "^7.12.16",
     "@snowpack/plugin-babel": "^2.1.6",
     "dotenv": "^8.2.0",
+    "gsap": "^3.6.1",
     "isomorphic-fetch": "^3.0.0",
     "paddle-sdk": "^2.2.0",
     "postcss-import": "^14.0.0",
     "stimulus": "^2.0.0",
     "stylelint-config-oval": "^1.0.6",
-    "turbolinks": "^5.2.0",
     "web-audio-daw": "^4.10.1"
   },
   "devDependencies": {
