@@ -1,5 +1,29 @@
 module.exports = [
   {
+    title: "Oval Partnership",
+    label: "UI Development",
+    text: "Oval Money partnerhips website based NextJs/React and my latest Design System",
+    url: "https://partnership.ovalmoney.com",
+    color1: "#00CE84",
+    color2: "#045FBA"
+  },
+  {
+    title: "Oval Website",
+    label: "UI Development",
+    text: "Oval Money official website based NextJs/React and my latest Design System",
+    url: "https://ovalmoney.com",
+    color1: "#734DDE",
+    color2: "#77006B"
+  },
+  {
+    title: "Oval Blog",
+    label: "UI Development",
+    text: "Oval Money blog based on NextJs/React and my latest Design System",
+    url: "https://blog.ovalmoney.com",
+    color1: "#87CA52",
+    color2: "#005B5B"
+  },
+  {
     title: "Brachetto App",
     label: "macos app",
     text: "Replacement icons on your hand with live preview, grid perfection, and persistence.",
