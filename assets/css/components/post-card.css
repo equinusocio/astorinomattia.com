@@ -24,14 +24,16 @@
     transition: transform 150ms cubic-bezier(0.3, 0.07, 0.34, 1);
   }
 
-  &:hover::before {
-    transform: translate(-0.36rem, -0.36rem);
-    transition: transform 500ms cubic-bezier(0.3, 0.07, 0.34, 1);
-  }
+  @media (hover: hover) {
+    &:hover::before {
+      transform: translate(-0.36rem, -0.36rem);
+      transition: transform 500ms cubic-bezier(0.3, 0.07, 0.34, 1);
+    }
 
-  &:hover > * {
-    transform: translate(0.36rem, 0.36rem);
-    transition: transform 500ms cubic-bezier(0.3, 0.07, 0.34, 1);
+    &:hover > * {
+      transform: translate(0.36rem, 0.36rem);
+      transition: transform 500ms cubic-bezier(0.3, 0.07, 0.34, 1);
+    }
   }
 }
 
@@ -44,7 +46,10 @@
 .PostCard__Abstract {
   opacity: 0.8;
 
-  @media (--from-large) {
-    min-height: 4.54rem;
+  &:not([data-postcard-compact='true']) & {
+
+    @media (--from-large) {
+      min-height: 4.54rem;
+    }
   }
 }

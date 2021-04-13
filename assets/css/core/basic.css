@@ -10,7 +10,7 @@
 
 html {
   background-color: var(--global-background);
-  font-size: 137%;
+  font-size: 137%; /* = 22px => 100 : 16 = 22 = 137 */
   box-sizing: border-box;
 }
 

@@ -5,6 +5,10 @@
     transition: transform 200ms;
     pointer-events: none;
   }
+
+  & a {
+    display: block;
+  }
 }
 
 .Socials a:hover svg,

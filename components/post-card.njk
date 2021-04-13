@@ -7,9 +7,10 @@
   title,
   date,
   abstract,
-  isExternal
+  isExternal,
+  compact = false
 ) %}
-  <article class="PostCard">
+  <article class="PostCard" data-postcard-compact="{{ compact }}">
     {% call Stack(columns=1, rowGap="1.45rem", horizontalAlign="start") -%}
       {% call Stack(columns=1, rowGap="0.72rem") -%}
         {% call Label() %}

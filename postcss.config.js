@@ -9,8 +9,9 @@ module.exports = {
     // https://preset-env.cssdb.org
     require('postcss-preset-env')({
       stage: 0,
-      'prefers-color-scheme-query': false,
-      'gap-properties': false
+      features: {
+        'prefers-color-scheme-query': false,
+      },
     }),
     // https://cssnano.co
     require('cssnano')({
