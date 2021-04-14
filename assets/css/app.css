@@ -22,6 +22,10 @@
 @import './components/button.css';
 @import './components/mark.css';
 @import './components/cursor.css';
+@import './components/figure.css';
+@import './components/permalink.css';
+@import './components/iframe-wrapper.css';
+@import './components/code-wrapper.css';
 
 /* Themes */
 

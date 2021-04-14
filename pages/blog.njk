@@ -10,33 +10,21 @@ title: Blog
 {% call Container() -%}
   {% call Stack(columns=1, rowGap="min(16vw, 4.72rem)") -%}
 
-  {% if collections.posts.length %}
-    {% call Stack(columns=1, rowGap="1rem", horizontalAlign="start") -%}
-      {% for item in collections.posts | reverse %}
+    {% if collections.posts.length %}
+      {% call Stack(columns=1, rowGap="1rem", horizontalAlign="start") -%}
+        {% for item in collections.posts | reverse %}
 
-          {% if item.data.external_url %}
-            {% set isExternal = true %}
-            {% set postUrl = item.data.external_url %}
-          {% else %}
-            {% set postUrl = item.url %}
-            {% set isExternal = false %}
-          {% endif %}
+            {% if item.data.external_url %}
+              {% set isExternal = true %}
+              {% set postUrl = item.data.external_url %}
+            {% else %}
+              {% set postUrl = item.url %}
+              {% set isExternal = false %}
+            {% endif %}
 
-          {{ PostCard(postUrl, item.data.title, item.date, item.data.metaDesc, isExternal, compact=true) }}
-      {% endfor %}
-    {% endcall %}
-  {% endif %}
-
-  {# {% if collections.posts.length %}
-    <ol reversed>
-      {% for item in collections.posts | reverse %}
-        {% if not loop.first %}
-          <hr/>
-        {% endif %}
-        {{ postItem(item.url, item.data.title, item.date) }}
-      {% endfor %}
-    </ol>
-  {% endif %} #}
-
+            {{ PostCard(postUrl, item.data.title, item.date, item.data.metaDesc, isExternal, compact=true) }}
+        {% endfor %}
+      {% endcall %}
+    {% endif %}
   {% endcall %}
 {% endcall %}

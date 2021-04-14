@@ -1,5 +1,6 @@
 {% macro Container(
   class,
+  small,
   fullWidth = false,
   padding = true,
   attributes
@@ -9,6 +10,7 @@
     class="Container {{ class }}"
     data-container-padding="{{ padding }}"
     data-container-fullwidth="{{ fullWidth }}"
+    data-container-small="{{ small }}""
   >
     {{ caller() }}
   </div>
