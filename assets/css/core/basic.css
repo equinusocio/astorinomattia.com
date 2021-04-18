@@ -43,6 +43,10 @@ body {
   outline: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 svg {
   fill: currentColor;
 }
@@ -59,5 +63,31 @@ svg {
 
   & > :--headings + p {
     margin-top: calc(2rem / 2);
+  }
+}
+
+ul:not([class]) {
+  list-style-type: none;
+  padding: 0;
+
+  & li {
+    padding: 8px 0 8px 1.77rem;
+    position: relative;
+
+    &::before {
+      content: '::';
+      background-image:
+        linear-gradient(
+          180deg,
+          hsl(var(--accent-color)),
+          hsl(var(--gradient-color-1))
+        );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+      display: inline-block;
+    }
   }
 }

@@ -16,8 +16,8 @@
     {% call Stack(rowGap="2.18rem", columns=1, verticalAlign="start") -%}
       {% include "header.njk" %}
 
-      {% call Container(small=true) -%}
-        {% call Stack(columns=1, rowGap="1.09rem") -%}
+      {% call Container() -%}
+        {% call Stack(columns=1, rowGap="1.09rem", horizontalAlign="center", class="PostHeader") -%}
           {% if date %}
             <small><time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time></small>
           {% endif %}
@@ -25,27 +25,28 @@
           <h1>{{ title }}</h1>
 
           {% if tags.length %}
-            <ul style="all: unset; display: inline-flex; list-style: none;">
+            <ul class="TagList">
             {% for tag in tags %}
               <li style="margin-right: 16px"><a href="/blog/tag/{{tag}}/">#{{tag}}</a></li>
             {% endfor %}
             </ul>
           {% endif %}
         {% endcall %}
-
-        <hr />
-
-        <article data-prose>
-          {{ content | safe }}
-        </article>
-
-        <hr />
-
-        {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-        {% set nextPost = collections.posts | getNextCollectionItem(page) %}
-        {{ postNavigation(previousPost, nextPost) }}
       {% endcall %}
+    {% endcall %}
 
+    {% call Container(small=true) -%}
+      <hr />
+
+      <article data-prose class="PostContent">
+        {{ content | safe }}
+      </article>
+
+      <hr />
+
+      {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+      {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+      {{ postNavigation(previousPost, nextPost) }}
     {% endcall %}
   </main>
 

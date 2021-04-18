@@ -3,6 +3,7 @@
   --computed-x: var(--x);
   --computed-y: var(--y);
 
+  display: none;
   will-change: transform;
   width: var(--size);
   height: var(--size);
@@ -11,4 +12,8 @@
   pointer-events: none;
   fill: hsl(var(--accent-color));
   opacity: 0;
+
+  @media (--from-medium) {
+    display: unset;
+  }
 }

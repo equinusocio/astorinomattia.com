@@ -14,7 +14,7 @@
     grid-template-columns: auto;
   }
 
-  @media (width >= 60em) {
+  @media (--from-medium) {
     grid-template-columns: repeat(var(--columns), 1fr);
   }
 }

@@ -17,9 +17,9 @@ module.exports = {
    */
   syntaxTheme: 'prism-mono.css',
   permalinkClass: ['Permalink'],
-  iframeClass: ['IframesWrapper'],
-  codeClass: ['CodeWrapper'],
-  figureClass: ['Figure'],
+  iframeClass: ['IframesWrapper', "Bleeding"],
+  codeClass: ['CodeWrapper', "Bleeding"],
+  figureClass: ['Figure', "Bleeding"],
   /**
    * Main navigation items.
    * Used by components/header.njk

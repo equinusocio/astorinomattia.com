@@ -8,11 +8,11 @@
   &[data-container-padding='true'] {
     padding:
       0
-      calc(env(safe-area-inset-right) + 1.09rem)
+      calc(env(safe-area-inset-right) + 0.88rem)
       0
-      calc(env(safe-area-inset-left) + 1.09rem);
+      calc(env(safe-area-inset-left) + 0.88rem);
 
-    @media (width >= 60em) {
+    @media (--from-medium) {
       padding: 0 4rem;
     }
   }

@@ -32,11 +32,11 @@
       border: 3px solid transparent;
     }
   }
-  @media (width >= 48em) {
+  @media (--from-small) {
     grid-auto-flow: unset;
     grid-template-columns: repeat(auto-fit, minmax(min(var(--desktopColumnSize), 100%), 1fr));
   }
-  @media (width >= 60em) {
+  @media (--from-medium) {
     row-gap: var(--rGap);
     column-gap: var(--cGap);
     padding: 0 4rem var(--cGap);

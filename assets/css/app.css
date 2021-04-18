@@ -26,6 +26,10 @@
 @import './components/permalink.css';
 @import './components/iframe-wrapper.css';
 @import './components/code-wrapper.css';
+@import './components/bleeding.css';
+@import './components/post-header.css';
+@import './components/post-content.css';
+@import './components/taglist.css';
 
 /* Themes */
 

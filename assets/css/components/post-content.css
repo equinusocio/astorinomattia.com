@@ -1,0 +1,8 @@
+.PostContent {
+  margin: 0 auto;
+  max-width: 52ch;
+
+  & img {
+    border-radius: 16px;
+  }
+}
