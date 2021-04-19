@@ -7,4 +7,9 @@
   text-decoration: none;
   font-weight: 700;
   color: hsl(var(--accent-color));
+
+  &:is(:hover, :focus) {
+    background-color: hsl(var(--accent-color));
+    color: var(--color-100);
+  }
 }
