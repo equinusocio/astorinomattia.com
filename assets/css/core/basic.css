@@ -71,7 +71,7 @@ ul:not([class]) {
   padding: 0;
 
   & li {
-    padding: 8px 0 8px 1.77rem;
+    padding: 8px 0 8px 1.33rem;
     position: relative;
 
     &::before {

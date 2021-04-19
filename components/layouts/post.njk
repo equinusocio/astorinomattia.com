@@ -1,7 +1,9 @@
 {% extends 'layouts/base.njk' %}
-{% from "../post-navigation.njk" import postNavigation %}
+{% from "post-navigation.njk" import postNavigation %}
 {% from "stack.njk" import Stack %}
 {% from "container.njk" import Container %}
+{% from "chip.njk" import Chip %}
+{% from "separator.njk" import Separator %}
 
 {# Populate <head> with post-related assets #}
 {% block head %}
@@ -27,7 +29,9 @@
           {% if tags.length %}
             <ul class="TagList">
             {% for tag in tags %}
-              <li style="margin-right: 16px"><a href="/blog/tag/{{tag}}/">#{{tag}}</a></li>
+              <li style="margin-right: 16px">
+                {{ Chip(text=tag) }}
+              </li>
             {% endfor %}
             </ul>
           {% endif %}
@@ -36,13 +40,13 @@
     {% endcall %}
 
     {% call Container(small=true) -%}
-      <hr />
+      {{ Separator() }}
 
       <article data-prose class="PostContent">
         {{ content | safe }}
       </article>
 
-      <hr />
+      {{ Separator() }}
 
       {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
       {% set nextPost = collections.posts | getNextCollectionItem(page) %}

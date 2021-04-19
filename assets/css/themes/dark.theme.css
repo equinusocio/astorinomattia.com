@@ -16,6 +16,10 @@
 
     /* PostCard */
 
-    --postc-dard-counter-foreground: var(--color-90);
+    --post-dard-counter-foreground: var(--color-90);
+
+    /* Separator */
+
+    --separator-color: var(--color-80);
   }
 }

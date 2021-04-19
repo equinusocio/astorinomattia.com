@@ -12,7 +12,7 @@
     left: -2.8rem;
     z-index: -1;
     display: block;
-    color: var(--postc-dard-counter-foreground, var(--color-10));
+    color: var(--post-dard-counter-foreground, var(--color-10));
     line-height: 1;
     font-size: 7rem;
     font-weight: 100;

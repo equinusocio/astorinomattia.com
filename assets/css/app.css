@@ -30,6 +30,8 @@
 @import './components/post-header.css';
 @import './components/post-content.css';
 @import './components/taglist.css';
+@import './components/chip.css';
+@import './components/separator.css';
 
 /* Themes */
 

@@ -1,3 +1,8 @@
 .PostHeader {
   text-align: center;
+  margin: 0 auto;
+
+  @media (--from-small) {
+    max-width: 70ch;
+  }
 }

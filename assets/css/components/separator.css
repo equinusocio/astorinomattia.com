@@ -1,0 +1,5 @@
+.Separator {
+  height: 1px;
+  background-color: var(--separator-color);
+  border: 0;
+}

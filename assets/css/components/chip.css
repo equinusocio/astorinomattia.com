@@ -1,0 +1,10 @@
+.Chip {
+  display: inline-flex;
+  background-color: hsl(var(--accent-color) / 10%);
+  border-radius: 0.44rem;
+  font-size: 0.88rem;
+  padding: 0.22rem 0.44rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: hsl(var(--accent-color));
+}
