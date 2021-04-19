@@ -1,6 +1,7 @@
 @custom-selector :--headings h1, h2, h3, h4, h5, h6;
 
 :--headings {
+  color: var(--headings-foreground);
 
   @media (width <= 48em) {
     --bodyFontSize: 0.8rem;
