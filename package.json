@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "snowpack dev",
-    "prebuild": "yarn eleventy",
+    "prebuild": "yarn eleventy && yarn postcss ./assets/css/app.css -o ./_output/css/index.css",
     "build": "snowpack build",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
     "update:deps": "yarn upgrade-interactive --latest && yarn upgrade",
