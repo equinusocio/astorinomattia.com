@@ -6942,11 +6942,6 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.5.tgz#b8b639cefad7d0bb2abd37d433ff8293efa5f406"
   integrity sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==
 
-tunajs@^1.0.8:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/tunajs/-/tunajs-1.0.13.tgz#6aa3d9ca3c40b70d0361b6c47f28e51bc605af02"
-  integrity sha512-FSxFGRBJzm4ogcXOvfg48OVLkCkxukV5ks6KcdiMMDr1YGqOuHFolAOHCvz4awzia90XxEMuEzxj/ptAV3Sl/g==
-
 tunnel-agent@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
@@ -7231,13 +7226,6 @@ w3c-xmlserializer@^1.0.0:
     domexception "^1.0.1"
     webidl-conversions "^4.0.2"
     xml-name-validator "^3.0.0"
-
-web-audio-daw@^4.10.1:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/web-audio-daw/-/web-audio-daw-4.11.0.tgz#75d6c5aa31df30d995f4baadf754aa0cea030f2a"
-  integrity sha512-BgwJScAjOJyPU8p8NzUjD/p8GfpoWiBt+8VeSnw8D/hGu5pB09Ec7TUXtAkjESarHFiqZCnr/CF1asbZHyITJw==
-  dependencies:
-    tunajs "^1.0.8"
 
 webidl-conversions@^4.0.2:
   version "4.0.2"
