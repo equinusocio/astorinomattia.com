@@ -51,6 +51,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
     "@snowpack/plugin-postcss": "^1.1.0",
     "@snowpack/plugin-run-script": "^2.3.0",
+    "@snowpack/plugin-webpack": "^2.3.1",
     "@tbranyen/jsdom": "^13.0.0",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",
@@ -62,7 +63,7 @@
     "postcss-dark-theme-class": "^0.5.1",
     "postcss-preset-env": "^6.7.0",
     "slugify": "^1.4.6",
-    "snowpack": "^3.0.11",
+    "snowpack": "^3.3.5",
     "stylelint": "^13.10.0"
   }
 }
