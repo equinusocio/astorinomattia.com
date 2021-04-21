@@ -92,7 +92,7 @@ ul:not([class]) {
   }
 }
 
-code {
+p code {
   padding: 0 4px 2px;
   border-radius: 4px;
   font-size: 0.9em;

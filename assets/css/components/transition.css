@@ -1,0 +1,25 @@
+@media (hover: hover) {
+  .Transition {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .Transition__Layer {
+    background-image:
+      linear-gradient(
+        to bottom,
+        hsl(var(--transition-overlay-background) / 0),
+        hsl(var(--transition-overlay-background)) 20% 70%
+      );
+    width: 100vw;
+    height: 100vw;
+    transform: scaleY(0);
+  }
+}

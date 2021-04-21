@@ -9,6 +9,6 @@ const fetchProducts = async () => {
   return data.products
 }
 
-module.exports = async function() {
-  return await fetchProducts();
-}
+// module.exports = async function() {
+//   return await fetchProducts();
+// }

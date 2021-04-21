@@ -912,6 +912,14 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@barba/core@^2.9.7":
+  version "2.9.7"
+  resolved "https://registry.yarnpkg.com/@barba/core/-/core-2.9.7.tgz#803f7b54c6fa7d69e482378168f701cbb1a28d8b"
+  integrity sha512-GLtpty1fzWnd500AoUHd+hJoSCVElqth20P4W8Bf0IAA9nd1K5e8NbPnCegXC4KzOwV+JHk5DVofAZcoc+I54Q==
+  dependencies:
+    is-promise "^2.1.0"
+    path-to-regexp "^3.0.0"
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -3759,7 +3767,7 @@ is-potential-custom-element-name@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-potential-custom-element-name/-/is-potential-custom-element-name-1.0.0.tgz#0c52e54bcca391bb2c494b21e8626d7336c6e397"
   integrity sha1-DFLlS8yjkbssSUsh6GJtczbG45c=
 
-is-promise@^2.0.0:
+is-promise@^2.0.0, is-promise@^2.1.0:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/is-promise/-/is-promise-2.2.2.tgz#39ab959ccbf9a774cf079f7b40c7a26f763135f1"
   integrity sha512-+lP4/6lKUBfQjZ2pdxThZvLUAafmZb8OAxFb8XXtiQmS35INgr85hdOGoEs124ez1FCnZJt6jau/T+alh58QFQ==
@@ -4872,6 +4880,11 @@ path-root@^0.1.1:
   integrity sha1-mkpoFMrBwM1zNgqV8yCDyOpHRbc=
   dependencies:
     path-root-regex "^0.1.0"
+
+path-to-regexp@^3.0.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-3.2.0.tgz#fa7877ecbc495c601907562222453c43cc204a5f"
+  integrity sha512-jczvQbCUS7XmS7o+y1aEO9OBVFeZBQ1MDSEqmO7xSoPgOPoowY/SxLpZ6Vh97/8qHZOteiCKb7gkG9gA2ZUxJA==
 
 path-type@^4.0.0:
   version "4.0.0"

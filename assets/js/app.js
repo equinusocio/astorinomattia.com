@@ -6,6 +6,13 @@ import AudioFx from './controllers/audio-fx'
 import Button from './controllers/button'
 import Mark from './controllers/mark'
 import Cursor from './controllers/cursor'
+import { pageTransition } from './transition'
+
+const canHoverDevice = window.matchMedia("hover: hover");
+
+if (canHoverDevice) {
+  pageTransition();
+}
 
 /* Init Stimulus library */
 const application = Application.start()
@@ -16,3 +23,4 @@ application.register('audio-fx', AudioFx)
 application.register('button', Button)
 application.register('mark', Mark)
 application.register('cursor', Cursor)
+

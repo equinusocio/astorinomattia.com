@@ -1,3 +1,5 @@
+{% from "stack.njk" import Stack %}
+
 <!doctype html>
 <html lang="{{ config.lang }}" data-theme="auto" prefix="og: http://ogp.me/ns#">
   <head>
@@ -55,8 +57,14 @@
     </script>
     {% block head %}{% endblock %}
   </head>
-  <body data-controller="audio-fx button cursor">
+  <body data-controller="audio-fx button cursor" data-barba="wrapper">
     {% include "cursor.njk" %}
-    {% block content %}{% endblock content %}
+    {% include "transition.njk" %}
+    {% call Stack(rowGap="2.18rem", columns=1, verticalAlign="start") -%}
+      {% include "header.njk" %}
+      <main tabindex="-1" data-barba="container" data-barba-namespace="{{ title }}">
+        {% block content %}{% endblock content %}
+      </main>
+    {% endcall %}
   </body>
 </html>

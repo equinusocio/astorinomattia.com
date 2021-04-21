@@ -2,7 +2,7 @@
 title: Fieldset, this stranger.
 date: '2019-01-31'
 metaDesc: "Field..wat?? Let's talk about this old friend and why you should use it to group your form elements."
-socialImage: true
+socialImage: false
 tags:
   - css
   - html

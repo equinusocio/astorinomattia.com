@@ -1,6 +1,12 @@
 .TagList {
   list-style: none;
   display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.77rem -0.22rem;
   padding: 0;
-  margin: 1.77rem 0;
+
+  & > * {
+    margin: 0.22rem;
+  }
 }

@@ -6,6 +6,7 @@
   --mark-color-green: #ccffed;
   --mark-color-pink: #f9d8e6;
   --inline-code-background: var(--color-10);
+  --transition-overlay-background: 0deg 0% 100%;
 
   /* Header */
 

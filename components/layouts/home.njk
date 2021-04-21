@@ -2,10 +2,7 @@
 {% from "stack.njk" import Stack %}
 
 {% block content %}
-  <main tabindex="-1">
-    {% call Stack(rowGap="2.18rem", columns=1, verticalAlign="start") -%}
-      {% include "header.njk" %}
-      {{ content | safe }}
-    {% endcall %}
-  </main>
+  <div>
+    {{ content | safe }}
+  </div>
 {% endblock %}

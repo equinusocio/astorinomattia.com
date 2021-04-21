@@ -13,12 +13,6 @@ permalink: /blog/tag/{{ tag | slug }}/
 {% from "container.njk" import Container %}
 {% from "post-card.njk" import PostCard %}
 
-{# {{ title  }}
-
-<h1 style="margin-bottom: 8px">#{{ tag }}</h1>
-<small>{{ collections[tag].length }} posts published</small> #}
-
-
 {% call Container() -%}
   {% call Stack(columns=1, rowGap="min(16vw, 4.72rem)") -%}
     {% call Stack(columns=1, rowGap="0.88rem") -%}

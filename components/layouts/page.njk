@@ -3,10 +3,7 @@
 {% from "container.njk" import Container %}
 
 {% block content %}
-  <main tabindex="-1">
-  {% call Stack(rowGap="2.18rem", columns=1, verticalAlign="start") -%}
-    {% include "header.njk" %}
-
+  <div>
     {% call Container() -%}
       {% call Stack(columns=1, rowGap="1.09rem") -%}
         {% if title %}
@@ -16,7 +13,6 @@
     {% endcall %}
 
     {{ content | safe }}
-  {% endcall %}
-  </main>
+  </div>
 {% endblock %}
 

@@ -2,7 +2,7 @@
 title: Making dark theme switcher with PostCSS.
 date: '2020-05-06'
 metaDesc: "Building a theme switcher that take care of users"
-socialImage: true
+socialImage: false
 tags:
   - css
   - accessibility
@@ -111,12 +111,15 @@ Each time we click on a theme button, the value set as `data-set-theme` is appli
 
 Check it live:
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 420px;
+  width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/theme-switcher-with-postcss?path=style.css&previewSize=0"
     title="accessible-icon-button on Glitch"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 400px; width: 100%; border: 0;">
+    style="height: 400px;
+  width: 100%;
+  border: 0;">
   </iframe>
 </div>
 
@@ -126,6 +129,7 @@ The magic is made by `postcss-dark-theme-class` — which will add our `[data-th
 
 ```css
 /* Our automatic and user specified light theme */
+
 :root {
   --accent-color: hsl(226deg, 100%, 50%);
   --global-background: hsl(0, 0%, 100%);
@@ -133,8 +137,9 @@ The magic is made by `postcss-dark-theme-class` — which will add our `[data-th
 }
 
 /* Our automatic dark theme */
+
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme='light']) {
     --accent-color: hsl(226deg, 100%, 50%);
     --global-background: hsl(0, 0%, 0%);
     --global-foreground: hsl(0, 0%, 100%);
@@ -142,7 +147,8 @@ The magic is made by `postcss-dark-theme-class` — which will add our `[data-th
 }
 
 /* Our dark theme specified by the user */
-:root[data-theme="dark"] {
+
+:root[data-theme='dark'] {
   --accent-color: hsl(226deg, 100%, 50%);
   --global-background: hsl(0, 0%, 0%);
   --global-foreground: hsl(0, 0%, 100%);

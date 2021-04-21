@@ -14,28 +14,24 @@
 {% endblock %}
 
 {% block content %}
-  <main tabindex="-1">
-    {% call Stack(rowGap="2.18rem", columns=1, verticalAlign="start") -%}
-      {% include "header.njk" %}
+  <div>
+    {% call Container() -%}
+      {% call Stack(columns=1, rowGap="1.09rem", horizontalAlign="center", class="PostHeader") -%}
+        {% if date %}
+          <small><time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time></small>
+        {% endif %}
 
-      {% call Container() -%}
-        {% call Stack(columns=1, rowGap="1.09rem", horizontalAlign="center", class="PostHeader") -%}
-          {% if date %}
-            <small><time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time></small>
-          {% endif %}
+        <h1>{{ title }}</h1>
 
-          <h1>{{ title }}</h1>
-
-          {% if tags.length %}
-            <ul class="TagList">
-            {% for tag in tags %}
-              <li style="margin-right: 16px">
-                {{ Chip(text=tag) }}
-              </li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        {% endcall %}
+        {% if tags.length %}
+          <ul class="TagList">
+          {% for tag in tags %}
+            <li>
+              {{ Chip(text=tag) }}
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
       {% endcall %}
     {% endcall %}
 
@@ -52,6 +48,6 @@
       {% set nextPost = collections.posts | getNextCollectionItem(page) %}
       {{ postNavigation(previousPost, nextPost) }}
     {% endcall %}
-  </main>
+  </div>
 {% endblock %}
 

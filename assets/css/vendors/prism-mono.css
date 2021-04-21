@@ -5,8 +5,15 @@ pre code {
   font-family: monospace;
   color: var(--color-10);
   overflow-x: auto;
-  font-size: 1em;
+  font-size: 0.9em;
   background-color: var(--color-100);
+}
+
+@media (min-width: 60em) {
+  pre[class*='language-'],
+  pre code {
+    font-size: 1em;
+  }
 }
 
 pre[class*='language-'] {

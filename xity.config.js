@@ -4,7 +4,7 @@ module.exports = {
    */
   name: 'Mattia Astorino',
   shortDesc: "I'm Mattia Astorino, UX Engineer in Milan and member of Open Source Design.",
-  url: 'https://xity-starter.netlify.app',
+  url: 'https://equinusocio.dev',
   lang: 'en',
   /**
    * Socials and monetisation
@@ -30,10 +30,10 @@ module.exports = {
       "url": "/blog/",
       "external": false
     },
-    {
-      "text": "Art",
-      "url": "/art/",
-      "external": false
-    }
+    // {
+    //   "text": "Art",
+    //   "url": "/art/",
+    //   "external": false
+    // }
   ],
 }

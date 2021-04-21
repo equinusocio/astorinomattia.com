@@ -2,7 +2,7 @@
 title: Smart animations with custom properties
 date: '2018-10-16'
 metaDesc: "What you get by combining css custom properties and keyframes? Smart keyframes!"
-socialImage: true
+socialImage: false
 tags:
   - css
   - custom properties
@@ -51,6 +51,7 @@ One of the recent innovations introduced in CSS are the <a href="https://www.w3.
 ```css
 .MyComponent {
   --foregroundColor: DodgerBlue;
+
   color: var(--foregroundColor, SlateBlue);
 }
 ```
@@ -64,6 +65,7 @@ We now define the same animation as above, where a fade animation is performed b
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -76,11 +78,13 @@ We have our simple animation and we can now try to add the custom properties to 
 @keyframes fade {
   from {
     opacity: var(--fromOpacity, 0);
-    transform: translate(
-      var(--fromX, 0),
-      var(--fromY, 0)
-    );
+    transform:
+      translate(
+        var(--fromX, 0),
+        var(--fromY, 0)
+      );
   }
+
   to {
     opacity: var(--toOpacity, 1);
     transform: none;
