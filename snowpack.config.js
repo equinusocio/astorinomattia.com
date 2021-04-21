@@ -2,7 +2,7 @@
 module.exports = {
   mount: {
     /* https://www.snowpack.dev/reference/configuration#mount */
-    build: { url: '/', static: true },
+    _output: { url: '/', static: true },
     'assets/js': { url: '/js' },
     'assets/css/vendors': { url: '/css' },
   },
@@ -25,7 +25,7 @@ module.exports = {
     ],
     [
       '@snowpack/plugin-run-script',
-      { cmd: 'postcss ./assets/css/app.css -o ./build/css/index.css', watch: '$1 --watch' },
+      { cmd: 'postcss ./assets/css/app.css -o ./_output/css/index.css', watch: '$1 --watch' },
     ],
   ],
   routes: [
@@ -37,7 +37,7 @@ module.exports = {
   packageOptions: {
     /* https://www.snowpack.dev/reference/configuration#packageoptions */
   },
-    optimize: {
+  optimize: {
     /* https://www.snowpack.dev/guides/optimize-and-bundle#option-1%3A-built-in-optimizations */
     // bundle: true,
     minify: true
@@ -48,6 +48,5 @@ module.exports = {
   },
   buildOptions: {
     /* https://www.snowpack.dev/reference/configuration#buildoptions */
-    out: 'build'
   },
 }

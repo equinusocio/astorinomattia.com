@@ -19,8 +19,8 @@ const PATHS = {
   layouts: `../components/layouts`,
   // => /data
   data: '../data',
-  // => /build
-  output: 'build',
+  // => /_output
+  output: '_output',
   // => /[PATH.INPUT]/blog
   blog: 'blog',
   // => /static
