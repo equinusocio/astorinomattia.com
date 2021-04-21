@@ -1,11 +1,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --global-background: var(--color-100);
-    --global-foreground: var(--color-20);
+    --global-foreground: var(--color-30);
     --headings-foreground: var(--color-10);
     --mark-color-cyan: #065a75;
     --mark-color-green: #007a4f;
     --mark-color-pink: #6a1036;
+    --inline-code-background: var(--color-80);
 
     /* Header */
 
@@ -22,5 +23,13 @@
     /* Separator */
 
     --separator-color: var(--color-80);
+
+    /* Button */
+
+    --button-foreground: var(--color-100);
+
+    /* PostNavigation */
+
+    --post-navigation-border-color: var(--color-80);
   }
 }

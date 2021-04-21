@@ -5,6 +5,7 @@
   --mark-color-cyan: #b0e9fb;
   --mark-color-green: #ccffed;
   --mark-color-pink: #f9d8e6;
+  --inline-code-background: var(--color-10);
 
   /* Header */
 
@@ -21,4 +22,12 @@
   /* Separator */
 
   --separator-color: var(--color-20);
+
+  /* Button */
+
+  --button-foreground: var(--color-0);
+
+  /* PostNavigation */
+
+  --post-navigation-border-color: var(--color-10);
 }

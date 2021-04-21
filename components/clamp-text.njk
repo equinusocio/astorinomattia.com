@@ -1,0 +1,5 @@
+{% macro ClampText(rows = 3) %}
+  <span class="ClampText" style="--r: {{ rows }}">
+    {{ caller() }}
+  </span>
+{% endmacro %}

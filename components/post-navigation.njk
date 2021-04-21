@@ -1,20 +1,40 @@
+{% from "stack.njk" import Stack %}
+{% from "clamp-text.njk" import ClampText %}
+
 {% macro postNavigation(prev, next) %}
-  <nav>
-    {% if prev %}
-      <a href="{{ prev.url }}">
-        <svg width="16" height="16" viewBox="0 0 24 24"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none" stroke="currentColor" stroke-miterlimit="10"><path d="M22 12H2M9 19l-7-7 7-7"/></g></svg>
-        <b>Previous story</b>
-        {# <br /> #}
-        {# <small>{{ prev.data.title }}</small> #}
-      </a>
-    {% endif %}
-    {% if next %}
-      <a href="{{ next.url }}">
-        <b>Next story</b>
-        <svg width="16" height="16" viewBox="0 0 24 24"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none" stroke="currentColor" stroke-miterlimit="10"><path d="M2 12h20M15 5l7 7-7 7"/></g></svg>
-        {# <br /> #}
-        {# <small>{{ next.data.title }}</small> #}
-      </a>
-    {% endif %}
+  <nav class="PostNavigation">
+    {% call Stack(columns=2, verticalAlign="start") -%}
+      {% if prev %}
+        <a href="{{ prev.url }}" class="PostNavigation__Item">
+          {% call Stack(columns=1, rowGap="0", verticalAlign="start") -%}
+            {% call ClampText(rows=1) %}
+              <small>{{ prev.data.title }}</small>
+            {% endcall %}
+            <span class="PostNavigation__Action">
+              <svg width="16" height="16" viewBox="0 0 24 24"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none" stroke="currentColor" stroke-miterlimit="10"><path d="M22 12H2M9 19l-7-7 7-7"/></g></svg>
+              <b>Previous story</b>
+            </span>
+          {% endcall %}
+        </a>
+      {% else %}
+        <div></div>
+      {% endif %}
+
+      {% if next %}
+        <a href="{{ next.url }}" class="PostNavigation__Item">
+          {% call Stack(columns=1, rowGap="0", verticalAlign="start") -%}
+            {% call ClampText(rows=1) %}
+              <small>{{ next.data.title }}</small>
+            {% endcall %}
+            <span class="PostNavigation__Action">
+              <b>Next story</b>
+              <svg width="16" height="16" viewBox="0 0 24 24"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none" stroke="currentColor" stroke-miterlimit="10"><path d="M2 12h20M15 5l7 7-7 7"/></g></svg>
+            </span>
+          {% endcall %}
+        </a>
+      {% else %}
+        <div></div>
+      {% endif %}
+    {% endcall %}
   </nav>
 {% endmacro %}

@@ -91,3 +91,10 @@ ul:not([class]) {
     }
   }
 }
+
+code {
+  padding: 0 4px 2px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  background-color: var(--inline-code-background);
+}

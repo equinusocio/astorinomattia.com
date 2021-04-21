@@ -1,0 +1,41 @@
+.PostNavigation {
+  margin: 1.77rem 0;
+}
+
+.PostNavigation__Item {
+  text-decoration: none;
+  padding: 0.22rem 1.33rem 0.44rem;
+  position: relative;
+
+  &::before {
+    background: linear-gradient(to left, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
+    border-radius: 0.44rem;
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    content: '';
+    z-index: -1;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+
+
+  &:hover::before {
+    padding: 3px;
+  }
+
+  & small {
+    font-size: 0.6em;
+  }
+
+  &:nth-child(2) {
+    text-align: inline-end;
+  }
+}
+
+.PostNavigation__Action {
+  color: var(--headings-foreground);
+}

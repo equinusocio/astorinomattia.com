@@ -32,6 +32,8 @@
 @import './components/taglist.css';
 @import './components/chip.css';
 @import './components/separator.css';
+@import './components/post-navigation.css';
+@import './components/clamp-text.css';
 
 /* Themes */
 
