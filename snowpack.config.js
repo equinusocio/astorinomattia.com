@@ -2,7 +2,7 @@
 module.exports = {
   mount: {
     /* https://www.snowpack.dev/reference/configuration#mount */
-    _output: { url: '/', static: true },
+    build: { url: '/', static: true },
     'assets/js': { url: '/js' },
     'assets/css/vendors': { url: '/css' },
   },
@@ -25,7 +25,7 @@ module.exports = {
     ],
     [
       '@snowpack/plugin-run-script',
-      { cmd: 'postcss ./assets/css/app.css -o ./_output/css/index.css', watch: '$1 --watch' },
+      { cmd: 'postcss ./assets/css/app.css -o ./build/css/index.css', watch: '$1 --watch' },
     ],
   ],
   routes: [
@@ -37,12 +37,17 @@ module.exports = {
   packageOptions: {
     /* https://www.snowpack.dev/reference/configuration#packageoptions */
   },
+    optimize: {
+    /* https://www.snowpack.dev/guides/optimize-and-bundle#option-1%3A-built-in-optimizations */
+    // bundle: true,
+    minify: true
+  },
   devOptions: {
     // Eleventy updates multiple files at once, so add a 300ms delay before we trigger a browser update
     hmrDelay: 300,
   },
   buildOptions: {
     /* https://www.snowpack.dev/reference/configuration#buildoptions */
-    out: '_output'
+    out: 'build'
   },
 }

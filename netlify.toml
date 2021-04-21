@@ -1,5 +1,5 @@
 [build]
-  publish = "_output"
+  publish = "build"
   command = "yarn build"
 
 # REDIRECT and HEADERS examples
