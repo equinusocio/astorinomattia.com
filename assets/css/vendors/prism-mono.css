@@ -18,7 +18,6 @@ pre code {
 
 pre[class*='language-'] {
   text-align: left;
-  white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
@@ -26,6 +25,8 @@ pre[class*='language-'] {
   tab-size: 2;
   hyphens: none;
   font-weight: 700;
+  white-space: pre-wrap;
+  overflow-x: auto;
 }
 
 pre[class*='language-']::-moz-selection,

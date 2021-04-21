@@ -9,11 +9,11 @@ tags:
 - logical properties
 
 ---
-What the `<details>` element is? Well, generally speaking, this element is made to easily create collapsible content without using Javascript. Let's see the basic HTML structure:
+What the `details` element is? Well, generally speaking, this element is made to easily create collapsible content without using Javascript. Let's see the basic HTML structure:
 
 ```html
 <details>
-  <summary>Click to expand</summary>
+  summaryClick to expand</summary>
   Sample content
 </details>
 ```
@@ -62,7 +62,7 @@ This is what you get with the above CSS and HTML:
 
 <img title="::-webkit-details-marker is used to remove the default arrow" data-src="https://eqsc.gumlet.io/images/stories/details-button.png">
 
-We have now a `<summary>` element dressed as a button. We'll use this class in the following examples.
+We have now a `summary` element dressed as a button. We'll use this class in the following examples.
 
 ## Dropdown example
 
@@ -160,7 +160,7 @@ style="height: 400px;
 
 Now we have our modal, but as you can see something is missing, the interactive overlay which should close the modal when clicked.
 
-So let's add the backdrop layer, which as mentioned above should react to the user click. To do it we'll use the `<summary>` element since it already has that behavior, more precisely we are going to add a `::before` pseudo-element to it, but only when the `details` have the `open` attribute.
+So let's add the backdrop layer, which as mentioned above should react to the user click. To do it we'll use the `summary` element since it already has that behavior, more precisely we are going to add a `::before` pseudo-element to it, but only when the `details` have the `open` attribute.
 
 In real situations you have to target only the `summary` element inside the details that contains a modal, but for this simple example, the following selector is enough.
 
@@ -236,4 +236,4 @@ style="height: 400px;
 
 ## Conclusion
 
-The `<details>` element can be considered as a native HTML trigger to show hide things without using javascript. You can use it everywhere you have a two-state widget like **visible/hidden** and **open/closed**. The important thing is to remember that the accessibility of interactive elements should be implemented by yourself when using this approach.
+The `details` element can be considered as a native HTML trigger to show hide things without using javascript. You can use it everywhere you have a two-state widget like **visible/hidden** and **open/closed**. The important thing is to remember that the accessibility of interactive elements should be implemented by yourself when using this approach.

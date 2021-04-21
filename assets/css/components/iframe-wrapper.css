@@ -1,7 +1,6 @@
 .IframesWrapper {
   margin-top: 20px;
   margin-bottom: 80px;
-  padding: 0 1.77rem;
 
   & > iframe {
     background-color: var(--color-20);

@@ -1,6 +1,9 @@
 .Bleeding {
-  width: 100vw;
-  max-width: 60ch;
-  margin-left: calc(50%);
-  transform: translateX(-50%);
+
+  @media (--from-medium) {
+    width: 100vw;
+    max-width: 60ch;
+    margin-left: calc(50%);
+    transform: translateX(-50%);
+  }
 }
