@@ -43,5 +43,6 @@ module.exports = {
   },
   buildOptions: {
     /* https://www.snowpack.dev/reference/configuration#buildoptions */
+    out: '_output'
   },
 }
