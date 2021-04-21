@@ -37,14 +37,10 @@ module.exports = {
   packageOptions: {
     /* https://www.snowpack.dev/reference/configuration#packageoptions */
   },
-  optimize: {
-    /* https://www.snowpack.dev/guides/optimize-and-bundle#option-1%3A-built-in-optimizations */
-    // bundle: true,
-    minify: true
-  },
   devOptions: {
     // Eleventy updates multiple files at once, so add a 300ms delay before we trigger a browser update
     hmrDelay: 300,
+    output: "stream"
   },
   buildOptions: {
     /* https://www.snowpack.dev/reference/configuration#buildoptions */
