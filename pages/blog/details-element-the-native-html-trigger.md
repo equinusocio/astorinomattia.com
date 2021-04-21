@@ -1,8 +1,7 @@
 ---
 title: Details element, the native html trigger
 date: 2020-06-26
-metaDesc: Let's see how to to use the <details> element as a native on/off trigger
-  with an eye to accessibility.
+metaDesc: Let's see how to to use the details element as a native on/off trigger with an eye to accessibility.
 socialImage: false
 tags:
 - css
