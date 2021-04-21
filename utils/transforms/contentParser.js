@@ -40,7 +40,7 @@ module.exports = function (value, outputPath) {
            * then remove the title attribute
            */
           figCaption.innerHTML = `<small>${image.getAttribute('title')}</small>`
-          image.setAttribute('alt', image.getAttribute('title'))
+          image.setAttribute('alt', "")
           image.removeAttribute('title')
           /**
            * Add a custom class to the figure elements inside posts
