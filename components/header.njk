@@ -16,7 +16,7 @@
               <a
                 class="Header__NavigationItem"
                 href="{{ item.url }}"
-                {% if item.url in page.url %} aria-current="page" {% endif %}
+                {% if page.url == item.url %}  aria-current="page" {% endif %}
                 {% if item.external == item.url %} rel="external" target="_blank" {% endif %}
               >
                 <b>{{ item.text }}</b>
