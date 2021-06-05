@@ -1,5 +1,6 @@
 {% macro Mark(color) %}
   <mark data-controller="mark" data-mark-target="item" class="Mark" style="--color: {{ color }}">
-    <strong>{{ caller() }}&nbsp;</strong>
+    <strong>{{ caller() }}</strong>
   </mark>
+  &nbsp;
 {% endmacro %}
