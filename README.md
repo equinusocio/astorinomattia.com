@@ -62,7 +62,9 @@ You can download the scaffolding to create a new project structure with one comm
 npx degit equinusocio/xity-starter
 ```
 
-This command will download the project to your current working directory and remove the `.github` and `.vscode` folders. After the project structure has been downloaded, you should install the required dependencies:
+This command will download the project to your current working directory and remove the `.github` and `.vscode` folders.
+
+After the project structure has been downloaded, you should install the required dependencies:
 
 ```bash
 yarn install
