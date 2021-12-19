@@ -1,5 +1,13 @@
 module.exports = [
   {
+    title: "Wanda Design System",
+    label: "Design System",
+    text: "Wonderflow's design system made on top of PostCSS, React and Accessibility.",
+    url: "https://design.wonderflow.ai",
+    color1: "#e00000",
+    color2: "hotpink"
+  },  
+  {
     title: "Oval Partnership",
     label: "UI Development",
     text: "Oval Money partnerhips website based NextJs/React and my latest Design System",
