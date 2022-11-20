@@ -88,6 +88,11 @@ You can swap the themes in your applications without violating the design-tokens
 ```css
 body {
   background: var(--global-background);
+  color: var(--global-foreground);
+}
+
+a {
+  color: var(--interactive-text);
 }
 ```
 
