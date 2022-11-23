@@ -12,6 +12,10 @@ Nowadays, there needs to be more clarity about design tokens, what they are, and
 
 Most misconceptions exist because of famous design tools like Figma plugins and online services that push on the wrong way.
 
+Figma Tokens for example push on changind design tokens core values in order to update all your design across the system. This is the most dangerous thing you can do to break the system, especially if the design system is used by different teams on different platforms.
+
+<img title="Figma Tokens show you can change design tokens. Never do it." data-src="/images/stories/figma-tokens-wrong-usage.gif">
+
 ## Design token's core principles
 
 Design systems with solid and scalable design-tokens implementations follow and never violate the following core principles:
@@ -46,8 +50,10 @@ That means you can use design tokens only when you want the same value across pl
 
 ## Introducing themes
 
-
 Themes are an additional platform-specific layer you can use to create different shared UI styles using semantic keys. Themes are raw data containing semantic keys with specific purposes. Still, as raw data, you need to transform them as you do for design tokens because the web uses CSS, but iOS and Android use different languages to create user interfaces.
+
+<img title="From Design Tokens WG https://youtu.be/ssOdzxZdg58?t=833" data-src="/images/stories/tokens-themes.png">
+
 
 Let's create three different themes to use across platforms. You can ship these themes as NPM packages or CSS files or build them on each platform, but this last option will likely bring inconsistency since different teams may work on them.
 
@@ -101,3 +107,5 @@ The only requirement that still exists is that all the themes must declare the s
 ## Conclusion
 
 Consider design tokens as a vocabulary from which you can take and use consistent values on every platform/implementation. In contrast, themes are the way to make themeable UIs using their keys that may have different values based on the theme.
+
+Even you don't have to support multiple themes, is recommended to build a theme anyway and use it as "default". This allow you to be ready if you want to add multiple themes in the future, like the common light/dark themes without touchin ALL the products you made in the meantime.
