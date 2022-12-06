@@ -35,7 +35,7 @@ module.exports = [
     title: "Material Theme",
     label: "vscode extension",
     text: "Your dev experience will get a boost and your eyes will be always grateful to you.",
-    url: "https://material-theme.site/",
+    url: "https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme",
     color1: "#A673E8",
     color2: "#00A695"
   },
