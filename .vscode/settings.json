@@ -1,0 +1,71 @@
+{
+  "stylelint.validate": ["css", "postcss", "astro"],
+  "stylelint.snippet": ["css", "postcss", "astro"],
+  "javascript.validate.enable": false,
+  "cssvar.files": [
+    "./node_modules/open-props/open-props.min.css"
+  ],
+  // Do not ignore node_modules css files, which is ignored by default
+  "cssvar.ignore": [],
+  "cssvar.extensions": [
+    "css", "postcss","jsx", "tsx", "astro"
+  ],
+  "cssEnvVarsAutocomplete.envFiles": ["./node_modules/@lualtek/tokens/platforms/web/tokens.css"],
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts, ${capture}.module.css, ${capture}-*.tsx, ${capture}.module.css.d.ts, ${capture}.stories.tsx",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock"
+  },
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "files.associations": {
+    "*.css": "postcss",
+    "*.module.css": "postcss",
+    ".stylelintrc": "json",
+    "yarn.lock": "yaml",
+    ".eslintrc": "json"
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "better-comments.multilineComments": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "[yaml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80],
+    "editor.wordWrap": "wordWrapColumn",
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astro]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql"
+  ],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql"
+  ],
+}
