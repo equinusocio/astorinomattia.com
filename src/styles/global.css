@@ -1,0 +1,50 @@
+html {
+  font-size: 112.5%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  line-height: 1.5;
+  background: var(--global-background);
+  font-family: Arial, sans-serif;
+  color-scheme: light dark;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: inherit;
+  cursor: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--global-foreground);
+  outline-offset: 2px;
+}
+
+body {
+  color: var(--global-foreground);
+  font-feature-settings: "calt" off;
+  font-size: 1rem;
+  margin: 0;
+}
+
+::selection {
+  background-color: var(--dimmed-7);
+  color: var(--dimmed-0);
+  text-shadow: none;
+}
+
+img {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+}
+
+svg:not([fill]) {
+  fill: currentcolor;
+}
+
+fieldset {
+  border: 0;
+}

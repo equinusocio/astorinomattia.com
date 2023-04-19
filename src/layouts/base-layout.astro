@@ -1,0 +1,63 @@
+---
+import Cursor from "@/components/cursor/cursor.astro";
+import "@/styles/global.css";
+import "@/styles/themes.css";
+
+export type Props = {
+  title?: string;
+  keywords?: string[];
+  url?: string;
+  description?: string;
+};
+
+const {
+  title = "What i do",
+  keywords,
+  description = "I'm Mattia Astorino and i'm a UI Engineer, open-source developer and amateur photographer.",
+  page,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentUrl = new URL(Astro.url.pathname, Astro.url);
+const socialImageURL = new URL("/cover.jpg", Astro.url);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    {title && <title>{`${title}- Mattia Astorino`}</title>}
+    {keywords && <meta name="keywords" content={keywords.join()} />}
+
+    <meta property="og:site_name" content="Mattia Astorino" />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+
+    <meta property="og:url" content={currentUrl} />
+    <meta property="twitter:url" content={currentUrl} />
+
+    <meta name="description" content={description} />
+    <meta name="twitter:description" content={description} />
+    <meta property="og:description" content={description} />
+
+    <meta property="twitter:url" content={currentUrl} />
+    <meta property="twitter:site" content="Mattia Astorino" />
+    <meta name="twitter:creator" content="@equinusocio" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content={socialImageURL} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta property="og:image:alt" content={`Page image for ${title}`} />
+    <meta name="twitter:image:alt" content={`Page image for ${title}`} />
+  </head>
+  <body>
+    <Cursor />
+    <slot />
+  </body>
+</html>

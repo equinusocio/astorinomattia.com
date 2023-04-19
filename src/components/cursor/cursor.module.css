@@ -1,0 +1,35 @@
+.Cursor {
+  --size: 64px;
+
+  display: none;
+  will-change: translate;
+  width: var(--size);
+  height: var(--size);
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  transition: scale 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s linear;
+  translate: calc(var(--x) - (var(--size) / 2)) calc(var(--y) - (var(--size) / 2));
+  scale: var(--scale);
+  opacity: var(--opacity, 0%);
+
+
+  @media (width >= 30em) {
+    display: unset;
+  }
+}
+
+.InnerCircle {
+  transform-origin: center;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

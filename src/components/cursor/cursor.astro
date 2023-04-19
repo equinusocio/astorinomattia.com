@@ -1,0 +1,68 @@
+---
+import styles from "./cursor.module.css";
+---
+
+<svg
+  class={styles.Cursor}
+  data-cursor
+  width="64"
+  height="64"
+  viewBox="0 0 65 65"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle cx="32.5" cy="32.5" r="32.5" fill="#BBC4D2" opacity="0.2"></circle>
+  <path opacity="0.2" d="M19 19L46 46" stroke="#252C37"></path>
+  <path opacity="0.2" d="M19 46L46 19" stroke="#252C37"></path>
+  <circle
+    class={styles.InnerCircle}
+    cx="32.5"
+    cy="32.5"
+    r="25.5"
+    stroke="var(--global-foreground)"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-dasharray="2 4 6 8"></circle>
+  <circle
+    cx="32.5"
+    cy="32.5"
+    r="32"
+    stroke="var(--global-foreground)"
+    opacity="0.5"></circle>
+</svg>
+
+<script>
+  const cursor: SVGElement | null = document.querySelector("[data-cursor]");
+
+  document.addEventListener(
+    "mousemove",
+    (event) => {
+      cursor?.style.setProperty("--x", `${event.pageX}px`);
+      cursor?.style.setProperty("--y", `${event.pageY}px`);
+      cursor?.style.setProperty("--opacity", "100%");
+    },
+    true
+  );
+
+  document.addEventListener(
+    "mouseenter",
+    (event: MouseEvent) => {
+      switch (event.target instanceof HTMLElement && event.target?.nodeName) {
+        case "BUTTON":
+        case "A":
+          cursor?.style.setProperty("--scale", "0.6");
+          break;
+
+        default:
+          break;
+      }
+    },
+    true
+  );
+
+  document.addEventListener(
+    "mouseleave",
+    () => cursor?.style.setProperty("--scale", "1"),
+    true
+  );
+</script>
