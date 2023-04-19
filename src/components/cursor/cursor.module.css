@@ -21,15 +21,23 @@
 
 .InnerCircle {
   transform-origin: center;
-  animation: rotate 10s linear infinite;
+  animation: rotate 15s linear infinite;
+}
+
+.Line {
+  transform-origin: center;
+  transition: rotate 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @nest .Cursor[data-hover-interaction='true'] & {
+    rotate: 44deg;
+  }
+  @nest .Cursor[data-hover-interaction='true'] &:nth-child(2) {
+    rotate: -44deg;
+  }
 }
 
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
   100% {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }

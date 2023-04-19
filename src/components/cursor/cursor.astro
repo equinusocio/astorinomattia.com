@@ -12,8 +12,16 @@ import styles from "./cursor.module.css";
   xmlns="http://www.w3.org/2000/svg"
 >
   <circle cx="32.5" cy="32.5" r="32.5" fill="#BBC4D2" opacity="0.2"></circle>
-  <path opacity="0.2" d="M19 19L46 46" stroke="#252C37"></path>
-  <path opacity="0.2" d="M19 46L46 19" stroke="#252C37"></path>
+  <path
+    opacity="0.5"
+    class={styles.Line}
+    d="M19 19L46 46"
+    stroke="var(--global-foreground)"></path>
+  <path
+    opacity="0.5"
+    class={styles.Line}
+    d="M19 46L46 19"
+    stroke="var(--global-foreground)"></path>
   <circle
     class={styles.InnerCircle}
     cx="32.5"
@@ -47,14 +55,14 @@ import styles from "./cursor.module.css";
   document.addEventListener(
     "mouseenter",
     (event: MouseEvent) => {
-      switch (event.target instanceof HTMLElement && event.target?.nodeName) {
-        case "BUTTON":
-        case "A":
-          cursor?.style.setProperty("--scale", "0.6");
-          break;
+      const targetElementName =
+        event.target instanceof HTMLElement && event.target?.nodeName;
+      const isButtonOrAnchor =
+        targetElementName === "BUTTON" || targetElementName === "A";
 
-        default:
-          break;
+      if (isButtonOrAnchor) {
+        cursor?.style.setProperty("--scale", "0.6");
+        cursor?.setAttribute("data-hover-interaction", "true");
       }
     },
     true
@@ -62,7 +70,10 @@ import styles from "./cursor.module.css";
 
   document.addEventListener(
     "mouseleave",
-    () => cursor?.style.setProperty("--scale", "1"),
+    () => {
+      cursor?.style.setProperty("--scale", "1");
+      cursor?.setAttribute("data-hover-interaction", "false");
+    },
     true
   );
 </script>
