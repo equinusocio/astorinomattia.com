@@ -1,5 +1,7 @@
 .Media {
   --circles-size: 1450px;
+  --role-size: 1246px;
+  --skills-size: 1008px;
 
   position: absolute;
   inset: 0;
@@ -7,8 +9,6 @@
   z-index: -1;
   overflow: hidden;
   contain: style content;
-  mask-image:
-  linear-gradient(to bottom, transparent 0%, red 150px);
 }
 
 .Diagonal {
@@ -40,6 +40,24 @@
   left: 50%;
   top: 50%;
   translate: calc((var(--circles-size) / 2) * -1)  calc((var(--circles-size) / 2) * -1);
+}
+
+.Role {
+  width: var(--role-size);
+  height: var(--role-size);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: calc((var(--role-size) / 2) * -1)  calc((var(--role-size) / 2) * -1);
+}
+
+.Skills {
+  width: var(--skills-size);
+  height: var(--skills-size);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: calc((var(--skills-size) / 2) * -1)  calc((var(--skills-size) / 2) * -1);
 }
 
 .Rotate {

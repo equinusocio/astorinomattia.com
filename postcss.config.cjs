@@ -2,6 +2,10 @@ const OpenProps = require('open-props');
 
 module.exports = {
   plugins: [
+    require('postcss-dark-theme-class')({
+      darkSelector: '[data-theme="dark"]',
+      lightSelector: '[data-theme="light"]'
+    }),
     require('autoprefixer'),
     require('postcss-jit-props')({
       ...OpenProps
