@@ -1,0 +1,28 @@
+---
+import styles from "./media.module.css";
+---
+
+<div class={styles.Media} data-media>
+  <div class={styles.Diagonal} data-diagonal="left"></div>
+  <div class={styles.Diagonal} data-diagonal="right"></div>
+</div>
+
+<script>
+  const media: HTMLDivElement | null = document.querySelector("[data-media]");
+
+  const getDiagonal = () => {
+    const w = document.documentElement.clientWidth;
+    const h = document.documentElement.clientHeight;
+    // Calculate diagonal length using Pythagorean theorem
+    const diagonalLength = Math.sqrt(w ** 2 + h ** 2);
+    // Calculate angle of inclination in degrees
+    const angleInRadians = Math.atan(h / w);
+    const angleInDegrees = angleInRadians * (180 / Math.PI);
+
+    media?.style.setProperty("--diagonal", diagonalLength + "px");
+    media?.style.setProperty("--angle", angleInDegrees + "deg");
+  };
+
+  getDiagonal();
+  window.addEventListener("resize", () => getDiagonal());
+</script>

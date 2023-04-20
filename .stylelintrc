@@ -1,4 +1,13 @@
 {
   "extends": ["stylelint-config-equinusocio"],
-  "ignoreFiles": "**/*.astro"
+  "ignoreFiles": [
+    "!**/*.css",
+    "!**/*.module.css",
+    "**/*.tsx",
+    "**/*.astro",
+    "node_modules"
+  ],
+  "rules": {
+    "import-notation": "string"
+  }
 }

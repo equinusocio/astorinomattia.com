@@ -1,0 +1,35 @@
+.Media {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.Diagonal {
+  height: 1px;
+  width: var(--diagonal, 9999px);
+  top: 0;
+  position: absolute;
+  background: var(--dimmed-0);
+  scale: 0;
+  animation: scale-in 3s var(--ease-in-out-3) forwards;
+
+  &[data-diagonal='left'] {
+    transform-origin: 0 0;
+    left: 0;
+    rotate: var(--angle);
+  }
+
+  &[data-diagonal='right'] {
+    transform-origin: 100% 0;
+    right: 0;
+    rotate: calc(var(--angle) * -1);
+  }
+}
+
+@keyframes scale-in {
+  100% {
+    scale: 1;
+  }
+}

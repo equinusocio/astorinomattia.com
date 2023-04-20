@@ -9,6 +9,7 @@ import styles from "./cursor.module.css";
   height="64"
   viewBox="0 0 65 65"
   fill="none"
+  aria-hidden="true"
   xmlns="http://www.w3.org/2000/svg"
 >
   <circle cx="32.5" cy="32.5" r="32.5" fill="#BBC4D2" opacity="0.2"></circle>
@@ -42,12 +43,20 @@ import styles from "./cursor.module.css";
 <script>
   const cursor: SVGElement | null = document.querySelector("[data-cursor]");
 
+  const setProperty = (
+    element: HTMLElement | SVGElement | null,
+    property: string,
+    value: string
+  ) => {
+    element?.style.setProperty(property, value);
+  };
+
   document.addEventListener(
     "mousemove",
     (event) => {
-      cursor?.style.setProperty("--x", `${event.pageX}px`);
-      cursor?.style.setProperty("--y", `${event.pageY}px`);
-      cursor?.style.setProperty("--opacity", "100%");
+      setProperty(cursor, "--x", `${event.pageX}px`);
+      setProperty(cursor, "--y", `${event.pageY}px`);
+      setProperty(cursor, "--opacity", "100%");
     },
     true
   );
@@ -61,7 +70,7 @@ import styles from "./cursor.module.css";
         targetElementName === "BUTTON" || targetElementName === "A";
 
       if (isButtonOrAnchor) {
-        cursor?.style.setProperty("--scale", "0.6");
+        setProperty(cursor, "--scale", "0.6");
         cursor?.setAttribute("data-hover-interaction", "true");
       }
     },
@@ -71,7 +80,7 @@ import styles from "./cursor.module.css";
   document.addEventListener(
     "mouseleave",
     () => {
-      cursor?.style.setProperty("--scale", "1");
+      setProperty(cursor, "--scale", "1");
       cursor?.setAttribute("data-hover-interaction", "false");
     },
     true

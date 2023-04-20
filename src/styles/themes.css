@@ -1,4 +1,6 @@
 :root {
   --global-foreground: #252C37;
   --global-background: var(--stone-0);
+
+  --dimmed-0: var(--stone-3);
 }

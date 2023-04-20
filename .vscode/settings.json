@@ -29,7 +29,6 @@
     "yarn.lock": "yaml",
     ".eslintrc": "json"
   },
-  "prettier.documentSelectors": ["**/*.astro"],
   "better-comments.multilineComments": true,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
@@ -53,19 +52,5 @@
   "[astro]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "graphql"
-  ],
-  "eslint.probe": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "graphql"
-  ],
+  }
 }

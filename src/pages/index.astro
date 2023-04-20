@@ -1,8 +1,13 @@
 ---
+import Media from "@/components/media/media.astro";
+import Stack from "@/components/stack/stack.astro";
 import BaseLayout from "@/layouts/base-layout.astro";
 ---
 
 <BaseLayout>
+  <Media client:visible />
   <main>MAIN</main>
   <button>dio</button>
+  <Stack>div</Stack>
+  <Stack>section + <span>dio</span></Stack>
 </BaseLayout>

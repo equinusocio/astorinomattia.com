@@ -15,7 +15,7 @@
 
 
   @media (width >= 30em) {
-    display: unset;
+    display: contents;
   }
 }
 
