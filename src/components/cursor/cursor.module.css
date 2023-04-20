@@ -12,6 +12,8 @@
   translate: calc(var(--x) - (var(--size) / 2)) calc(var(--y) - (var(--size) / 2));
   scale: var(--scale);
   opacity: var(--opacity, 0%);
+  backdrop-filter: invert();
+  border-radius: 100%;
 
 
   @media (width >= 30em) {
