@@ -12,7 +12,12 @@ import styles from "./cursor.module.css";
   aria-hidden="true"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <circle cx="32.5" cy="32.5" r="32.5" fill="#BBC4D2" opacity="0.2"></circle>
+  <circle
+    cx="32.5"
+    cy="32.5"
+    r="32.5"
+    fill="var(--global-background)"
+    opacity="0.2"></circle>
   <path
     opacity="0.5"
     class={styles.Line}
@@ -35,6 +40,7 @@ import styles from "./cursor.module.css";
     stroke="var(--global-background)"
     stroke-width="2"
     stroke-linecap="round"
+    opacity="0.5"
     stroke-dasharray="2 4 6 8"></circle>
 </svg>
 

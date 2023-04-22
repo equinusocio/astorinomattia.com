@@ -1,10 +1,41 @@
 ---
 import Media from "@/components/media/media.astro";
+import Social from "@/components/social/social.astro";
 import Stack from "@/components/stack/stack.astro";
+import Github from "@/icons/github.astro";
+import Twitter from "@/icons/twitter.astro";
+import Vero from "@/icons/vero.astro";
 import BaseLayout from "@/layouts/base-layout.astro";
+
+import styles from "./index.module.css";
 ---
 
 <BaseLayout>
   <Media />
-  <main>MAIN</main>
+  <Stack as="main" rowGap="min(300px, 20vh)" hAlign="center" hPadding="32px">
+    <span>equinusocio</span>
+    <Stack hAlign="center" fill={false} rowGap="24px">
+      <h1 class={styles.DisplayTitle}>MATTIA ASTORINO</h1>
+      <Stack direction="row" columnGap="16px">
+        <Social href="https://twitter.com/equinusocio" label="Social">
+          <Twitter slot="icon" />
+        </Social>
+        <Social href="https://github.com/equinusocio" label="Code">
+          <Github slot="icon" />
+        </Social>
+        <Social href="https://vero.co/equinusocio" label="Photo">
+          <Vero slot="icon" />
+        </Social>
+      </Stack>
+    </Stack>
+    <span>
+      Lead UI Engineer @ <a
+        href="https://lualtek.io"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <strong>Lualtek.io</strong>
+      </a>
+    </span>
+  </Stack>
 </BaseLayout>

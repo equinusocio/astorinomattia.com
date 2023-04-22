@@ -8,7 +8,8 @@
   pointer-events: none;
   z-index: -1;
   overflow: hidden;
-  contain: style content;
+  contain: style;
+  opacity: 70%;
 }
 
 .Diagonal {

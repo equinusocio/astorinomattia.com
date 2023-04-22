@@ -1,0 +1,28 @@
+---
+import Stack from "../stack/stack.astro";
+import styles from "./social.module.css";
+
+export type Props = {
+  label: string;
+  href: string;
+};
+
+const { label, href } = Astro.props;
+---
+
+<Stack
+  class={styles.Social}
+  as="a"
+  target="_blank"
+  rel="noopener noreferrer"
+  rowGap="12px"
+  hPadding="8px"
+  vPadding="8px"
+  hAlign="center"
+  vAlign="start"
+  inline
+  href={href}
+>
+  <slot name="icon" />
+  <span class={styles.Label}>{label}</span>
+</Stack>

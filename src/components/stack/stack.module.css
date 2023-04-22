@@ -5,11 +5,11 @@
   align-items: var(--h-align);
   justify-content: var(--v-align);
 
-  &:where([data-stack-has-padding='true']) {
+  &:where([data-stack-has-padding]) {
     padding: var(--v-padding, 0) var(--h-padding, 0);
   }
 
-  &:where([data-stack-fill='true']) > * {
+  &:where([data-stack-fill]) > * {
     flex-grow: 1;
   }
 
@@ -30,12 +30,12 @@
     flex-direction: row-reverse;
   }
 
-  &[data-stack-inline='true'] {
+  &[data-stack-inline] {
     display: inline-flex;
     flex-grow: 0;
   }
 
-  &[data-stack-wrap='true'] {
+  &[data-stack-wrap] {
     flex-wrap: wrap;
   }
 }

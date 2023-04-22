@@ -1,0 +1,27 @@
+.DisplayTitle {
+  letter-spacing: 4vw;
+  line-height: 1;
+  text-align: center;
+  font-weight: 400;
+  font-size: var(--font-size-fluid-2);
+  animation: title-intro 4s var(--ease-in-out-5);
+  text-shadow:
+    0 0 10px var(--global-background),
+    0 0 10px var(--global-background),
+    0 0 10px var(--global-background),
+    0 0 10px var(--global-background),
+    0 0 10px var(--global-background),
+    0 0 10px var(--global-background);
+}
+
+@keyframes title-intro {
+  from {
+    opacity: 0%;
+    letter-spacing: 3.5vw;
+  }
+
+  to {
+    opacity: 100%;
+    letter-spacing: 4vw;
+  }
+}

@@ -2,8 +2,8 @@
 import type { HTMLAttributes } from "astro/types";
 import styles from "./stack.module.css";
 
-export type Props = HTMLAttributes<"div"> & {
-  as?: keyof astroHTML.JSX.DefinedIntrinsicElements;
+export type Props<T extends "div"> = HTMLAttributes<T> & {
+  as?: keyof astroHTML.JSX.DefinedIntrinsicElements[T];
   /**
    * Add a gap between rows.
    */
@@ -63,6 +63,7 @@ const {
   hPadding = "0",
   vPadding = "0",
   class: extClass,
+  ...otherProps
 } = Astro.props;
 
 const Wrapper = as;
@@ -91,6 +92,7 @@ const alignmentTemplate = (prop: string) => {
     "--v-padding": vPadding,
     "--h-padding": hPadding,
   }}
+  {...otherProps}
 >
   <slot />
 </Wrapper>

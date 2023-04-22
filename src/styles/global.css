@@ -5,7 +5,7 @@ html {
   box-sizing: border-box;
   line-height: 1.5;
   background: var(--global-background);
-  font-family: Arial, sans-serif;
+  font-family: 'Times New Roman', sans-serif;
   color-scheme: light dark;
 }
 
@@ -24,14 +24,19 @@ html {
 
 body {
   color: var(--global-foreground);
-  font-feature-settings: "calt" off;
+  font-feature-settings: 'calt' off;
   font-size: 1rem;
   margin: 0;
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
 }
 
 ::selection {
-  background-color: var(--dimmed-7);
-  color: var(--dimmed-0);
+  background-color: var(--dimmed-3);
+  color: var(--global-background);
   text-shadow: none;
 }
 
@@ -47,4 +52,9 @@ svg:not([fill]) {
 
 fieldset {
   border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--global-foreground);
 }

@@ -1,0 +1,28 @@
+.Social {
+  position: relative;
+  height: 48px;
+  border-radius: 40%;
+
+  & svg {
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.Label {
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  font-size: var(--font-size-0);
+  letter-spacing: 0.2ch;
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: 56px;
+  opacity: 0%;
+  translate: 0 -10% 0;
+  transition: all 0.4s var(--ease-squish-3);
+
+  @nest .Social:is(:hover, :focus) & {
+    translate: 0 0 0;
+    opacity: 100%;
+  }
+}
