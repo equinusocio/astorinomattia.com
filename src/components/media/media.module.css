@@ -48,6 +48,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  overflow: visible;
   translate: calc((var(--role-size) / 2) * -1)  calc((var(--role-size) / 2) * -1);
 }
 
@@ -79,6 +80,21 @@
   }
 }
 
+.ZoomIn {
+  transform-origin: 50% 50%;
+  animation: zoom-in 3s var(--ease-out-5) 1;
+}
+
+@keyframes zoom-in {
+  0% {
+    scale: 1.02;
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 100%;
+  }
+}
 @keyframes scale-in {
   100% {
     scale: 1;
