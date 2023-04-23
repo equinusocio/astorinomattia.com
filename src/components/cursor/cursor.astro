@@ -46,6 +46,7 @@ import styles from "./cursor.module.css";
 
 <script>
   const cursor: SVGElement | null = document.querySelector("[data-cursor]");
+  const tagnames = ["BUTTON", "A", "SELECT"];
 
   const setProperty = (
     element: HTMLElement | SVGElement | null,
@@ -70,10 +71,9 @@ import styles from "./cursor.module.css";
     (event: MouseEvent) => {
       const targetElementName =
         event.target instanceof HTMLElement && event.target?.nodeName;
-      const isButtonOrAnchor =
-        targetElementName === "BUTTON" || targetElementName === "A";
+      const isInteractive = tagnames.includes(targetElementName as string);
 
-      if (isButtonOrAnchor) {
+      if (isInteractive) {
         setProperty(cursor, "--scale", "0.6");
         cursor?.setAttribute("data-hover-interaction", "true");
       }
