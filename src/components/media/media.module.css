@@ -63,10 +63,10 @@
 }
 
 .Rotate {
-    --duration: 20s;
+  --duration: 20s;
 
-    animation: rotate var(--duration, 400s) linear infinite;
-    transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  animation: rotate var(--duration, 400s) linear infinite;
 
   &[data-rotation-direction='reverse'] {
     animation-direction: reverse;

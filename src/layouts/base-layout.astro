@@ -1,5 +1,7 @@
 ---
 import Cursor from "@/components/cursor/cursor.astro";
+import Player from "@/components/player/player.astro";
+import Video from "@/components/video/video.astro";
 import "@/styles/global.css";
 import "@/styles/themes.css";
 
@@ -57,6 +59,8 @@ const socialImageURL = new URL("/cover.jpg", Astro.url);
   </head>
   <body>
     <Cursor />
+    <Player />
+    <Video />
     <slot />
   </body>
 </html>

@@ -17,6 +17,7 @@
 @keyframes title-intro {
   from {
     opacity: 0%;
+    filter: blur(10px);
     letter-spacing: 3.5vw;
   }
 

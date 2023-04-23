@@ -7,6 +7,7 @@ html {
   background: var(--global-background);
   font-family: 'Times New Roman', sans-serif;
   color-scheme: light dark;
+  cursor: none;
 }
 
 *,
@@ -14,7 +15,6 @@ html {
 *::after {
   margin: 0;
   box-sizing: inherit;
-  cursor: none;
 }
 
 *:focus-visible {
