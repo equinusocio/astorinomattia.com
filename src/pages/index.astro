@@ -8,6 +8,7 @@ import Vero from "@/icons/vero.astro";
 import BaseLayout from "@/layouts/base-layout.astro";
 
 import styles from "./index.module.css";
+import ThemeSwitcher from "@/components/theme-switcher/theme-switcher.astro";
 ---
 
 <BaseLayout>
@@ -16,7 +17,7 @@ import styles from "./index.module.css";
     <span>equinusocio</span>
     <Stack hAlign="center" fill={false} rowGap="24px">
       <h1 class={styles.DisplayTitle}>MATTIA ASTORINO</h1>
-      <Stack direction="row" columnGap="16px">
+      <Stack as="address" direction="row" columnGap="16px">
         <Social
           href="https://twitter.com/equinusocio"
           label="Social"
@@ -32,7 +33,7 @@ import styles from "./index.module.css";
         </Social>
       </Stack>
     </Stack>
-    <span>
+    <p>
       Lead UI Engineer @ <a
         href="https://lualtek.io"
         target="_blank"
@@ -40,6 +41,7 @@ import styles from "./index.module.css";
       >
         <strong>Lualtek.io</strong>
       </a>
-    </span>
+    </p>
   </Stack>
+  <ThemeSwitcher />
 </BaseLayout>
