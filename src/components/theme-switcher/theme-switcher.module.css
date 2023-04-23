@@ -1,13 +1,17 @@
 .ThemeSwitcher {
-  position: fixed;
   left: 50%;
   color: var(--global-foreground);
   bottom: var(--size-9);
-  translate: -50% 0 0 ;
   appearance: none;
   border: 0;
   background: hsl(0deg 0% 50% / 20%);
   backdrop-filter: blur(2px);
   padding: var(--size-2) var(--size-3);
   width: auto;
+
+  @media (width >= 40em) {
+    position: fixed;
+    translate: -50% 0 0 ;
+
+  }
 }
