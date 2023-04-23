@@ -4,7 +4,7 @@
   text-align: center;
   font-weight: 400;
   font-size: var(--font-size-fluid-2);
-  animation: title-intro 4s var(--ease-in-out-5);
+  animation: title-intro 4s var(--ease-out-5);
   text-shadow:
     0 0 10px var(--global-background),
     0 0 10px var(--global-background),

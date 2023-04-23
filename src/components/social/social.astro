@@ -5,9 +5,10 @@ import styles from "./social.module.css";
 export type Props = {
   label: string;
   href: string;
+  delay?: string;
 };
 
-const { label, href } = Astro.props;
+const { label, href, delay = "0s" } = Astro.props;
 ---
 
 <Stack
@@ -22,6 +23,9 @@ const { label, href } = Astro.props;
   vAlign="start"
   inline
   href={href}
+  style={{
+    "--delay": delay,
+  }}
 >
   <slot name="icon" />
   <span class={styles.Label}>{label}</span>

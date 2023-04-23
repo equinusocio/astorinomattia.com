@@ -1,7 +1,10 @@
 .Social {
   position: relative;
-  height: 48px;
+  height: 32px;
   border-radius: 40%;
+  scale: 0;
+  transform-origin: 50% 16px;
+  animation: scale-in var(--delay) 3.4s var(--ease-in-out-3) forwards;
 
   & svg {
     pointer-events: none;
@@ -18,11 +21,18 @@
   position: absolute;
   top: 56px;
   opacity: 0%;
-  translate: 0 -10% 0;
+  translate: -50% -10% 0;
   transition: all 0.4s var(--ease-squish-3);
+  left: 50%;
 
   @nest .Social:is(:hover, :focus) & {
-    translate: 0 0 0;
+    translate: -50% 0 0;
     opacity: 100%;
+  }
+}
+
+@keyframes scale-in {
+  100% {
+    scale: 1;
   }
 }

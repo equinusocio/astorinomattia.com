@@ -17,13 +17,17 @@ import styles from "./index.module.css";
     <Stack hAlign="center" fill={false} rowGap="24px">
       <h1 class={styles.DisplayTitle}>MATTIA ASTORINO</h1>
       <Stack direction="row" columnGap="16px">
-        <Social href="https://twitter.com/equinusocio" label="Social">
+        <Social
+          href="https://twitter.com/equinusocio"
+          label="Social"
+          delay="1s"
+        >
           <Twitter slot="icon" />
         </Social>
-        <Social href="https://github.com/equinusocio" label="Code">
+        <Social href="https://github.com/equinusocio" label="Code" delay="1.5s">
           <Github slot="icon" />
         </Social>
-        <Social href="https://vero.co/equinusocio" label="Photo">
+        <Social href="https://vero.co/equinusocio" label="Photo" delay="2s">
           <Vero slot="icon" />
         </Social>
       </Stack>

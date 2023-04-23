@@ -7,7 +7,6 @@ html {
   background: var(--global-background);
   font-family: 'Times New Roman', sans-serif;
   color-scheme: light dark;
-  cursor: none;
 }
 
 *,
@@ -15,6 +14,7 @@ html {
 *::after {
   margin: 0;
   box-sizing: inherit;
+  cursor: none;
 }
 
 *:focus-visible {
@@ -35,7 +35,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--dimmed-3);
+  background-color: var(--dimmed-2);
   color: var(--global-background);
   text-shadow: none;
 }

@@ -1,4 +1,5 @@
 ---
+import Canvas from "@/components/canvas/canvas.astro";
 import Cursor from "@/components/cursor/cursor.astro";
 import Player from "@/components/player/player.astro";
 import Video from "@/components/video/video.astro";
@@ -59,8 +60,6 @@ const socialImageURL = new URL("/cover.jpg", Astro.url);
   </head>
   <body>
     <Cursor />
-    <Player />
-    <Video />
     <slot />
   </body>
 </html>

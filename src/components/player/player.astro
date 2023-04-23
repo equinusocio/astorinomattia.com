@@ -1,9 +1,0 @@
-<script>
-  const audio: HTMLMediaElement | null = new Audio("/bg.mp3");
-  audio.volume = 0.1;
-  audio.loop = true;
-
-  audio.addEventListener("canplaythrough", () => {
-    audio?.play();
-  });
-</script>
