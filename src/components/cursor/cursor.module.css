@@ -24,6 +24,11 @@
 .InnerCircle {
   transform-origin: center;
   animation: rotate 15s linear infinite;
+  display: none;
+
+  @nest .Cursor[data-hover-interaction='true'] & {
+    display: block;
+  }
 }
 
 .Line {

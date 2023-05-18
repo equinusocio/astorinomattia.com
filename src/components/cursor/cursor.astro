@@ -26,7 +26,7 @@ import styles from "./cursor.module.css";
   >
   </path>
   <path
-    opacity="0.5"
+    opacity="0.8"
     class={styles.Line}
     d="M19 46L46 19"
     stroke="var(--global-background)"
@@ -40,7 +40,7 @@ import styles from "./cursor.module.css";
     stroke="var(--global-background)"
     stroke-width="2"
     stroke-linecap="round"
-    opacity="0.5"
+    opacity="0.8"
     stroke-dasharray="2 4 6 8"></circle>
 </svg>
 
@@ -74,7 +74,7 @@ import styles from "./cursor.module.css";
       const isInteractive = tagnames.includes(targetElementName as string);
 
       if (isInteractive) {
-        setProperty(cursor, "--scale", "0.6");
+        setProperty(cursor, "--scale", "0.7");
         cursor?.setAttribute("data-hover-interaction", "true");
       }
     },
