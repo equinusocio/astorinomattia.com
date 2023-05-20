@@ -13,7 +13,16 @@ export type Props = {
 
 const {
   title = "What i do",
-  keywords,
+  keywords = [
+    "Mattia Astorino",
+    "UI Engineer",
+    "Frontend Developer",
+    "react",
+    "css",
+    "javascript",
+    "design-systems",
+    "figma",
+  ],
   description = "I'm Mattia Astorino and i'm a UI Engineer, open-source developer and amateur photographer.",
 } = Astro.props;
 
