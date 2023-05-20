@@ -60,6 +60,9 @@
   top: 50%;
   translate: -50% -50% 0;
   user-select: none;
+  animation: zoom-in 0.2s var(--ease-out-5) 1;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
 }
 
 
