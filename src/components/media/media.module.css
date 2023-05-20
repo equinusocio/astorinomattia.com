@@ -53,57 +53,15 @@
   }
 }
 
-.Circles {
-  width: var(--circles-size);
-  height: var(--circles-size);
+.Canvas {
+  filter: var(--filter);
   position: absolute;
   left: 50%;
   top: 50%;
-  translate: calc((var(--circles-size) / 2) * -1)  calc((var(--circles-size) / 2) * -1);
+  translate: -50% -50% 0;
+  user-select: none;
 }
 
-.Role {
-  width: var(--role-size);
-  height: var(--role-size);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  overflow: visible;
-  translate: calc((var(--role-size) / 2) * -1)  calc((var(--role-size) / 2) * -1);
-}
-
-.Skills {
-  width: var(--skills-size);
-  height: var(--skills-size);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  translate: calc((var(--skills-size) / 2) * -1)  calc((var(--skills-size) / 2) * -1);
-}
-
-.Rotate {
-  --duration: 20s;
-
-  transform-origin: 50% 50%;
-  animation: rotate var(--duration, 400s) linear infinite;
-
-  &[data-rotation-direction='reverse'] {
-    animation-direction: reverse;
-  }
-
-  &[data-rotation-duration='slow'] {
-    --duration: 600s;
-  }
-
-  &[data-rotation-duration='fast'] {
-    --duration: 200s;
-  }
-}
-
-.ZoomIn {
-  transform-origin: 50% 50%;
-  animation: zoom-in 3s var(--ease-out-5) 1;
-}
 
 @keyframes zoom-in {
   0% {

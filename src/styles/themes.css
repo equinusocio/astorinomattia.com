@@ -13,5 +13,6 @@
     --dimmed-0: var(--stone-9);
     --dimmed-1: var(--stone-5);
     --dimmed-2: var(--stone-2);
+    --filter: invert();
   }
 }

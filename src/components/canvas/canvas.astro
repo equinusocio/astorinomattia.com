@@ -1,0 +1,17 @@
+---
+const { class: className } = Astro.props;
+---
+
+<canvas class={className} id="canvas" width="1451" height="1451"></canvas>
+
+<script>
+  const r = new rive.Rive({
+    src: "/website_media.riv",
+    canvas: document.getElementById("canvas"),
+    autoplay: true,
+    stateMachines: "mainSM",
+    onLoad: () => {
+      r.resizeDrawingSurfaceToCanvas();
+    },
+  });
+</script>

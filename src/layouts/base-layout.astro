@@ -1,8 +1,6 @@
 ---
 import Canvas from "@/components/canvas/canvas.astro";
 import Cursor from "@/components/cursor/cursor.astro";
-import Player from "@/components/player/player.astro";
-import Video from "@/components/video/video.astro";
 import "@/styles/global.css";
 import "@/styles/themes.css";
 
@@ -61,5 +59,6 @@ const socialImageURL = new URL("/cover.jpg", Astro.url);
   <body>
     <Cursor />
     <slot />
+    <script is:inline src="https://unpkg.com/@rive-app/canvas@1.1.7"></script>
   </body>
 </html>
