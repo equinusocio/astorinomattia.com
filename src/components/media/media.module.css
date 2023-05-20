@@ -15,17 +15,19 @@
   &::after {
     content: '';
     position: absolute;
-    animation: zoom-in 3s var(--ease-out-5) 1;
+    animation: scale-in 3s var(--ease-in-out-3) forwards;
   }
 
   &::before {
     inset: 24px 20%;
     border-top: 1px solid var(--dimmed-1);
+    scale: 0 1;
     border-bottom: 1px solid var(--dimmed-1);
   }
 
   &::after {
     inset: 10% 24px;
+    scale: 1 0;
     border-left: 1px solid var(--dimmed-1);
     border-right: 1px solid var(--dimmed-1);
   }
