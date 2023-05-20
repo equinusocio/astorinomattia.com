@@ -9,6 +9,7 @@ import BaseLayout from "@/layouts/base-layout.astro";
 import styles from "./index.module.css";
 import ThemeSwitcher from "@/components/theme-switcher/theme-switcher.astro";
 import Media from "@/components/media/media.astro";
+import Lab from "@/icons/lab.astro";
 ---
 
 <BaseLayout>
@@ -30,6 +31,9 @@ import Media from "@/components/media/media.astro";
         </Social>
         <Social href="https://vero.co/equinusocio" label="Photo" delay="2s">
           <Vero slot="icon" />
+        </Social>
+        <Social href="https://codepen.io/equinusocio" label="Lab" delay="2.5s">
+          <Lab slot="icon" />
         </Social>
       </Stack>
     </Stack>
