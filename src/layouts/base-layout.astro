@@ -66,7 +66,7 @@ const socialImageURL = new URL("/cover.jpg", Astro.url);
     <meta name="twitter:image:alt" content={`Page image for ${title}`} />
   </head>
   <body>
-    <Cursor client:idle />
+    <Cursor />
     <slot />
     <script is:inline src="https://unpkg.com/@rive-app/canvas@1.1.7"></script>
   </body>
