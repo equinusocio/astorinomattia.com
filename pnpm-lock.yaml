@@ -4,6 +4,9 @@ dependencies:
   astro:
     specifier: 2.4.5
     version: 2.4.5
+  astro-compressor:
+    specifier: 0.4.0
+    version: 0.4.0
   open-props:
     specifier: 1.5.8
     version: 1.5.8
@@ -1148,6 +1151,10 @@ packages:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /astro-compressor@0.4.0:
+    resolution: {integrity: sha512-yw6wM+cjkdyAMc6HW2lrdinOxt64PwQuL5NCAe71cXF/5xjnyJhgg9nyyFE32oQtmtd5I/57Pyp/kPe9IfYAxg==}
+    dev: false
 
   /astro@2.4.5:
     resolution: {integrity: sha512-osxLnuLXaOX0FjWOVQH8cmK4N/Gdj/ZdEkeyMJWsUss7xQU4Q64tAxB/dAv75f/XZiu+PprmndJkyQ4sYLOv1g==}

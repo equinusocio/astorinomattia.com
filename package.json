@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "astro": "2.4.5",
+    "astro-compressor": "0.4.0",
     "open-props": "1.5.8"
   },
   "devDependencies": {
