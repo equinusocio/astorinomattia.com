@@ -9,8 +9,6 @@ export default defineConfig({
     // Compressor must be at the end of the array
     compressor({
       fileExtensions: [".css", ".js", ".html", ".xml", ".cjs", ".mjs", ".svg", ".txt", '.riv'],
-      gzip: true,
-      brotli: true
     })
   ]
 });
