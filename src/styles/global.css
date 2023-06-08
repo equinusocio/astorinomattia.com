@@ -24,7 +24,7 @@ html {
 
 body {
   color: var(--global-foreground);
-  font-family: 'PT Serif', serif;
+  font-family: Comfortaa, cursive;
   font-feature-settings: 'calt' off;
   font-size: 1rem;
   margin: 0;
