@@ -4,7 +4,7 @@ import compressor from "astro-compressor";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://equinusocio.dev',
+  site: 'https://astorinomattia.com',
   integrations: [
     // Compressor must be at the end of the array
     compressor({
