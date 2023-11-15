@@ -23,8 +23,8 @@
   "css.validate": false,
   "scss.validate": false,
   "files.associations": {
-    "*.css": "postcss",
-    "*.module.css": "postcss",
+    "*.css": "css",
+    "*.module.css": "css",
     ".stylelintrc": "json",
     "yarn.lock": "yaml",
     ".eslintrc": "json"
